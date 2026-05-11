@@ -241,10 +241,56 @@ function Frame38() {
             ease: "easeInOut",
           }}
         >
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 635.6 635.6">
-            <g filter="url(#filter0_f_1_3964)" id="Ellipse 29">
-              <circle cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="230.5" />
-            </g>
+          <svg className="block size-full overflow-visible" fill="none" preserveAspectRatio="none" viewBox="0 0 635.6 635.6">
+            <style>
+              {`
+                @keyframes disperse-right {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(500px, 0) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-left {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(-500px, 0) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-up {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(0, -500px) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-down {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(0, 500px) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-top-right {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(350px, -350px) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-top-left {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(-350px, -350px) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-bottom-right {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(350px, 350px) scale(1.5); opacity: 0; }
+                }
+                @keyframes disperse-bottom-left {
+                  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+                  100% { transform: translate(-350px, 350px) scale(1.5); opacity: 0; }
+                }
+                .particle { transform-origin: center; }
+                .p1 { animation: disperse-right 2.5s ease-out infinite; animation-delay: 0s; }
+                .p2 { animation: disperse-left 2.5s ease-out infinite; animation-delay: 0.3s; }
+                .p3 { animation: disperse-up 2.5s ease-out infinite; animation-delay: 0.6s; }
+                .p4 { animation: disperse-down 2.5s ease-out infinite; animation-delay: 0.9s; }
+                .p5 { animation: disperse-top-right 2.5s ease-out infinite; animation-delay: 1.2s; }
+                .p6 { animation: disperse-top-left 2.5s ease-out infinite; animation-delay: 1.5s; }
+                .p7 { animation: disperse-bottom-right 2.5s ease-out infinite; animation-delay: 1.8s; }
+                .p8 { animation: disperse-bottom-left 2.5s ease-out infinite; animation-delay: 2.1s; }
+                .p9 { animation: disperse-right 2.5s ease-out infinite; animation-delay: 0.15s; }
+                .p10 { animation: disperse-left 2.5s ease-out infinite; animation-delay: 0.45s; }
+                .p11 { animation: disperse-up 2.5s ease-out infinite; animation-delay: 0.75s; }
+                .p12 { animation: disperse-down 2.5s ease-out infinite; animation-delay: 1.05s; }
+              `}
+            </style>
             <defs>
               <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="635.6" id="filter0_f_1_3964" width="635.6" x="0" y="0">
                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
@@ -252,6 +298,20 @@ function Frame38() {
                 <feGaussianBlur result="effect1_foregroundBlur_1_3964" stdDeviation="43.65" />
               </filter>
             </defs>
+            <g filter="url(#filter0_f_1_3964)">
+              <circle className="particle p1" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p2" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p3" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p4" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p5" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p6" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p7" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p8" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p9" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p10" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p11" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+              <circle className="particle p12" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            </g>
           </svg>
         </motion.div>
       </div>
@@ -1113,7 +1173,7 @@ function Frame19() {
 
 function Group40() {
   return (
-    <div className="absolute contents left-0 top-[204px]">
+    <div className="absolute contents left-0 top-[0px]">
       <Frame19 />
       <div className="absolute left-[213px] size-[12px] top-[52.88px]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
