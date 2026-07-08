@@ -276,7 +276,11 @@ function Frame38() {
                   0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
                   100% { transform: translate(-350px, 350px) scale(1.5); opacity: 0; }
                 }
-                .particle { transform-origin: center; }
+                .particle {
+                  transform-origin: center;
+                  transform-box: fill-box;
+                  filter: blur(22px);
+                }
                 .p1 { animation: disperse-right 2.5s ease-out infinite; animation-delay: 0s; }
                 .p2 { animation: disperse-left 2.5s ease-out infinite; animation-delay: 0.3s; }
                 .p3 { animation: disperse-up 2.5s ease-out infinite; animation-delay: 0.6s; }
@@ -298,20 +302,19 @@ function Frame38() {
                 <feGaussianBlur result="effect1_foregroundBlur_1_3964" stdDeviation="43.65" />
               </filter>
             </defs>
-            <g filter="url(#filter0_f_1_3964)">
-              <circle className="particle p1" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p2" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p3" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p4" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p5" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p6" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p7" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p8" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p9" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p10" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p11" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-              <circle className="particle p12" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
-            </g>
+            {/* Particles placed directly in SVG (outside filter group) so CSS translate is never clipped by the filter primitive's fixed bounds */}
+            <circle className="particle p1" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p2" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p3" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p4" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p5" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p6" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p7" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p8" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p9" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p10" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p11" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
+            <circle className="particle p12" cx="317.8" cy="317.8" fill="var(--fill-0, white)" r="50" />
           </svg>
         </motion.div>
       </div>
