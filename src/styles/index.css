@@ -63,15 +63,14 @@ h6,
   animation: ara-particle-flight var(--particle-duration) linear infinite;
   animation-delay: var(--particle-delay);
   animation-play-state: paused;
-  background: var(--particle-color);
-  height: var(--particle-size);
+  height: var(--particle-height);
   left: 50%;
   opacity: 0;
   position: absolute;
   top: 48%;
-  transform: translate3d(0, 0, 0) rotate(0deg) scale(0.92);
+  transform: translate3d(0, 0, 0) rotate(var(--particle-r0)) scale(0.92);
   transform-origin: center;
-  width: var(--particle-size);
+  width: var(--particle-width);
   will-change: transform, opacity;
 }
 
@@ -79,30 +78,17 @@ h6,
   animation-play-state: running;
 }
 
-.ara-hero-particle[data-shape="circle"] {
-  border-radius: 999px;
-}
-
-.ara-hero-particle[data-shape="ring"] {
-  background: transparent;
-  border: max(3px, calc(var(--particle-size) * 0.24)) solid var(--particle-color);
-  border-radius: 999px;
-}
-
-.ara-hero-particle[data-shape="capsule"] {
-  border-radius: 999px;
-  height: calc(var(--particle-size) * 0.42);
-  width: calc(var(--particle-size) * 1.9);
-}
-
-.ara-hero-particle[data-shape="diamond"] {
-  border-radius: 3px;
+.ara-hero-particle svg {
+  display: block;
+  height: 100%;
+  overflow: visible;
+  width: 100%;
 }
 
 @keyframes ara-particle-flight {
   0% {
     opacity: 0;
-    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.92);
+    transform: translate3d(0, 0, 0) rotate(var(--particle-r0)) scale(0.92);
   }
   5% {
     opacity: 0.18;
