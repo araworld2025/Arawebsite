@@ -15,7 +15,9 @@ The repository requires these GitHub Actions secrets:
 - `HOSTINGER_FTP_USERNAME`
 - `HOSTINGER_FTP_PASSWORD`
 
-Reach and checkout credentials are not GitHub deployment secrets. Create
+Reach and checkout credentials are not GitHub deployment secrets. The site can
+be deployed without them; lead submissions return a temporary-unavailable
+response until Reach is enabled. When enabling Reach, create
 `/home/u589531741/domains/ara.kids/ara-config.php` through Hostinger File
 Manager, outside `public_html`, using `api/config.example.php` as the template.
 The PHP API loads that file at runtime. Never place the real file or its values
