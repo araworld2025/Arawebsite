@@ -45,3 +45,99 @@ h6,
 [class*="Montserrat"] {
   font-family: 'Montserrat', sans-serif;
 }
+
+.ara-hero-particle-field {
+  contain: layout paint;
+  height: 540px;
+  left: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: -16px;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 0;
+}
+
+.ara-hero-particle {
+  animation: ara-particle-flight var(--particle-duration) linear infinite;
+  animation-delay: var(--particle-delay);
+  animation-play-state: paused;
+  background: var(--particle-color);
+  height: var(--particle-size);
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 48%;
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(0.92);
+  transform-origin: center;
+  width: var(--particle-size);
+  will-change: transform, opacity;
+}
+
+.ara-hero-particle-field[data-active="true"] .ara-hero-particle {
+  animation-play-state: running;
+}
+
+.ara-hero-particle[data-shape="circle"] {
+  border-radius: 999px;
+}
+
+.ara-hero-particle[data-shape="ring"] {
+  background: transparent;
+  border: max(3px, calc(var(--particle-size) * 0.24)) solid var(--particle-color);
+  border-radius: 999px;
+}
+
+.ara-hero-particle[data-shape="capsule"] {
+  border-radius: 999px;
+  height: calc(var(--particle-size) * 0.42);
+  width: calc(var(--particle-size) * 1.9);
+}
+
+.ara-hero-particle[data-shape="diamond"] {
+  border-radius: 3px;
+}
+
+@keyframes ara-particle-flight {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.92);
+  }
+  5% {
+    opacity: 0.18;
+  }
+  14% {
+    opacity: 0.92;
+    transform: translate3d(var(--particle-x1), var(--particle-y1), 0) rotate(var(--particle-r1)) scale(1);
+  }
+  38% {
+    opacity: 0.82;
+    transform: translate3d(var(--particle-x2), var(--particle-y2), 0) rotate(var(--particle-r2)) scale(0.98);
+  }
+  72% {
+    opacity: 0.66;
+    transform: translate3d(var(--particle-x3), var(--particle-y3), 0) rotate(var(--particle-r3)) scale(0.94);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--particle-x4), var(--particle-y4), 0) rotate(var(--particle-r4)) scale(0.86);
+  }
+}
+
+@media (max-width: 767px) {
+  .ara-hero-particle-field {
+    height: 520px;
+    top: -8px;
+  }
+
+  .ara-hero-particle:nth-child(n + 15) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ara-hero-particle-field {
+    display: none;
+  }
+}

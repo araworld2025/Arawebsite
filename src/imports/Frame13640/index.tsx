@@ -8,6 +8,7 @@ import childReading from "../../assets/child-reading.png";
 import kidsReading from "../../assets/kids-reading.png";
 import { activateFeaturedProduct, featuredProductStage } from "@/config/featuredProduct";
 import { submitLead } from "@/services/leads";
+import { HeroParticleField } from "@/app/components/HeroParticleField";
 const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23e8e4dc'/%3E%3Cpath d='M0 640 300 360l190 180 170-140 540 400H0Z' fill='%23c9c2b5'/%3E%3Ccircle cx='850' cy='230' r='90' fill='%23d6cfc3'/%3E%3C/svg%3E";
 const imgImage75 = childReading;
 const imgImage91 = placeholderImage;
@@ -122,7 +123,7 @@ function Group16() {
 
 function Frame2() {
   return (
-    <div className="h-[507.911px] relative shrink-0 w-[417.339px]">
+    <div className="h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
       <div className="absolute inset-[0_10.64%_37.76%_13.62%]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
           <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
@@ -271,6 +272,7 @@ function Frame36() {
 function Frame37() {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
+      <HeroParticleField />
       <Frame2 />
       <Frame36 />
     </div>
