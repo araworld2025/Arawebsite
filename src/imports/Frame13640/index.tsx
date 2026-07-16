@@ -145,7 +145,7 @@ function Frame2() {
           </svg>
         </div>
       </div>
-      <div className="absolute flex items-center justify-center left-[252.18px] size-[104.9px] top-[169.6px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--1 absolute flex items-center justify-center left-[252.18px] size-[104.9px] top-[169.6px]">
         <div className="flex-none rotate-[111.31deg]">
           <div className="relative size-[81.004px]">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 81.0039 81.0039">
@@ -155,7 +155,7 @@ function Frame2() {
         </div>
       </div>
       <Group16 />
-      <div className="absolute flex h-[6.637px] items-center justify-center left-[308.47px] top-[293.88px] w-[50.43px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--2 absolute flex h-[6.637px] items-center justify-center left-[308.47px] top-[293.88px] w-[50.43px]">
         <div className="flex-none rotate-[175.15deg]">
           <div className="h-[2.387px] relative w-[50.408px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -166,7 +166,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[30.609px] items-center justify-center left-[105.91px] top-[240.19px] w-[42.835px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--3 absolute flex h-[30.609px] items-center justify-center left-[105.91px] top-[240.19px] w-[42.835px]">
         <div className="flex-none rotate-[145.37deg]">
           <div className="h-[2.387px] relative w-[50.408px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -177,7 +177,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex items-center justify-center left-[48.84px] size-[53.419px] top-[195.35px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--4 absolute flex items-center justify-center left-[48.84px] size-[53.419px] top-[195.35px]">
         <div className="flex-none rotate-[111.31deg]">
           <div className="relative size-[41.25px]">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 41.2505 41.2505">
@@ -186,7 +186,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[8.261px] items-center justify-center left-[188.25px] top-[331.21px] w-[26.775px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--5 absolute flex h-[8.261px] items-center justify-center left-[188.25px] top-[331.21px] w-[26.775px]">
         <div className="flex-none rotate-[-14.85deg]">
           <div className="h-[1.295px] relative w-[27.356px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -197,7 +197,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[63.992px] items-center justify-center left-[-40.84px] top-[158.05px] w-[41.129px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--6 absolute flex h-[63.992px] items-center justify-center left-[-40.84px] top-[158.05px] w-[41.129px]">
         <div className="flex-none rotate-[58.45deg]">
           <div className="h-[3.455px] relative w-[72.972px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -208,7 +208,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[36.494px] items-center justify-center left-[14.21px] top-[146.51px] w-[39.162px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--7 absolute flex h-[36.494px] items-center justify-center left-[14.21px] top-[146.51px] w-[39.162px]">
         <div className="flex-none rotate-[-31.55deg]">
           <div className="h-[23.447px] relative w-[31.558px]">
             <div className="absolute inset-[-35.03%_-9.08%_0_-26.02%]">

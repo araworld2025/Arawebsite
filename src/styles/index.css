@@ -85,6 +85,99 @@ h6,
   width: 100%;
 }
 
+.ara-hero-origin-particle {
+  animation: ara-origin-particle-float var(--origin-duration) cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  animation-delay: var(--origin-delay);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.ara-hero-origin-particle--1 {
+  --origin-delay: -1.4s;
+  --origin-duration: 5.2s;
+  --origin-r1: -3deg;
+  --origin-r2: 4deg;
+  --origin-x1: -3px;
+  --origin-x2: 4px;
+  --origin-y1: 5px;
+  --origin-y2: -7px;
+}
+
+.ara-hero-origin-particle--2 {
+  --origin-delay: -3.1s;
+  --origin-duration: 4.7s;
+  --origin-r1: 4deg;
+  --origin-r2: -5deg;
+  --origin-x1: 5px;
+  --origin-x2: -4px;
+  --origin-y1: -4px;
+  --origin-y2: 7px;
+}
+
+.ara-hero-origin-particle--3 {
+  --origin-delay: -0.8s;
+  --origin-duration: 5.8s;
+  --origin-r1: -5deg;
+  --origin-r2: 3deg;
+  --origin-x1: -5px;
+  --origin-x2: 6px;
+  --origin-y1: -6px;
+  --origin-y2: 5px;
+}
+
+.ara-hero-origin-particle--4 {
+  --origin-delay: -4.2s;
+  --origin-duration: 6.1s;
+  --origin-r1: -2deg;
+  --origin-r2: 2deg;
+  --origin-x1: 3px;
+  --origin-x2: -5px;
+  --origin-y1: 7px;
+  --origin-y2: -8px;
+}
+
+.ara-hero-origin-particle--5 {
+  --origin-delay: -2.3s;
+  --origin-duration: 4.4s;
+  --origin-r1: 6deg;
+  --origin-r2: -6deg;
+  --origin-x1: -4px;
+  --origin-x2: 5px;
+  --origin-y1: 4px;
+  --origin-y2: -6px;
+}
+
+.ara-hero-origin-particle--6 {
+  --origin-delay: -5.1s;
+  --origin-duration: 6.4s;
+  --origin-r1: -4deg;
+  --origin-r2: 5deg;
+  --origin-x1: 6px;
+  --origin-x2: -3px;
+  --origin-y1: -5px;
+  --origin-y2: 8px;
+}
+
+.ara-hero-origin-particle--7 {
+  --origin-delay: -1.9s;
+  --origin-duration: 5.5s;
+  --origin-r1: 5deg;
+  --origin-r2: -4deg;
+  --origin-x1: -3px;
+  --origin-x2: 6px;
+  --origin-y1: 6px;
+  --origin-y2: -5px;
+}
+
+@keyframes ara-origin-particle-float {
+  from {
+    transform: translate3d(var(--origin-x1), var(--origin-y1), 0) rotate(var(--origin-r1));
+  }
+  to {
+    transform: translate3d(var(--origin-x2), var(--origin-y2), 0) rotate(var(--origin-r2));
+  }
+}
+
 @keyframes ara-particle-flight {
   0% {
     opacity: 0;
@@ -125,5 +218,9 @@ h6,
 @media (prefers-reduced-motion: reduce) {
   .ara-hero-particle-field {
     display: none;
+  }
+
+  .ara-hero-origin-particle {
+    animation: none;
   }
 }
