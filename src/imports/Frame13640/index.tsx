@@ -1,16 +1,25 @@
 import { useState } from "react";
 import svgPaths from "./svg-4bw8vxn8mh";
-import imgImage75 from "./a4b9e4bf795835c778478a9da39db5a51fcb2835.png";
-import imgImage91 from "./909a41865144461862f96da0783f580456263dd5.png";
-import imgImage92 from "./0c6d61985fec1f5c67a4842241a142ce47212f66.png";
-import imgImage93 from "./c1af50cadb95f5303a07aeb86d24763440385881.png";
-import imgEllipse42 from "./938f47edd50c8033a5cebec8d14a147f11d60e4d.png";
-import imgImage98 from "./5f80e5e021ec6b8337e0c04ae8578434c613e708.png";
-import imgImage97 from "./5e92d627ab482b9c5372406b86a5cd2ccc52b27b.png";
-import imgImage99 from "./2b8f48e7b6fc6b355e9912cca06b74d87fbf5ec9.png";
-import imgImage100 from "./010c74bc809a54feda00e400e55ec5b8e42d9057.png";
-import imgEllipse28 from "./657549feaa2916d2b426956c999c75c6cf52ef5d.png";
-import imgRectangle from "./182ee4437611a71e51ba90b9e8f0a6cf66626fbb.png";
+import familyPhoto from "../../assets/family-photo.png";
+import eranKoProducts from "../../assets/eran-ko-products.png";
+import yorubaBook from "../../assets/yoruba-book.png";
+import yorubaFlipcards from "../../assets/yoruba-flipcards.png";
+import childReading from "../../assets/child-reading.png";
+import kidsReading from "../../assets/kids-reading.png";
+import { activateFeaturedProduct, featuredProductStage } from "@/config/featuredProduct";
+import { submitLead } from "@/services/leads";
+const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23e8e4dc'/%3E%3Cpath d='M0 640 300 360l190 180 170-140 540 400H0Z' fill='%23c9c2b5'/%3E%3Ccircle cx='850' cy='230' r='90' fill='%23d6cfc3'/%3E%3C/svg%3E";
+const imgImage75 = childReading;
+const imgImage91 = placeholderImage;
+const imgImage92 = placeholderImage;
+const imgImage93 = placeholderImage;
+const imgEllipse42 = placeholderImage;
+const imgImage98 = yorubaBook;
+const imgImage97 = eranKoProducts;
+const imgImage99 = yorubaFlipcards;
+const imgImage100 = familyPhoto;
+const imgEllipse28 = placeholderImage;
+const imgRectangle = kidsReading;
 
 function Group14() {
   return (
@@ -88,7 +97,7 @@ function Group19() {
   return (
     <div className="absolute contents left-[53.28px] top-[43.51px]">
       <div className="absolute h-[464.11px] left-[53.28px] top-[43.51px] w-[309.897px]" data-name="image 75">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage75} />
+        <img alt="Child reading a book" className="absolute inset-0 max-w-none object-contain object-center pointer-events-none size-full" src={imgImage75} />
       </div>
     </div>
   );
@@ -215,11 +224,11 @@ function Frame2() {
 
 function Frame7() {
   return (
-    <div className="relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full">
+    <button type="button" onClick={activateFeaturedProduct} className="relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full cursor-pointer">
       <div aria-hidden className="absolute bg-[#00a193] inset-0 pointer-events-none rounded-[11px]" />
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex gap-[10px] items-center justify-center px-[43px] py-[23px] relative size-full">
-          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[22.125px] text-center text-white whitespace-nowrap">Pre-Order new book</p>
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[22.125px] text-center text-white whitespace-nowrap">{featuredProductStage.cta}</p>
           <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[27px]">
             <div className="flex-none rotate-90">
               <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative text-[22.125px] text-center text-white whitespace-nowrap">{`-->`}</p>
@@ -228,7 +237,7 @@ function Frame7() {
         </div>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_4px_0px_0px_rgba(255,255,255,0.25)]" />
-    </div>
+    </button>
   );
 }
 
@@ -247,20 +256,7 @@ function Frame8() {
 }
 
 function Frame35() {
-  return (
-    <div className="content-center flex flex-wrap gap-[16px] items-center relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[20.349px] whitespace-nowrap">featured on:</p>
-      <div className="h-[23.25px] relative shrink-0 w-[81.579px]" data-name="image 91">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage91} />
-      </div>
-      <div className="h-[69px] relative shrink-0 w-[122.667px]" data-name="image 92">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage92} />
-      </div>
-      <div className="h-[36px] relative shrink-0 w-[119.502px]" data-name="image 93">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage93} />
-      </div>
-    </div>
-  );
+  return null;
 }
 
 function Frame36() {
@@ -474,7 +470,7 @@ function CountryTag({ name, flag }: { name: string; flag: string }) {
         </span>
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-        <p className="[word-break:break-word] font-['DM_Sans:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[18px] whitespace-nowrap">{name}</p>
+        <p className="[word-break:break-word] font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[27px] relative shrink-0 text-[#344054] text-[22px] whitespace-nowrap">{name}</p>
       </div>
     </div>
   );
@@ -720,21 +716,18 @@ function TopSection() {
   return (
     <div className="h-[226px] mb-[-70px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
       <Frame23 />
-      <div className="absolute left-[523px] size-[634px] top-[-118.97px]">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="634" src={imgEllipse42} width="634" />
-      </div>
     </div>
   );
 }
 
 function Frame() {
   return (
-    <div className="col-1 content-stretch flex gap-[10px] items-center justify-center max-w-[396px] ml-0 mt-0 px-[43px] py-[23px] relative rounded-[12px] row-1">
+    <button type="button" onClick={activateFeaturedProduct} className="col-1 content-stretch flex gap-[10px] items-center justify-center max-w-[396px] ml-0 mt-0 px-[43px] py-[23px] relative rounded-[12px] row-1 cursor-pointer">
       <div aria-hidden className="absolute bg-[#0abded] inset-0 pointer-events-none rounded-[12px]" />
-      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">Buy the Book</p>
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">{featuredProductStage.cta}</p>
       <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">{`>`}</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-4px_0px_0px_rgba(0,0,0,0.25),inset_0px_2px_0px_0px_rgba(255,255,255,0.5)]" />
-    </div>
+    </button>
   );
 }
 
@@ -1090,22 +1083,15 @@ function Frame24() {
 
 function Frame3() {
   return (
-    <div className="h-[412px] relative shrink-0 w-[338px]">
-      <div className="absolute left-[-3.18px] size-[341px] top-[61.06px]">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="341" src={imgEllipse28} width="341" />
-      </div>
-      <div className="absolute h-[232px] left-[-43.18px] top-[-14.94px] w-[381px]" data-name="Rectangle">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[178.76%] left-[-0.1%] max-w-none top-[0.09%] w-[123.25%]" src={imgRectangle} />
-        </div>
-      </div>
+    <div className="h-[412px] relative shrink-0 w-[412px]">
+      <img alt="Mother reading with her child" className="absolute inset-0 object-contain size-full" src={imgRectangle} />
     </div>
   );
 }
 
 function Frame18() {
   return (
-    <div className="content-stretch flex gap-[17px] items-center relative shrink-0">
+    <div className="content-stretch flex flex-wrap gap-[17px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[35px] items-center justify-center relative shrink-0 w-[34px]">
         <div className="flex-none rotate-90">
           <div className="h-[34px] relative w-[35px]">
@@ -1115,7 +1101,7 @@ function Frame18() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[20.349px] whitespace-nowrap">Prof. Jim Cummins — University of Toronto</p>
+      <p className="[word-break:break-word] flex-1 font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-[220px] relative text-[#554739] text-[20.349px] text-center whitespace-normal">Prof. Jim Cummins — University of Toronto</p>
     </div>
   );
 }
@@ -1266,10 +1252,11 @@ function Frame20() {
   return (
     <div className="relative shrink-0 w-full z-[3]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[97px] relative size-full">
-          <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[36px] text-center tracking-[-2.16px] w-[480px] whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14' }}>{`Connect with us to get a dooze of                to connect with your child`}</p>
-          <div className="absolute h-[40.644px] left-[336px] overflow-clip top-[80px] w-[96px]" data-name="ara-logo-base">
-            <LogoGroup1 />
+        <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[16px] md:px-[97px] relative size-full">
+          <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[36px] text-center tracking-[-2.16px] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+            Connect with us to get a dooze of{" "}
+            <span className="inline-flex h-[40.644px] overflow-clip relative align-middle w-[96px]" data-name="ara-logo-base"><LogoGroup1 /></span>{" "}
+            to connect with your child
           </div>
         </div>
       </div>
@@ -1281,10 +1268,15 @@ function Frame19() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
     if (email && email.includes("@")) {
-      setSubscribed(true);
-      setTimeout(() => { setEmail(""); setSubscribed(false); }, 3000);
+      try {
+        await submitLead({ email, source: "newsletter-footer", newsletterConsent: true });
+        setSubscribed(true);
+        setTimeout(() => { setEmail(""); setSubscribed(false); }, 3000);
+      } catch {
+        setSubscribed(false);
+      }
     }
   };
 
@@ -1660,7 +1652,7 @@ function Frame56() {
 
 function Frame57() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[100px] relative shrink-0 w-[1440px]">
+    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[100px] relative shrink-0 w-full">
       <Frame56 />
     </div>
   );

@@ -276,3 +276,44 @@ This project is part of Figma Make and follows the platform's licensing terms.
 ---
 
 **Built with ❤️ for African heritage and language learning**
+
+## Product lifecycle and email capture
+
+The advertised product is controlled from `src/config/featuredProduct.ts`. Its `stage` can be `interest`, `preorder`, `available`, or `unavailable`. Both responsive layouts use this configuration. `interest` and `unavailable` open the lead form; `preorder` and `available` use `checkoutUrl`, falling back safely to the form while no checkout is configured.
+
+### Hostinger Reach setup
+
+The application submits to `POST /api/leads.php`. Deploy the `api` directory beside the built site on PHP-enabled Hostinger Web Hosting and configure the server variables in `.env.example`. Never use a `VITE_` prefix for secrets because Vite exposes those values to browsers.
+
+In Hostinger Reach:
+
+1. Connect and authenticate the sending domain, then enable double opt-in.
+2. The current public Reach API only documents `email`, `name`, `surname`, `phone`, and `note` for contact creation. The adapter therefore stores lifecycle fields and proposed tags as structured JSON in `note` instead of sending unsupported properties.
+3. Create Reach segments/forms for product interest and newsletter consent in the Reach dashboard. When Reach exposes tag/custom-field assignment through its public API, update only `reach_upsert()` to map the structured metadata into those native fields.
+4. Test new and repeated submissions with the same address in your Reach account before launch. If your Reach profile requires the profile-scoped endpoint, set `REACH_CONTACTS_URL` accordingly.
+
+The same normalized email is upserted as its intent advances. Newsletter consent is only added when explicitly selected or when the footer newsletter form is submitted.
+
+### Payment webhook contract
+
+Until a checkout provider is selected, `POST /api/payment-webhook.php` accepts an internal event. Sign the raw JSON with HMAC-SHA256 using `PAYMENT_WEBHOOK_SECRET` and send the lowercase hex result as `X-Ara-Signature`.
+
+```json
+{
+  "eventId": "evt_123",
+  "type": "order.paid",
+  "order": {
+    "orderId": "ARA-10024",
+    "email": "parent@example.com",
+    "productId": "yoruba-500"
+  }
+}
+```
+
+Supported types are `order.paid`, `order.cancelled`, and `order.refunded`. Once a checkout platform is selected, replace the generic verification and mapping with its official webhook SDK. Only this verified server endpoint may mark a contact as paid.
+
+### Email journeys
+
+- Product interest: double opt-in → product thank-you → development updates → paid-preorder launch.
+- Paid preorder: payment confirmation → production/delivery updates → dispatch notification.
+- Newsletter: separate welcome and editorial sequence for `newsletter:subscribed` contacts.
