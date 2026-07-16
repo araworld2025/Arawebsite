@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 import DesktopFrame from "@/imports/Frame13640/index";
 import MobileFrame from "@/imports/Frame13641/index";
+import { ProductInterestDialog } from "@/app/components/ProductInterestDialog";
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,6 +87,9 @@ export default function App() {
           <MobileFrame />
         </motion.div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <ProductInterestDialog />
 
       {/* Scroll to Top Button */}
       <motion.button

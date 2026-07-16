@@ -1,3 +1,47 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+:root {
+  --ara-space-1: 12px;
+  --ara-space-2: 16px;
+  --ara-space-3: 24px;
+  --ara-space-4: 48px;
+  --ara-space-5: 80px;
+  --ara-section-compact: 100px;
+  --ara-section-standard: 120px;
+  --ara-section-generous: 150px;
+  --ara-section-hero: 200px;
+  --ara-type-body: 20.349px;
+  --ara-type-action: 22.125px;
+  --ara-type-statement: 36px;
+  --ara-type-display: 66px;
+}
+
+body,
+input,
+button,
+textarea,
+select {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-bold,
+.font-black,
+[class*="DM_Sans"] {
+  font-family: 'DM Sans', sans-serif;
+}
+
+[class*="Inter"] {
+  font-family: 'Inter', sans-serif;
+}
+
+[class*="Montserrat"] {
+  font-family: 'Montserrat', sans-serif;
+}

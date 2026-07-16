@@ -1,0 +1,22 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+
+# Local environment and server secrets
+.env
+.env.local
+.env.*.local
+api/config.local.php
+
+# Logs and test output
+*.log
+coverage/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.swp
