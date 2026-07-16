@@ -23,8 +23,31 @@ function request_json(): array {
     return $data;
 }
 
+function config_value(string $name): string|false {
+    static $config = null;
+    if ($config === null) {
+        $config = [];
+        $configuredPath = getenv('ARA_CONFIG_FILE');
+        $configPath = $configuredPath !== false && trim($configuredPath) !== ''
+            ? trim($configuredPath)
+            : dirname(__DIR__, 2) . '/ara-config.php';
+        if (is_file($configPath)) {
+            $loaded = require $configPath;
+            if (is_array($loaded)) $config = $loaded;
+        }
+    }
+
+    $environmentValue = getenv($name);
+    if ($environmentValue !== false && trim($environmentValue) !== '') {
+        return trim($environmentValue);
+    }
+
+    $fileValue = $config[$name] ?? false;
+    return is_string($fileValue) && trim($fileValue) !== '' ? trim($fileValue) : false;
+}
+
 function env_required(string $name): string {
-    $value = getenv($name);
+    $value = config_value($name);
     if ($value === false || trim($value) === '') {
         error_log("Missing required environment variable: {$name}");
         json_response(503, ['code' => 'service_unconfigured', 'message' => 'Signup is temporarily unavailable.']);
@@ -42,7 +65,7 @@ function normalize_email(mixed $value): string {
 
 function reach_upsert(array $contact): array {
     $token = env_required('REACH_API_TOKEN');
-    $url = getenv('REACH_CONTACTS_URL') ?: 'https://developers.hostinger.com/api/reach/v1/contacts';
+    $url = config_value('REACH_CONTACTS_URL') ?: 'https://developers.hostinger.com/api/reach/v1/contacts';
     $reachPayload = [
         'email' => $contact['email'],
         'name' => '',

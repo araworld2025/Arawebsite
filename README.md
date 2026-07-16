@@ -2,6 +2,27 @@
 
 A responsive and interactive landing page for **ara**, an African heritage and language learning platform for children.
 
+## Production deployment
+
+Merges to `main` deploy automatically to `https://ara.kids` through
+`.github/workflows/deploy-hostinger.yml`. GitHub Actions builds the Vite app and
+uploads only the compiled site plus the PHP API to the FTP account rooted at
+`public_html`.
+
+The repository requires these GitHub Actions secrets:
+
+- `HOSTINGER_FTP_SERVER`
+- `HOSTINGER_FTP_USERNAME`
+- `HOSTINGER_FTP_PASSWORD`
+
+Reach and checkout credentials are not GitHub deployment secrets. The site can
+be deployed without them; lead submissions return a temporary-unavailable
+response until Reach is enabled. When enabling Reach, create
+`/home/u589531741/domains/ara.kids/ara-config.php` through Hostinger File
+Manager, outside `public_html`, using `api/config.example.php` as the template.
+The PHP API loads that file at runtime. Never place the real file or its values
+inside the repository or `public_html`.
+
 ## 🚀 Quick Start
 
 ```bash
