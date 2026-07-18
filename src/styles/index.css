@@ -12,10 +12,30 @@
   --ara-section-standard: 120px;
   --ara-section-generous: 150px;
   --ara-section-hero: 200px;
-  --ara-type-body: 20.349px;
-  --ara-type-action: 22.125px;
-  --ara-type-statement: 36px;
-  --ara-type-display: 66px;
+  /* Primitive typography scale */
+  --ara-text-zero: 0px;
+  --ara-text-micro: 6px;
+  --ara-text-tiny: 9px;
+  --ara-text-caption: 12px;
+  --ara-text-small: 14px;
+  --ara-text-body: 16px;
+  --ara-text-body-large: 18px;
+  --ara-text-lead: 20px;
+  --ara-text-heading-small: 24px;
+  --ara-text-heading-medium: 32px;
+  --ara-text-heading-large: 40px;
+  --ara-text-heading-xlarge: 48px;
+  --ara-text-display: 54px;
+
+  /* Semantic typography aliases */
+  --ara-type-body: var(--ara-text-body);
+  --ara-type-action: var(--ara-text-lead);
+  --ara-type-statement: var(--ara-text-heading-medium);
+  --ara-type-display: var(--ara-text-display);
+}
+
+html {
+  font-size: var(--ara-text-body);
 }
 
 body,
@@ -24,6 +44,24 @@ button,
 textarea,
 select {
   font-family: 'Nunito', sans-serif;
+  font-size: var(--ara-type-body);
+}
+
+@media (max-width: 767px) {
+  .block.md\:hidden {
+    --ara-text-heading-medium: 24px;
+    --ara-text-heading-large: 32px;
+    --ara-text-heading-xlarge: 40px;
+    --ara-text-display: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hidden.md\:block {
+    --ara-text-heading-medium: 32px;
+    --ara-text-heading-xlarge: 40px;
+    --ara-text-display: 48px;
+  }
 }
 
 h1,

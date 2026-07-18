@@ -490,7 +490,7 @@ function Frame38() {
 function Frame51() {
   return (
     <div className="bg-[#00a193] content-stretch flex items-center justify-center overflow-clip px-[43px] py-[23px] relative rounded-[11px] shrink-0">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[22.125px] text-center text-white">Explore</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[length:var(--ara-text-lead)] text-center text-white">Explore</p>
     </div>
   );
 }
@@ -498,8 +498,8 @@ function Frame51() {
 function Frame52() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[#2d251d] text-[66px] tracking-[-3.96px] w-[500px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}><span className="leading-none">Surround them with your</span><span className="font-['DM_Sans:Black_Italic',sans-serif] font-black italic leading-none text-[#7f694f]" style={{ fontVariationSettings: "\'opsz\' 14" }}> African</span></p>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[20.349px] w-[511px] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[-3.96px] w-[500px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}><span className="leading-none">Surround them with your</span><span className="font-['DM_Sans:Black_Italic',sans-serif] font-black italic leading-none text-[#7f694f]" style={{ fontVariationSettings: "\'opsz\' 14" }}> African</span></p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[511px] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
       <Frame51 />
       <div className="absolute left-[172px] size-[12px] top-[303px]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
@@ -513,7 +513,7 @@ function Frame52() {
 function Frame73() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0">
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[20.349px]">featured on:</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)]">featured on:</p>
       <div className="h-[23.25px] relative shrink-0 w-[81.579px]" data-name="image 91">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage91} />
       </div>
@@ -549,7 +549,7 @@ function Frame44() {
   return (
     <div className="bg-gradient-to-b from-[#f8f7f3] from-[72.585%] h-[913px] overflow-clip relative shrink-0 to-[95.893%] to-white w-full z-[7]">
       <AraLogoBase />
-      <p className="-translate-x-1/2 absolute bottom-[1057.06%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+684.5px)] not-italic text-[22.125px] text-center text-white top-[-960.02%]">Explore</p>
+      <p className="-translate-x-1/2 absolute bottom-[1057.06%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+684.5px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-960.02%]">Explore</p>
       <Frame75 />
     </div>
   );
@@ -579,7 +579,7 @@ function Component() {
 function Text() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">Nigerian</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">Nigerian</p>
     </div>
   );
 }
@@ -616,7 +616,7 @@ function Component1() {
 function Text1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">Ghana</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">Ghana</p>
     </div>
   );
 }
@@ -655,7 +655,7 @@ function Component2() {
 function Text2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">South African</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">South African</p>
     </div>
   );
 }
@@ -702,7 +702,7 @@ function Component3() {
 function Text3() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">Kenyan</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">Kenyan</p>
     </div>
   );
 }
@@ -743,7 +743,7 @@ function Component4() {
 function Text4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">Ethiopian</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">Ethiopian</p>
     </div>
   );
 }
@@ -779,7 +779,7 @@ function Component5() {
 function Text5() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">Ethiopian</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">Ethiopian</p>
     </div>
   );
 }
@@ -822,7 +822,7 @@ function Component6() {
 function Text6() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px]">Ethiopian</p>
+      <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)]">Ethiopian</p>
     </div>
   );
 }
@@ -925,7 +925,7 @@ function FlagSwipeSection() {
                   />
                 </div>
                 <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-                  <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[22px] whitespace-nowrap">{country.name}</p>
+                  <p className="font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)] whitespace-nowrap">{country.name}</p>
                 </div>
               </div>
             ))}
@@ -985,11 +985,11 @@ function Frame53() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-start relative shrink-0 w-[291px]">
       <ParentFill />
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">{`Partnering with `}</span>
         <span className="leading-none text-[#628506]">parents</span>
       </p>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -1021,12 +1021,12 @@ function Frame54() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-start relative shrink-0 w-[291px]">
       <ParentFill1 />
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">{`Raising confident, `}</span>
         <span className="leading-none text-[#e07100]">{`culturally grounded `}</span>
         <span className="leading-none">children</span>
       </p>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -1059,11 +1059,11 @@ function Frame55() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-start relative shrink-0 w-[291px]">
       <ParentFill2 />
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">{`Providing complete `}</span>
         <span className="leading-none text-[#058076]">learning resources</span>
       </p>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -1099,11 +1099,11 @@ function Frame58() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-start relative shrink-0 w-[291px]">
       <ParentFill3 />
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">{`Supporting early `}</span>
         <span className="leading-none text-[#f43e3c]">language development</span>
       </p>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content] whitespace-pre-wrap">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -1122,7 +1122,7 @@ function Frame56() {
 function Frame57() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[#2d251d] text-[66px] text-center tracking-[-3.96px] w-[884px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-[884px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">On a mission to bring home Home; one product at time</span>
         <span className="leading-none text-[#fd9e11]">.</span>
       </p>
@@ -1146,7 +1146,7 @@ function Frame45() {
 function Frame67() {
   return (
     <div className="-translate-x-1/2 absolute bg-gradient-to-b content-stretch flex from-[33.659%] from-[rgba(255,255,255,0)] items-center justify-center left-[calc(50%+0.5px)] p-[10px] to-[#e9e9e9] top-[86.97px] w-[1515px]">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-[258.462px] text-center tracking-[-15.5077px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-[length:var(--ara-text-display)] text-center tracking-[-15.5077px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         New Product!
       </p>
     </div>
@@ -1167,8 +1167,8 @@ function Frame42() {
 function Frame19() {
   return (
     <div className="absolute bg-[#0abded] content-stretch flex gap-[10px] items-center justify-center left-0 max-w-[396px] px-[43px] py-[23px] rounded-[12px] top-0">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white">Buy the Book</p>
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white">{`>`}</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-white">Buy the Book</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-white">{`>`}</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-4px_0px_0px_rgba(0,0,0,0.25),inset_0px_2px_0px_0px_rgba(255,255,255,0.5)]" />
     </div>
   );
@@ -1190,7 +1190,7 @@ function Group40() {
 function Group41() {
   return (
     <div className="absolute contents left-0 top-[204px]">
-      <p className="absolute font-['DM_Sans:Bold',sans-serif] font-bold leading-none left-[232px] text-[#07364a] text-[27.029px] top-[226.88px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="absolute font-['DM_Sans:Bold',sans-serif] font-bold leading-none left-[232px] text-[#07364a] text-[length:var(--ara-text-heading-small)] top-[226.88px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         £20.30
       </p>
       <Group40 />
@@ -1201,11 +1201,11 @@ function Group41() {
 function Frame46() {
   return (
     <div className="content-stretch flex flex-col gap-[23px] items-start relative shrink-0 w-[500px]">
-      <p className="font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[58px] tracking-[-3.48px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[length:var(--ara-text-heading-xlarge)] tracking-[-3.48px] w-[min-content] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">{`My first 500 yoruba `}</span>
         <span className="leading-none text-[#0099cb]">Book</span>
       </p>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[14px] w-[min-content] whitespace-pre-wrap">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words, clear visuals, and everyday expressions.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content] whitespace-pre-wrap">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words, clear visuals, and everyday expressions.</p>
       <Group41 />
     </div>
   );
@@ -1310,7 +1310,7 @@ function Frame20() {
     <div className="absolute bg-[#dcfe58] h-[29px] left-[47px] max-w-[396px] rounded-[11px] top-[-12px] w-[150px]">
       <div className="flex flex-row items-center justify-center max-w-[inherit] size-full">
         <div className="content-stretch flex items-center justify-center max-w-[inherit] px-[43px] py-[23px] relative size-full">
-          <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[#4f690b] text-[16px]">NEW RELEASE!</p>
+          <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[#4f690b] text-[length:var(--ara-text-body)]">NEW RELEASE!</p>
         </div>
       </div>
     </div>
@@ -1379,7 +1379,7 @@ function Frame2() {
 function Group19() {
   return (
     <div className="content-stretch flex gap-[7.124px] items-center relative shrink-0">
-      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[15.927px] text-black text-center">Bùrẹ́dì</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-black text-center">Bùrẹ́dì</p>
     </div>
   );
 }
@@ -1413,7 +1413,7 @@ function Frame11() {
   return (
     <div className="content-stretch flex gap-[0.949px] h-[12.817px] items-end justify-center pr-[1.424px] relative shrink-0">
       <Grid />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.947px] tracking-[0.4168px]">Bu</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.4168px]">Bu</p>
       <DotWrapper />
     </div>
   );
@@ -1448,7 +1448,7 @@ function Frame12() {
   return (
     <div className="content-stretch flex gap-[0.949px] h-[12.817px] items-start justify-center pr-[1.424px] relative shrink-0">
       <Grid1 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.947px] tracking-[0.4168px]">re</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.4168px]">re</p>
       <DotWrapper1 />
     </div>
   );
@@ -1471,7 +1471,7 @@ function Frame15() {
   return (
     <div className="content-stretch flex gap-[0.949px] h-[12.817px] items-end justify-center pr-[1.424px] relative shrink-0">
       <Grid2 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.947px] tracking-[0.4168px]">di</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.4168px]">di</p>
     </div>
   );
 }
@@ -1510,7 +1510,7 @@ function Frame14() {
 function Frame17() {
   return (
     <div className="bg-[#f5e1cb] content-stretch flex items-center justify-center pb-[2.574px] pt-[2.059px] px-[2.059px] relative rounded-[1.716px]">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[6.935px] text-center">Bread</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[length:var(--ara-text-micro)] text-center">Bread</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-0.858px_0px_0px_rgba(118,118,118,0.5)]" />
     </div>
   );
@@ -1532,7 +1532,7 @@ function Frame3() {
 function Group20() {
   return (
     <div className="content-stretch flex gap-[7.124px] items-center relative shrink-0">
-      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[15.927px] text-black text-center">labalábá</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-black text-center">labalábá</p>
     </div>
   );
 }
@@ -1566,7 +1566,7 @@ function Frame23() {
   return (
     <div className="content-stretch flex gap-[0.825px] h-[11.131px] items-center justify-center pr-[1.237px] relative shrink-0">
       <Grid3 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.034px] tracking-[0.362px]">lah</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.362px]">lah</p>
       <DotWrapper2 />
     </div>
   );
@@ -1601,7 +1601,7 @@ function Frame24() {
   return (
     <div className="content-stretch flex gap-[0.825px] h-[11.131px] items-center justify-center pr-[1.237px] relative shrink-0">
       <Grid4 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.034px] tracking-[0.362px]">bah</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.362px]">bah</p>
       <DotWrapper3 />
     </div>
   );
@@ -1636,7 +1636,7 @@ function Frame25() {
   return (
     <div className="content-stretch flex gap-[0.825px] h-[11.131px] items-start justify-center pr-[1.237px] relative shrink-0">
       <Grid5 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.034px] tracking-[0.362px]">lah</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.362px]">lah</p>
       <DotWrapper4 />
     </div>
   );
@@ -1659,7 +1659,7 @@ function Frame26() {
   return (
     <div className="content-stretch flex gap-[0.825px] h-[11.131px] items-start justify-center pr-[1.237px] relative shrink-0">
       <Grid6 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.034px] tracking-[0.362px]">bah</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.362px]">bah</p>
     </div>
   );
 }
@@ -1699,7 +1699,7 @@ function Frame18() {
 function Frame4() {
   return (
     <div className="bg-[#fbe3d1] content-stretch flex items-center justify-center pb-[2.023px] pt-[1.619px] px-[1.619px] relative rounded-[1.349px]">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[5.451px] text-center">Bird</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[length:var(--ara-text-micro)] text-center">Bird</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-0.674px_0px_0px_rgba(118,118,118,0.5)]" />
     </div>
   );
@@ -1823,7 +1823,7 @@ function Frame() {
 function Group24() {
   return (
     <div className="content-stretch flex gap-[7.124px] items-center relative shrink-0">
-      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[15.927px] text-black text-center">Ajá</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-black text-center">Ajá</p>
     </div>
   );
 }
@@ -1857,7 +1857,7 @@ function Frame30() {
   return (
     <div className="content-stretch flex gap-[1.29px] h-[17.415px] items-center justify-center pr-[1.935px] relative shrink-0">
       <Grid7 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[9.44px] tracking-[0.5664px]">Ha</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-tiny)] tracking-[0.5664px]">Ha</p>
       <DotWrapper5 />
     </div>
   );
@@ -1880,7 +1880,7 @@ function Frame31() {
   return (
     <div className="content-stretch flex gap-[1.29px] h-[17.415px] items-start justify-center pr-[1.935px] relative shrink-0">
       <Grid8 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[9.44px] tracking-[0.5664px]">jah</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-tiny)] tracking-[0.5664px]">jah</p>
     </div>
   );
 }
@@ -1914,7 +1914,7 @@ function Frame27() {
 function Frame5() {
   return (
     <div className="absolute bg-[#f7e1c1] content-stretch flex items-center justify-center left-[8.02px] pb-[3.21px] pt-[2.568px] px-[2.568px] rounded-[2.14px] top-[112.77px]">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[8.647px] text-center">Dog</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[length:var(--ara-text-tiny)] text-center">Dog</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-1.07px_0px_0px_rgba(118,118,118,0.5)]" />
     </div>
   );
@@ -1949,7 +1949,7 @@ function Group36() {
 function Group27() {
   return (
     <div className="content-stretch flex gap-[7.124px] items-center relative shrink-0">
-      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[15.927px] text-black text-center">Ėyė</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-black text-center">Ėyė</p>
     </div>
   );
 }
@@ -1983,7 +1983,7 @@ function Frame35() {
   return (
     <div className="content-stretch flex gap-[0.949px] h-[12.817px] items-end justify-center pr-[1.424px] relative shrink-0">
       <Grid9 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.947px] tracking-[0.4168px]">Bu</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.4168px]">Bu</p>
       <DotWrapper6 />
     </div>
   );
@@ -2018,7 +2018,7 @@ function Frame36() {
   return (
     <div className="content-stretch flex gap-[0.949px] h-[12.817px] items-start justify-center pr-[1.424px] relative shrink-0">
       <Grid10 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.947px] tracking-[0.4168px]">re</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.4168px]">re</p>
       <DotWrapper7 />
     </div>
   );
@@ -2041,7 +2041,7 @@ function Frame37() {
   return (
     <div className="content-stretch flex gap-[0.949px] h-[12.817px] items-end justify-center pr-[1.424px] relative shrink-0">
       <Grid11 />
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[6.947px] tracking-[0.4168px]">di</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[#7c7c7c] text-[length:var(--ara-text-micro)] tracking-[0.4168px]">di</p>
     </div>
   );
 }
@@ -2080,7 +2080,7 @@ function Frame32() {
 function Frame9() {
   return (
     <div className="bg-[#fbe3d1] content-stretch flex items-center justify-center pb-[2.023px] pt-[1.619px] px-[1.619px] relative rounded-[1.349px]">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[5.451px] text-center">Bird</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] mix-blend-color-burn not-italic relative shrink-0 text-[#1c1c1c] text-[length:var(--ara-text-micro)] text-center">Bird</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-0.674px_0px_0px_rgba(118,118,118,0.5)]" />
     </div>
   );
@@ -2201,11 +2201,11 @@ function Frame40() {
 function Frame78() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
-      <p className="font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[0px] text-[40px] tracking-[-2.4px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] text-[length:var(--ara-text-heading-large)] tracking-[-2.4px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">Flipcard</span>
         <span className="leading-none text-[#fd9e11]">.</span>
       </p>
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#07364a] text-[18.019px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#07364a] text-[length:var(--ara-text-body-large)]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         £12.45
       </p>
     </div>
@@ -2216,7 +2216,7 @@ function Frame79() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[19px] items-start left-[39px] top-[39px] w-[293px]">
       <Frame78 />
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[14px] w-[min-content] whitespace-pre-wrap">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content] whitespace-pre-wrap">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
     </div>
   );
 }
@@ -2253,7 +2253,7 @@ function Frame59() {
   return (
     <div className="absolute bg-white content-stretch flex h-[53px] items-center justify-center overflow-clip pr-[24px] py-[16px] right-[30px] rounded-[59px] shadow-[0px_42px_12px_0px_rgba(56,73,8,0),0px_27px_11px_0px_rgba(56,73,8,0.02),0px_15px_9px_0px_rgba(56,73,8,0.07),0px_7px_7px_0px_rgba(56,73,8,0.11),0px_2px_4px_0px_rgba(56,73,8,0.13)] top-[173px]">
       <Frame72 />
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[#42580f] text-[16px] text-center">ADD</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[#42580f] text-[length:var(--ara-text-body)] text-center">ADD</p>
     </div>
   );
 }
@@ -2261,7 +2261,7 @@ function Frame59() {
 function Frame48() {
   return (
     <div className="bg-[#fcffe5] flex-[1_0_0] h-[254px] min-h-px min-w-px relative rounded-[8px]">
-      <p className="-translate-x-1/2 absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+684.5px)] not-italic text-[22.125px] text-center text-white top-[-3503.13%]">Explore</p>
+      <p className="-translate-x-1/2 absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+684.5px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%]">Explore</p>
       <Frame40 />
       <Frame79 />
       <Frame59 />
@@ -2301,7 +2301,7 @@ function Frame60() {
   return (
     <div className="absolute bg-white content-stretch flex h-[53px] items-center justify-center left-[209px] overflow-clip pr-[24px] py-[16px] rounded-[59px] shadow-[0px_42px_12px_0px_rgba(56,73,8,0),0px_27px_11px_0px_rgba(56,73,8,0.02),0px_15px_9px_0px_rgba(56,73,8,0.07),0px_7px_7px_0px_rgba(56,73,8,0.11),0px_2px_4px_0px_rgba(56,73,8,0.13)] top-[202px]">
       <Frame76 />
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[#0d544f] text-[16px] text-center">ADD</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[#0d544f] text-[length:var(--ara-text-body)] text-center">ADD</p>
     </div>
   );
 }
@@ -2346,11 +2346,11 @@ function Frame39() {
 function Frame80() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0">
-      <p className="font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#00a193] text-[0px] text-[40px] tracking-[-2.4px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#00a193] text-[length:var(--ara-text-zero)] text-[length:var(--ara-text-heading-large)] tracking-[-2.4px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         <span className="leading-none">Poster</span>
         <span className="leading-none text-[#fd9e11]">.</span>
       </p>
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#07364a] text-[18.019px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#07364a] text-[length:var(--ara-text-body-large)]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         £9.10
       </p>
     </div>
@@ -2361,7 +2361,7 @@ function Frame81() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[22px] items-start left-[51px] top-[38px] w-[293px]">
       <Frame80 />
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[14px] w-[min-content] whitespace-pre-wrap">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content] whitespace-pre-wrap">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
     </div>
   );
 }
@@ -2369,7 +2369,7 @@ function Frame81() {
 function Frame47() {
   return (
     <div className="bg-[#effefb] flex-[1_0_0] h-[256px] min-h-px min-w-px relative rounded-[8px]">
-      <p className="-translate-x-1/2 absolute bottom-[3567.16%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+684.5px)] not-italic text-[22.125px] text-center text-white top-[-3477.71%] w-[81px] whitespace-pre-wrap">Explore</p>
+      <p className="-translate-x-1/2 absolute bottom-[3567.16%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+684.5px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3477.71%] w-[81px] whitespace-pre-wrap">Explore</p>
       <Frame39 />
       <Frame81 />
     </div>
@@ -2389,7 +2389,7 @@ function Frame82() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="content-stretch flex flex-col gap-[17px] items-start px-[24px] relative w-full">
-        <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[14px] tracking-[0.98px] w-full whitespace-pre-wrap">{`MORE ON THESE SERIES >>`}</p>
+        <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] tracking-[0.98px] w-full whitespace-pre-wrap">{`MORE ON THESE SERIES >>`}</p>
         <Frame77 />
       </div>
     </div>
@@ -2441,7 +2441,7 @@ function Frame65() {
           </div>
         </div>
       </div>
-      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[20.349px]">Ada Marindaba 🇳🇬 🇬🇧</p>
+      <p className="font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)]">Ada Marindaba 🇳🇬 🇬🇧</p>
     </div>
   );
 }
@@ -2449,7 +2449,7 @@ function Frame65() {
 function Frame64() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-start relative shrink-0">
-      <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[1.3] relative shrink-0 text-[#2d251d] text-[36px] w-[572px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>{`"Reading this book to my son has truly enhanced his language skills. I'm thrilled I purchased it; it's been the best buying decision I've made."`}</p>
+      <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-[1.3] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] w-[572px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>{`"Reading this book to my son has truly enhanced his language skills. I'm thrilled I purchased it; it's been the best buying decision I've made."`}</p>
       <Frame65 />
     </div>
   );
@@ -2467,7 +2467,7 @@ function Frame62() {
 function Frame61() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[66px] text-center tracking-[-3.96px] w-[902px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-[902px] whitespace-pre-wrap" style={{ fontVariationSettings: "\'opsz\' 14" }}>
         Every child deserves to connect with their heritage
       </p>
       <Frame62 />
@@ -2598,7 +2598,7 @@ function Frame69() {
     <div className="relative shrink-0 w-full z-[3]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[97px] relative w-full">
-          <div className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[1.3] relative shrink-0 text-[#554739] text-[36px] text-center tracking-[-2.16px] w-[480px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+          <div className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[1.3] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[-2.16px] w-[480px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
             Connect with us to get a dooze of <AraLogoBase1 /> to connect with your child
           </div>
         </div>
@@ -2614,7 +2614,7 @@ function Frame70() {
     <div className="bg-white relative shrink-0 w-full z-[2]">
       <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex items-center px-[36px] py-[24px] relative w-full">
-          <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none opacity-40 relative shrink-0 text-[#554739] text-[18px] text-center" style={{ fontVariationSettings: "\'opsz\' 14" }}>
+          <p className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none opacity-40 relative shrink-0 text-[#554739] text-[length:var(--ara-text-body-large)] text-center" style={{ fontVariationSettings: "\'opsz\' 14" }}>
 
           </p>
         </div>
@@ -2628,7 +2628,7 @@ function Frame71() {
   return (
     <div className="bg-white relative shrink-0 w-full z-[1]">
       <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex items-center justify-between leading-none px-[24px] py-[30px] relative text-[18px] text-center w-full">
+        <div className="content-stretch flex items-center justify-between leading-none px-[24px] py-[30px] relative text-[length:var(--ara-text-body-large)] text-center w-full">
           <p className="font-['DM_Sans:Medium',sans-serif] font-medium relative shrink-0 text-[#dfdac9] tracking-[1.62px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
             ::
           </p>
@@ -2868,7 +2868,7 @@ function Title() {
 function TextStrong() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text Strong">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[16px]">About Us</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)]">About Us</p>
     </div>
   );
 }
@@ -2884,7 +2884,7 @@ function Title1() {
 function TextLinkListItem() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">About Us</p>
       </div>
     </div>
@@ -2894,7 +2894,7 @@ function TextLinkListItem() {
 function TextLinkListItem1() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">Mission</p>
       </div>
     </div>
@@ -2904,7 +2904,7 @@ function TextLinkListItem1() {
 function TextLinkListItem2() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">The team</p>
       </div>
     </div>
@@ -2925,7 +2925,7 @@ function TextLinkList() {
 function TextStrong1() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text Strong">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[16px]">Explore</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)]">Explore</p>
     </div>
   );
 }
@@ -2941,7 +2941,7 @@ function Title2() {
 function TextLinkListItem3() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">Free resources</p>
       </div>
     </div>
@@ -2951,7 +2951,7 @@ function TextLinkListItem3() {
 function TextLinkListItem4() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">Blog</p>
       </div>
     </div>
@@ -2961,7 +2961,7 @@ function TextLinkListItem4() {
 function TextLinkListItem5() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">FAQs</p>
       </div>
     </div>
@@ -2971,7 +2971,7 @@ function TextLinkListItem5() {
 function TextLinkListItem6() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">Roadmap</p>
       </div>
     </div>
@@ -2993,7 +2993,7 @@ function TextLinkList1() {
 function TextStrong2() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text Strong">
-      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] text-left">Resources</p>
+      <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] text-left">Resources</p>
     </div>
   );
 }
@@ -3009,7 +3009,7 @@ function Title3() {
 function TextLinkListItem7() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">Privacy Policy</p>
       </div>
     </div>
@@ -3019,7 +3019,7 @@ function TextLinkListItem7() {
 function TextLinkListItem8() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
         <p className="leading-[1.4]">Refund policy</p>
       </div>
     </div>

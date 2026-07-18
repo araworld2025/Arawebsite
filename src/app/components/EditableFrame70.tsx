@@ -12,7 +12,7 @@ export function EditableFrame70() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Type your email address here"
-            className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none opacity-40 relative shrink-0 text-[#554739] text-[18px] text-center w-full bg-transparent border-none outline-none placeholder:opacity-40 placeholder:text-[#554739] focus:opacity-100"
+            className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none opacity-40 relative shrink-0 text-[#554739] text-[length:var(--ara-text-body-large)] text-center w-full bg-transparent border-none outline-none placeholder:opacity-40 placeholder:text-[#554739] focus:opacity-100"
             style={{ fontVariationSettings: "\\'opsz\\' 14" } as React.CSSProperties}
           />
         </div>
