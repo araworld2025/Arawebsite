@@ -22,78 +22,6 @@ const imgImage100 = familyPhoto;
 const imgEllipse28 = placeholderImage;
 const imgRectangle = kidsReading;
 
-function Group14() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[428.44px]">
-      <div className="absolute h-[79.472px] left-[-96.79px] top-[428.44px] w-[436.43px]">
-        <div className="absolute inset-[-30.28%_-5.51%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 484.557 127.599">
-            <g filter="url(#filter0_f_88_3447)" id="Vector 292">
-              <path d={svgPaths.p139b3cf0} fill="var(--fill-0, #DFDFDF)" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="127.599" id="filter0_f_88_3447" width="484.557" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3447" stdDeviation="12.0318" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute h-[23.087px] left-[-48.84px] mix-blend-multiply top-[464.4px] w-[210.002px]">
-        <div className="absolute inset-[-104.23%_-11.46%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 258.129 71.2141">
-            <g filter="url(#filter0_f_88_3515)" id="Vector 293" style={{ mixBlendMode: "multiply" }}>
-              <path d={svgPaths.p33048000} fill="var(--fill-0, #DFDFDF)" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="71.2141" id="filter0_f_88_3515" width="258.129" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3515" stdDeviation="12.0318" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute h-[23.087px] left-[102.12px] mix-blend-multiply top-[475.94px] w-[210.002px]">
-        <div className="absolute inset-[-32.7%_-3.43%_-32.75%_-3.73%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 225.047 38.1974">
-            <g filter="url(#filter0_f_88_3511)" id="Vector 294" style={{ mixBlendMode: "multiply" }}>
-              <path d={svgPaths.p1db8cd00} fill="var(--fill-0, #DFDFDF)" />
-              <path d={svgPaths.p1db8cd00} stroke="var(--stroke-0, black)" strokeWidth="0.887956" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="38.1974" id="filter0_f_88_3511" width="225.047" x="5.96046e-08" y="-1.78814e-07">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3511" stdDeviation="3.55182" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Group15() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[428.44px]">
-      <Group14 />
-    </div>
-  );
-}
-
-function Group17() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[428.44px]">
-      <Group15 />
-    </div>
-  );
-}
-
 function Group19() {
   return (
     <div className="absolute contents left-[53.28px] top-[43.51px]">
@@ -112,15 +40,6 @@ function Group18() {
   );
 }
 
-function Group16() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[43.51px]">
-      <Group17 />
-      <Group18 />
-    </div>
-  );
-}
-
 function Frame2() {
   return (
     <div className="h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
@@ -128,22 +47,6 @@ function Frame2() {
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
           <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
         </svg>
-      </div>
-      <div className="absolute left-[7.99px] size-[409.348px] top-[78.14px]">
-        <div className="absolute inset-[-18.94%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 564.385 564.385">
-            <g filter="url(#filter0_f_88_3427)" id="Ellipse 29">
-              <circle cx="282.192" cy="282.192" fill="var(--fill-0, white)" r="204.674" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="564.385" id="filter0_f_88_3427" width="564.385" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3427" stdDeviation="38.7593" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
       </div>
       <div className="ara-hero-origin-particle ara-hero-origin-particle--1 absolute flex items-center justify-center left-[252.18px] size-[104.9px] top-[169.6px]">
         <div className="flex-none rotate-[111.31deg]">
@@ -154,7 +57,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <Group16 />
+      <Group18 />
       <div className="ara-hero-origin-particle ara-hero-origin-particle--2 absolute flex h-[6.637px] items-center justify-center left-[308.47px] top-[293.88px] w-[50.43px]">
         <div className="flex-none rotate-[175.15deg]">
           <div className="h-[2.387px] relative w-[50.408px]">
