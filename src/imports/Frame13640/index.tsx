@@ -25,7 +25,7 @@ const imgRectangle = kidsReading;
 function Group19() {
   return (
     <div className="absolute contents left-[53.28px] top-[43.51px]">
-      <div className="absolute h-[464.11px] left-[53.28px] top-[43.51px] w-[309.897px]" data-name="image 75">
+      <div className="ara-hero-child-figure absolute h-[464.11px] left-[53.28px] top-[43.51px] w-[309.897px]" data-name="image 75">
         <img alt="Child reading a book" className="absolute inset-0 max-w-none object-contain object-center pointer-events-none size-full" src={imgImage75} />
       </div>
     </div>

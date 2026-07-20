@@ -130,6 +130,12 @@ h6,
   will-change: transform;
 }
 
+/* The source PNG includes a wide left-hand shadow, so its visible subject is
+   right-heavy even when the image bounds are mathematically centered. */
+.ara-hero-child-figure {
+  transform: translateX(-42px);
+}
+
 .ara-hero-origin-particle--1 {
   --origin-delay: -1.4s;
   --origin-duration: 5.2s;
