@@ -42,7 +42,7 @@ function Group18() {
 
 function Frame2() {
   return (
-    <div className="h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
+    <div className="ara-hero-visual h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
       <div className="absolute inset-[0_10.64%_37.76%_13.62%]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
           <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
@@ -128,7 +128,7 @@ function Frame2() {
 
 function Frame7() {
   return (
-    <button type="button" onClick={activateFeaturedProduct} className="relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full cursor-pointer">
+    <button type="button" onClick={activateFeaturedProduct} className="ara-hero-cta relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full cursor-pointer">
       <div aria-hidden className="absolute bg-[#00a193] inset-0 pointer-events-none rounded-[11px]" />
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex gap-[10px] items-center justify-center px-[43px] py-[23px] relative size-full">
@@ -147,7 +147,7 @@ function Frame7() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="ara-hero-copy content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-full whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         {`Bring home closer `}
         <br aria-hidden />
@@ -165,7 +165,7 @@ function Frame35() {
 
 function Frame36() {
   return (
-    <div className="content-stretch flex flex-col gap-[77px] items-start max-w-[600px] relative shrink-0 w-full">
+    <div className="ara-hero-copy-shell content-stretch flex flex-col gap-[77px] items-start max-w-[600px] relative shrink-0 w-full">
       <Frame8 />
       <Frame35 />
     </div>
@@ -174,7 +174,7 @@ function Frame36() {
 
 function Frame37() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
+    <div className="ara-hero-stack content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
       <HeroParticleField />
       <Frame2 />
       <Frame36 />
@@ -184,7 +184,7 @@ function Frame37() {
 
 function Frame54() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] pb-[150px] pt-[200px] relative shrink-0 w-full">
+    <div className="ara-hero-shell content-stretch flex flex-col items-center justify-center max-w-[1440px] pb-[150px] pt-[200px] relative shrink-0 w-full">
       <Frame37 />
     </div>
   );
@@ -288,8 +288,8 @@ function LogoGroup() {
 
 function Frame49() {
   return (
-    <div className="absolute content-stretch flex flex-col items-center justify-center left-0 py-[15px] right-0 top-0">
-      <div className="h-[60.119px] overflow-clip relative shrink-0 w-[142px]" data-name="ara-logo-base">
+    <div className="ara-hero-logo-wrap absolute content-stretch flex flex-col items-center justify-center left-0 py-[15px] right-0 top-0">
+      <div className="ara-hero-logo h-[60.119px] overflow-clip relative shrink-0 w-[142px]" data-name="ara-logo-base">
         <LogoGroup />
       </div>
     </div>
