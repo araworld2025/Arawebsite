@@ -8,6 +8,7 @@ import childReading from "../../assets/child-reading.png";
 import kidsReading from "../../assets/kids-reading.png";
 import { activateFeaturedProduct, featuredProductStage } from "@/config/featuredProduct";
 import { submitLead } from "@/services/leads";
+import { HeroParticleField } from "@/app/components/HeroParticleField";
 const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23e8e4dc'/%3E%3Cpath d='M0 640 300 360l190 180 170-140 540 400H0Z' fill='%23c9c2b5'/%3E%3Ccircle cx='850' cy='230' r='90' fill='%23d6cfc3'/%3E%3C/svg%3E";
 const imgImage75 = childReading;
 const imgImage91 = placeholderImage;
@@ -21,82 +22,10 @@ const imgImage100 = familyPhoto;
 const imgEllipse28 = placeholderImage;
 const imgRectangle = kidsReading;
 
-function Group14() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[428.44px]">
-      <div className="absolute h-[79.472px] left-[-96.79px] top-[428.44px] w-[436.43px]">
-        <div className="absolute inset-[-30.28%_-5.51%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 484.557 127.599">
-            <g filter="url(#filter0_f_88_3447)" id="Vector 292">
-              <path d={svgPaths.p139b3cf0} fill="var(--fill-0, #DFDFDF)" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="127.599" id="filter0_f_88_3447" width="484.557" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3447" stdDeviation="12.0318" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute h-[23.087px] left-[-48.84px] mix-blend-multiply top-[464.4px] w-[210.002px]">
-        <div className="absolute inset-[-104.23%_-11.46%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 258.129 71.2141">
-            <g filter="url(#filter0_f_88_3515)" id="Vector 293" style={{ mixBlendMode: "multiply" }}>
-              <path d={svgPaths.p33048000} fill="var(--fill-0, #DFDFDF)" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="71.2141" id="filter0_f_88_3515" width="258.129" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3515" stdDeviation="12.0318" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute h-[23.087px] left-[102.12px] mix-blend-multiply top-[475.94px] w-[210.002px]">
-        <div className="absolute inset-[-32.7%_-3.43%_-32.75%_-3.73%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 225.047 38.1974">
-            <g filter="url(#filter0_f_88_3511)" id="Vector 294" style={{ mixBlendMode: "multiply" }}>
-              <path d={svgPaths.p1db8cd00} fill="var(--fill-0, #DFDFDF)" />
-              <path d={svgPaths.p1db8cd00} stroke="var(--stroke-0, black)" strokeWidth="0.887956" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="38.1974" id="filter0_f_88_3511" width="225.047" x="5.96046e-08" y="-1.78814e-07">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3511" stdDeviation="3.55182" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Group15() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[428.44px]">
-      <Group14 />
-    </div>
-  );
-}
-
-function Group17() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[428.44px]">
-      <Group15 />
-    </div>
-  );
-}
-
 function Group19() {
   return (
     <div className="absolute contents left-[53.28px] top-[43.51px]">
-      <div className="absolute h-[464.11px] left-[53.28px] top-[43.51px] w-[309.897px]" data-name="image 75">
+      <div className="ara-hero-child-figure absolute h-[464.11px] left-[53.28px] top-[43.51px] w-[309.897px]" data-name="image 75">
         <img alt="Child reading a book" className="absolute inset-0 max-w-none object-contain object-center pointer-events-none size-full" src={imgImage75} />
       </div>
     </div>
@@ -111,40 +40,15 @@ function Group18() {
   );
 }
 
-function Group16() {
-  return (
-    <div className="absolute contents left-[-96.79px] top-[43.51px]">
-      <Group17 />
-      <Group18 />
-    </div>
-  );
-}
-
 function Frame2() {
   return (
-    <div className="h-[507.911px] relative shrink-0 w-[417.339px]">
+    <div className="ara-hero-visual h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
       <div className="absolute inset-[0_10.64%_37.76%_13.62%]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
           <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
         </svg>
       </div>
-      <div className="absolute left-[7.99px] size-[409.348px] top-[78.14px]">
-        <div className="absolute inset-[-18.94%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 564.385 564.385">
-            <g filter="url(#filter0_f_88_3427)" id="Ellipse 29">
-              <circle cx="282.192" cy="282.192" fill="var(--fill-0, white)" r="204.674" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="564.385" id="filter0_f_88_3427" width="564.385" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_88_3427" stdDeviation="38.7593" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute flex items-center justify-center left-[252.18px] size-[104.9px] top-[169.6px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--1 absolute flex items-center justify-center left-[252.18px] size-[104.9px] top-[169.6px]">
         <div className="flex-none rotate-[111.31deg]">
           <div className="relative size-[81.004px]">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 81.0039 81.0039">
@@ -153,8 +57,8 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <Group16 />
-      <div className="absolute flex h-[6.637px] items-center justify-center left-[308.47px] top-[293.88px] w-[50.43px]">
+      <Group18 />
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--2 absolute flex h-[6.637px] items-center justify-center left-[308.47px] top-[293.88px] w-[50.43px]">
         <div className="flex-none rotate-[175.15deg]">
           <div className="h-[2.387px] relative w-[50.408px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -165,7 +69,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[30.609px] items-center justify-center left-[105.91px] top-[240.19px] w-[42.835px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--3 absolute flex h-[30.609px] items-center justify-center left-[105.91px] top-[240.19px] w-[42.835px]">
         <div className="flex-none rotate-[145.37deg]">
           <div className="h-[2.387px] relative w-[50.408px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -176,7 +80,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex items-center justify-center left-[48.84px] size-[53.419px] top-[195.35px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--4 absolute flex items-center justify-center left-[48.84px] size-[53.419px] top-[195.35px]">
         <div className="flex-none rotate-[111.31deg]">
           <div className="relative size-[41.25px]">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 41.2505 41.2505">
@@ -185,7 +89,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[8.261px] items-center justify-center left-[188.25px] top-[331.21px] w-[26.775px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--5 absolute flex h-[8.261px] items-center justify-center left-[188.25px] top-[331.21px] w-[26.775px]">
         <div className="flex-none rotate-[-14.85deg]">
           <div className="h-[1.295px] relative w-[27.356px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -196,7 +100,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[63.992px] items-center justify-center left-[-40.84px] top-[158.05px] w-[41.129px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--6 absolute flex h-[63.992px] items-center justify-center left-[-40.84px] top-[158.05px] w-[41.129px]">
         <div className="flex-none rotate-[58.45deg]">
           <div className="h-[3.455px] relative w-[72.972px]">
             <div className="absolute inset-[-311.71%_-1.84%_-314.11%_-1.59%]">
@@ -207,7 +111,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[36.494px] items-center justify-center left-[14.21px] top-[146.51px] w-[39.162px]">
+      <div className="ara-hero-origin-particle ara-hero-origin-particle--7 absolute flex h-[36.494px] items-center justify-center left-[14.21px] top-[146.51px] w-[39.162px]">
         <div className="flex-none rotate-[-31.55deg]">
           <div className="h-[23.447px] relative w-[31.558px]">
             <div className="absolute inset-[-35.03%_-9.08%_0_-26.02%]">
@@ -224,14 +128,14 @@ function Frame2() {
 
 function Frame7() {
   return (
-    <button type="button" onClick={activateFeaturedProduct} className="relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full cursor-pointer">
+    <button type="button" onClick={activateFeaturedProduct} className="ara-hero-cta relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full cursor-pointer">
       <div aria-hidden className="absolute bg-[#00a193] inset-0 pointer-events-none rounded-[11px]" />
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex gap-[10px] items-center justify-center px-[43px] py-[23px] relative size-full">
-          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[22.125px] text-center text-white whitespace-nowrap">{featuredProductStage.cta}</p>
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[length:var(--ara-text-lead)] text-center text-white whitespace-nowrap">{featuredProductStage.cta}</p>
           <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[27px]">
             <div className="flex-none rotate-90">
-              <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative text-[22.125px] text-center text-white whitespace-nowrap">{`-->`}</p>
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative text-[length:var(--ara-text-lead)] text-center text-white whitespace-nowrap">{`-->`}</p>
             </div>
           </div>
         </div>
@@ -243,13 +147,13 @@ function Frame7() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[66px] text-center tracking-[-3.96px] w-full whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+    <div className="ara-hero-copy content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-full whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         {`Bring home closer `}
         <br aria-hidden />
         to your child.
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[20.349px] text-center w-full">Beautiful books, learning tools, and cultural experiences designed for African families raising children abroad.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] text-center w-full">Beautiful books, learning tools, and cultural experiences designed for African families raising children abroad.</p>
       <Frame7 />
     </div>
   );
@@ -261,7 +165,7 @@ function Frame35() {
 
 function Frame36() {
   return (
-    <div className="content-stretch flex flex-col gap-[77px] items-start max-w-[600px] relative shrink-0 w-full">
+    <div className="ara-hero-copy-shell content-stretch flex flex-col gap-[77px] items-start max-w-[600px] relative shrink-0 w-full">
       <Frame8 />
       <Frame35 />
     </div>
@@ -270,7 +174,8 @@ function Frame36() {
 
 function Frame37() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
+    <div className="ara-hero-stack content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
+      <HeroParticleField />
       <Frame2 />
       <Frame36 />
     </div>
@@ -279,7 +184,7 @@ function Frame37() {
 
 function Frame54() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] pb-[150px] pt-[200px] relative shrink-0 w-full">
+    <div className="ara-hero-shell content-stretch flex flex-col items-center justify-center max-w-[1440px] pb-[150px] pt-[200px] relative shrink-0 w-full">
       <Frame37 />
     </div>
   );
@@ -383,8 +288,8 @@ function LogoGroup() {
 
 function Frame49() {
   return (
-    <div className="absolute content-stretch flex flex-col items-center justify-center left-0 py-[15px] right-0 top-0">
-      <div className="h-[60.119px] overflow-clip relative shrink-0 w-[142px]" data-name="ara-logo-base">
+    <div className="ara-hero-logo-wrap absolute content-stretch flex flex-col items-center justify-center left-0 py-[15px] right-0 top-0">
+      <div className="ara-hero-logo h-[60.119px] overflow-clip relative shrink-0 w-[142px]" data-name="ara-logo-base">
         <LogoGroup />
       </div>
     </div>
@@ -465,12 +370,12 @@ function CountryTag({ name, flag }: { name: string; flag: string }) {
   return (
     <div className="content-stretch flex gap-[10px] h-full items-center px-[24px] relative shrink-0" data-name="country-tag">
       <div className="relative shrink-0 size-[36px] rounded-full overflow-hidden bg-gray-100 flex items-center justify-center" data-name="Component 1">
-        <span style={{ fontSize: 26, lineHeight: 1, display: "block", textAlign: "center" }} role="img" aria-label={name}>
+        <span style={{ fontSize: "var(--ara-text-heading-small)", lineHeight: 1, display: "block", textAlign: "center" }} role="img" aria-label={name}>
           {flag}
         </span>
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
-        <p className="[word-break:break-word] font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[27px] relative shrink-0 text-[#344054] text-[22px] whitespace-nowrap">{name}</p>
+        <p className="[word-break:break-word] font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[27px] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)] whitespace-nowrap">{name}</p>
       </div>
     </div>
   );
@@ -547,11 +452,11 @@ function Frame9() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Partnering with `}</span>
         <span className="leading-none text-[#628506]">parents</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -576,12 +481,12 @@ function Frame10() {
           </svg>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Raising confident, `}</span>
         <span className="leading-none text-[#e07100]">{`culturally grounded `}</span>
         <span className="leading-none">children</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -616,11 +521,11 @@ function Frame11() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Providing complete `}</span>
         <span className="leading-none text-[#058076]">learning resources</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content]">From books, to learning resources, to toys, to games and everything to engage a child we are bring</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">From books, to learning resources, to toys, to games and everything to engage a child we are bring</p>
     </div>
   );
 }
@@ -653,11 +558,11 @@ function Frame13() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[36px] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Supporting early `}</span>
         <span className="leading-none text-[#f43e3c]">language development</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[20.349px] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
     </div>
   );
 }
@@ -676,7 +581,7 @@ function Frame12() {
 function Frame51() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] max-w-[800px] relative shrink-0 text-[#2d251d] text-[66px] text-center tracking-[-3.96px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">On a mission to bring home closer, one product at time</span>
         <span className="leading-none text-[#fd9e11]">.</span>
       </p>
@@ -708,7 +613,7 @@ function Section2() {
 function Frame23() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex items-center justify-center left-[calc(50%+0.5px)] p-[10px] top-[-42px] w-[1437px]" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 1437 268' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(110.8 1.0836e-13 -1.7766e-13 46.656 690 338.09)'><stop stop-color='rgba(233,233,233,1)' offset='0'/><stop stop-color='rgba(255,255,255,0)' offset='0.66341'/></radialGradient></defs></svg>\")" }}>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-[247.532px] text-center tracking-[-14.8519px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-[length:var(--ara-text-display)] text-center tracking-[-14.8519px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         New Product!
       </p>
     </div>
@@ -727,8 +632,8 @@ function Frame() {
   return (
     <button type="button" onClick={activateFeaturedProduct} className="col-1 content-stretch flex gap-[10px] items-center justify-center max-w-[396px] ml-0 mt-0 px-[43px] py-[23px] relative rounded-[12px] row-1 cursor-pointer">
       <div aria-hidden className="absolute bg-[#0abded] inset-0 pointer-events-none rounded-[12px]" />
-      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">{featuredProductStage.cta}</p>
-      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">{`>`}</p>
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-white whitespace-nowrap">{featuredProductStage.cta}</p>
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-white whitespace-nowrap">{`>`}</p>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-4px_0px_0px_rgba(0,0,0,0.25),inset_0px_2px_0px_0px_rgba(255,255,255,0.5)]" />
     </button>
   );
@@ -758,11 +663,11 @@ function Group21() {
 function Frame4() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[23px] items-start max-w-[400px] min-w-[340px] relative">
-      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[58px] tracking-[-3.48px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[length:var(--ara-text-heading-xlarge)] tracking-[-3.48px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`My first 500 yoruba `}</span>
         <span className="leading-none text-[#0099cb]">Book</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[14px] w-[min-content]">A comprehensive introduction to essential Yoruba vocabulary through simple words, clear visuals, and everyday expressions. Crafted for children aged 2–8.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content]">A comprehensive introduction to essential Yoruba vocabulary through simple words, clear visuals, and everyday expressions. Crafted for children aged 2–8.</p>
       <Group21 />
     </div>
   );
@@ -786,9 +691,9 @@ function Frame45() {
 function Frame40() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
-      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[0px] tracking-[-2.4px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
-        <span className="leading-none text-[40px]">Flipcard</span>
-        <span className="leading-none text-[#fd9e11] text-[40px]">.</span>
+      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[-2.4px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+        <span className="leading-none text-[length:var(--ara-text-heading-large)]">Flipcard</span>
+        <span className="leading-none text-[#fd9e11] text-[length:var(--ara-text-heading-large)]">.</span>
       </p>
     </div>
   );
@@ -798,7 +703,7 @@ function Frame41() {
   return (
     <div className="content-stretch flex flex-col gap-[19px] items-start relative shrink-0 w-full">
       <Frame40 />
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[14px] w-[min-content]">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content]">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
     </div>
   );
 }
@@ -814,9 +719,9 @@ function Frame48() {
 function Frame43() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
-      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[0px] tracking-[-2.4px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
-        <span className="leading-none text-[40px]">Poster</span>
-        <span className="leading-none text-[#fd9e11] text-[40px]">.</span>
+      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[-2.4px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+        <span className="leading-none text-[length:var(--ara-text-heading-large)]">Poster</span>
+        <span className="leading-none text-[#fd9e11] text-[length:var(--ara-text-heading-large)]">.</span>
       </p>
     </div>
   );
@@ -826,7 +731,7 @@ function Frame42() {
   return (
     <div className="content-stretch flex flex-col gap-[19px] items-start relative shrink-0 w-full">
       <Frame43 />
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[14px] w-[min-content]">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content]">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
     </div>
   );
 }
@@ -847,14 +752,14 @@ function Frame39() {
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage97} />
         </div>
         <Frame48 />
-        <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[22.125px] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
       <div className="bg-[#effefb] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage99} />
         </div>
         <Frame50 />
-        <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[22.125px] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
     </div>
   );
@@ -864,7 +769,7 @@ function Frame44() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="content-stretch flex flex-col gap-[17px] items-start px-[24px] relative size-full">
-        <p className="[word-break:break-word] font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[14px] tracking-[0.98px] w-full">{`MORE ON THESE SERIES >>`}</p>
+        <p className="[word-break:break-word] font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] tracking-[0.98px] w-full">{`MORE ON THESE SERIES >>`}</p>
         <Frame39 />
       </div>
     </div>
@@ -876,7 +781,7 @@ function Frame1() {
     <div className="absolute bg-[#dcfe58] h-[29px] left-[48px] max-w-[396px] rounded-[11px] top-[-12px] w-[150px]">
       <div className="flex flex-row items-center justify-center max-w-[inherit] size-full">
         <div className="content-stretch flex items-center justify-center max-w-[inherit] px-[43px] py-[23px] relative size-full">
-          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[#4f690b] text-[16px] whitespace-nowrap">NEW RELEASE!</p>
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[#4f690b] text-[length:var(--ara-text-body)] whitespace-nowrap">NEW RELEASE!</p>
         </div>
       </div>
     </div>
@@ -919,10 +824,10 @@ function Section3() {
 function Frame31() {
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[66px] tracking-[-3.96px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[-3.96px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
         Raise children who know where they come from.
       </p>
-      <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[24px] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
+      <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-small)] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
     </div>
   );
 }
@@ -949,7 +854,7 @@ function Frame26() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
       <Frame27 />
-      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[20.349px]">Every word in their mother tongue is a thread connecting them to who they are and where they come from.</p>
+      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">Every word in their mother tongue is a thread connecting them to who they are and where they come from.</p>
     </div>
   );
 }
@@ -976,7 +881,7 @@ function Frame28() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
       <Frame30 />
-      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[20.349px]">Children who know their roots grow up with a deeper sense of self - and that confidence shows everywhere.</p>
+      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">Children who know their roots grow up with a deeper sense of self - and that confidence shows everywhere.</p>
     </div>
   );
 }
@@ -1003,7 +908,7 @@ function Frame32() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
       <Frame33 />
-      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[20.349px]">Language is the bridge between your child and their grandparents, cousins, and the community back home.</p>
+      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">Language is the bridge between your child and their grandparents, cousins, and the community back home.</p>
     </div>
   );
 }
@@ -1030,7 +935,7 @@ function Frame34() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
       <Frame38 />
-      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[20.349px]">ara brings the songs, stories, and rituals of home into daily life - making culture something they live, not just learn.</p>
+      <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">ara brings the songs, stories, and rituals of home into daily life - making culture something they live, not just learn.</p>
     </div>
   );
 }
@@ -1104,7 +1009,7 @@ function Frame18() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] flex-1 font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-[220px] relative text-[#554739] text-[20.349px] text-center whitespace-normal">Prof. Jim Cummins — University of Toronto</p>
+      <p className="[word-break:break-word] flex-1 font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-[220px] relative text-[#554739] text-[length:var(--ara-text-body)] text-center whitespace-normal">Prof. Jim Cummins — University of Toronto</p>
     </div>
   );
 }
@@ -1112,7 +1017,7 @@ function Frame18() {
 function Frame17() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-center max-w-[634px] relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['DM_Sans:Regular',sans-serif] font-normal leading-[1.3] min-w-full relative shrink-0 text-[#2d251d] text-[36px] text-center w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>{`"Children with a strong foundation in their mother tongue develop stronger literacy abilities in every language they learn."`}</p>
+      <p className="[word-break:break-word] font-['DM_Sans:Regular',sans-serif] font-normal leading-[1.3] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] text-center w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>{`"Children with a strong foundation in their mother tongue develop stronger literacy abilities in every language they learn."`}</p>
       <Frame18 />
     </div>
   );
@@ -1256,7 +1161,7 @@ function Frame20() {
     <div className="relative shrink-0 w-full z-[3]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[16px] md:px-[97px] relative size-full">
-          <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[36px] text-center tracking-[-2.16px] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+          <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[-2.16px] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
             Connect with us to get a dooze of{" "}
             <span className="inline-flex h-[40.644px] overflow-clip relative align-middle w-[96px]" data-name="ara-logo-base"><LogoGroup1 /></span>{" "}
             to connect with your child
@@ -1297,7 +1202,7 @@ function Frame19() {
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
                 placeholder="Type your email address here"
-                className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none relative shrink-0 text-[#554739] text-[18px] text-center w-full bg-transparent border-none outline-none placeholder:opacity-40 placeholder:text-[#554739]"
+                className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-body-large)] text-center w-full bg-transparent border-none outline-none placeholder:opacity-40 placeholder:text-[#554739]"
                 style={{ fontVariationSettings: '"opsz" 14' }}
               />
             </div>
@@ -1310,7 +1215,7 @@ function Frame19() {
           className="bg-white relative shrink-0 w-full z-[1] cursor-pointer hover:bg-[#fdfaf5] transition-colors"
         >
           <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-            <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-none px-[24px] py-[30px] relative size-full text-[18px] text-center whitespace-nowrap">
+            <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-none px-[24px] py-[30px] relative size-full text-[length:var(--ara-text-body-large)] text-center whitespace-nowrap">
               <p className="font-['DM_Sans:Medium',sans-serif] font-medium relative shrink-0 text-[#dfdac9] tracking-[1.62px]" style={{ fontVariationSettings: '"opsz" 14' }}>::</p>
               <p className="font-['DM_Sans:SemiBold',sans-serif] font-semibold relative shrink-0 tracking-[0.36px] transition-colors" style={{ fontVariationSettings: '"opsz" 14', color: subscribed ? "#00a193" : "#7f694f" }}>
                 {subscribed ? "SUBSCRIBED ✓" : "SUBSCRIBE"}
@@ -1539,7 +1444,7 @@ function Title1() {
   return (
     <div className="content-stretch flex flex-col items-center pb-[16px] relative shrink-0 w-full" data-name="Title">
       <div className="content-stretch flex items-start justify-center relative shrink-0 w-full" data-name="Text Strong">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">About Us</p>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">About Us</p>
       </div>
     </div>
   );
@@ -1550,17 +1455,17 @@ function TextLinkList() {
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center relative shrink-0 w-[262px]" data-name="Text Link List">
       <Title1 />
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">About Us</p>
         </div>
       </div>
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">Mission</p>
         </div>
       </div>
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">The team</p>
         </div>
       </div>
@@ -1572,7 +1477,7 @@ function Title2() {
   return (
     <div className="content-stretch flex flex-col items-center pb-[16px] relative shrink-0 w-full" data-name="Title">
       <div className="content-stretch flex items-start justify-center relative shrink-0 w-full" data-name="Text Strong">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">Explore</p>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">Explore</p>
       </div>
     </div>
   );
@@ -1583,22 +1488,22 @@ function TextLinkList1() {
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center relative shrink-0 w-[262px]" data-name="Text Link List">
       <Title2 />
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">Free resources</p>
         </div>
       </div>
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">Blog</p>
         </div>
       </div>
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">FAQs</p>
         </div>
       </div>
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">Roadmap</p>
         </div>
       </div>
@@ -1610,7 +1515,7 @@ function Title3() {
   return (
     <div className="content-stretch flex flex-col items-center pb-[16px] relative shrink-0 w-full" data-name="Title">
       <div className="content-stretch flex items-start justify-center relative shrink-0 w-full" data-name="Text Strong">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">Resources</p>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.4] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">Resources</p>
       </div>
     </div>
   );
@@ -1621,12 +1526,12 @@ function TextLinkList2() {
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center relative shrink-0 w-[262px]" data-name="Text Link List">
       <Title3 />
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">Privacy Policy</p>
         </div>
       </div>
       <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[16px] whitespace-nowrap">
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
           <p className="leading-[1.4]">Refund policy</p>
         </div>
       </div>

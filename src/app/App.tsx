@@ -173,9 +173,6 @@ export default function App() {
 
         /* Tablet responsive overrides for desktop frame */
         @media (min-width: 768px) and (max-width: 1023px) {
-          .hidden.md\\:block p[class*="text-[66px]"],
-          .hidden.md\\:block p[class*="text-[58px]"] { font-size: 42px !important; }
-          .hidden.md\\:block p[class*="text-[36px]"] { font-size: 28px !important; }
           .hidden.md\\:block [class*="w-[1680px]"],
           .hidden.md\\:block [class*="w-[1753px]"] { width: 100% !important; max-width: 100vw !important; }
         }

@@ -40,27 +40,12 @@ export function ResponsiveWrapper({ children }: ResponsiveWrapperProps) {
             transform-origin: top center;
           }
 
-          /* Adjust font sizes */
-          .responsive-container p[class*="text-[66px]"],
-          .responsive-container p[class*="text-[58px]"] {
-            font-size: 32px !important;
-            line-height: 1.2 !important;
-          }
-
-          .responsive-container p[class*="text-[36px]"] {
-            font-size: 24px !important;
-          }
-
-          .responsive-container p[class*="text-[27px]"] {
-            font-size: 20px !important;
-          }
-
-          .responsive-container p[class*="text-[22px]"] {
-            font-size: 16px !important;
-          }
-
-          .responsive-container p[class*="text-[20px]"] {
-            font-size: 14px !important;
+          /* Keep the responsive hierarchy on the shared type scale. */
+          .responsive-container {
+            --ara-text-heading-medium: 24px;
+            --ara-text-heading-large: 32px;
+            --ara-text-heading-xlarge: 40px;
+            --ara-text-display: 40px;
           }
 
           /* Adjust padding and margins */
@@ -137,13 +122,10 @@ export function ResponsiveWrapper({ children }: ResponsiveWrapperProps) {
 
         /* Tablet Responsive Styles */
         @media (min-width: 768px) and (max-width: 1023px) {
-          .responsive-container p[class*="text-[66px]"],
-          .responsive-container p[class*="text-[58px]"] {
-            font-size: 42px !important;
-          }
-
-          .responsive-container p[class*="text-[36px]"] {
-            font-size: 28px !important;
+          .responsive-container {
+            --ara-text-heading-medium: 32px;
+            --ara-text-heading-xlarge: 40px;
+            --ara-text-display: 48px;
           }
 
           .responsive-container [class*="px-[139px]"],

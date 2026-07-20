@@ -12,10 +12,30 @@
   --ara-section-standard: 120px;
   --ara-section-generous: 150px;
   --ara-section-hero: 200px;
-  --ara-type-body: 20.349px;
-  --ara-type-action: 22.125px;
-  --ara-type-statement: 36px;
-  --ara-type-display: 66px;
+  /* Primitive typography scale */
+  --ara-text-zero: 0px;
+  --ara-text-micro: 6px;
+  --ara-text-tiny: 9px;
+  --ara-text-caption: 12px;
+  --ara-text-small: 14px;
+  --ara-text-body: 16px;
+  --ara-text-body-large: 18px;
+  --ara-text-lead: 20px;
+  --ara-text-heading-small: 24px;
+  --ara-text-heading-medium: 32px;
+  --ara-text-heading-large: 40px;
+  --ara-text-heading-xlarge: 48px;
+  --ara-text-display: 54px;
+
+  /* Semantic typography aliases */
+  --ara-type-body: var(--ara-text-body);
+  --ara-type-action: var(--ara-text-lead);
+  --ara-type-statement: var(--ara-text-heading-medium);
+  --ara-type-display: var(--ara-text-display);
+}
+
+html {
+  font-size: var(--ara-text-body);
 }
 
 body,
@@ -24,6 +44,24 @@ button,
 textarea,
 select {
   font-family: 'Nunito', sans-serif;
+  font-size: var(--ara-type-body);
+}
+
+@media (max-width: 767px) {
+  .block.md\:hidden {
+    --ara-text-heading-medium: 24px;
+    --ara-text-heading-large: 32px;
+    --ara-text-heading-xlarge: 40px;
+    --ara-text-display: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hidden.md\:block {
+    --ara-text-heading-medium: 32px;
+    --ara-text-heading-xlarge: 40px;
+    --ara-text-display: 48px;
+  }
 }
 
 h1,
@@ -44,4 +82,278 @@ h6,
 
 [class*="Montserrat"] {
   font-family: 'Montserrat', sans-serif;
+}
+
+.ara-hero-particle-field {
+  contain: layout paint;
+  height: 540px;
+  left: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: -16px;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 0;
+}
+
+/* Keep the complete opening story, including its CTA, inside standard viewport
+   heights while preserving the proportions of the original hero artwork. */
+.ara-hero-shell {
+  box-sizing: border-box;
+  min-height: 100svh;
+  padding-block: clamp(32px, 5svh, 54px);
+  padding-top: clamp(80px, 10svh, 108px);
+}
+
+.ara-hero-stack {
+  gap: clamp(8px, 1.4svh, 14px);
+}
+
+.ara-hero-visual {
+  --ara-hero-visual-scale: 0.78;
+  margin-bottom: calc(-507.911px * (1 - var(--ara-hero-visual-scale)) - 24px);
+  transform: scale(var(--ara-hero-visual-scale));
+  transform-origin: top center;
+}
+
+.ara-hero-copy-shell {
+  gap: 0;
+}
+
+.ara-hero-copy {
+  gap: clamp(14px, 2svh, 20px);
+}
+
+.ara-hero-cta > div > div {
+  padding-block: clamp(17px, 2.2svh, 20px);
+}
+
+.ara-hero-logo-wrap {
+  padding-block: 12px;
+}
+
+.ara-hero-logo {
+  height: 50.805px;
+  width: 120px;
+}
+
+.ara-hero-particle {
+  animation: ara-particle-flight var(--particle-duration) linear infinite;
+  animation-delay: var(--particle-delay);
+  animation-play-state: paused;
+  height: var(--particle-height);
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 48%;
+  transform: translate3d(0, 0, 0) rotate(var(--particle-r0)) scale(0.92);
+  transform-origin: center;
+  width: var(--particle-width);
+  will-change: transform, opacity;
+}
+
+.ara-hero-particle-field[data-active="true"] .ara-hero-particle {
+  animation-play-state: running;
+}
+
+.ara-hero-particle svg {
+  display: block;
+  height: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
+.ara-hero-origin-particle {
+  animation: ara-origin-particle-float var(--origin-duration) cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  animation-delay: var(--origin-delay);
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* The source PNG includes a wide left-hand shadow, so its visible subject is
+   right-heavy even when the image bounds are mathematically centered. */
+.ara-hero-child-figure {
+  transform: translateX(-42px);
+}
+
+.ara-hero-origin-particle--1 {
+  --origin-delay: -1.4s;
+  --origin-duration: 5.2s;
+  --origin-r1: -3deg;
+  --origin-r2: 4deg;
+  --origin-x1: -3px;
+  --origin-x2: 4px;
+  --origin-y1: 5px;
+  --origin-y2: -7px;
+}
+
+.ara-hero-origin-particle--2 {
+  --origin-delay: -3.1s;
+  --origin-duration: 4.7s;
+  --origin-r1: 4deg;
+  --origin-r2: -5deg;
+  --origin-x1: 5px;
+  --origin-x2: -4px;
+  --origin-y1: -4px;
+  --origin-y2: 7px;
+}
+
+.ara-hero-origin-particle--3 {
+  --origin-delay: -0.8s;
+  --origin-duration: 5.8s;
+  --origin-r1: -5deg;
+  --origin-r2: 3deg;
+  --origin-x1: -5px;
+  --origin-x2: 6px;
+  --origin-y1: -6px;
+  --origin-y2: 5px;
+}
+
+.ara-hero-origin-particle--4 {
+  --origin-delay: -4.2s;
+  --origin-duration: 6.1s;
+  --origin-r1: -2deg;
+  --origin-r2: 2deg;
+  --origin-x1: 3px;
+  --origin-x2: -5px;
+  --origin-y1: 7px;
+  --origin-y2: -8px;
+}
+
+.ara-hero-origin-particle--5 {
+  --origin-delay: -2.3s;
+  --origin-duration: 4.4s;
+  --origin-r1: 6deg;
+  --origin-r2: -6deg;
+  --origin-x1: -4px;
+  --origin-x2: 5px;
+  --origin-y1: 4px;
+  --origin-y2: -6px;
+}
+
+.ara-hero-origin-particle--6 {
+  --origin-delay: -5.1s;
+  --origin-duration: 6.4s;
+  --origin-r1: -4deg;
+  --origin-r2: 5deg;
+  --origin-x1: 6px;
+  --origin-x2: -3px;
+  --origin-y1: -5px;
+  --origin-y2: 8px;
+}
+
+.ara-hero-origin-particle--7 {
+  --origin-delay: -1.9s;
+  --origin-duration: 5.5s;
+  --origin-r1: 5deg;
+  --origin-r2: -4deg;
+  --origin-x1: -3px;
+  --origin-x2: 6px;
+  --origin-y1: 6px;
+  --origin-y2: -5px;
+}
+
+@keyframes ara-origin-particle-float {
+  from {
+    transform: translate3d(var(--origin-x1), var(--origin-y1), 0) rotate(var(--origin-r1));
+  }
+  to {
+    transform: translate3d(var(--origin-x2), var(--origin-y2), 0) rotate(var(--origin-r2));
+  }
+}
+
+@keyframes ara-particle-flight {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(var(--particle-r0)) scale(0.92);
+  }
+  5% {
+    opacity: 0.18;
+  }
+  14% {
+    opacity: 0.92;
+    transform: translate3d(var(--particle-x1), var(--particle-y1), 0) rotate(var(--particle-r1)) scale(1);
+  }
+  38% {
+    opacity: 0.82;
+    transform: translate3d(var(--particle-x2), var(--particle-y2), 0) rotate(var(--particle-r2)) scale(0.98);
+  }
+  72% {
+    opacity: 0.66;
+    transform: translate3d(var(--particle-x3), var(--particle-y3), 0) rotate(var(--particle-r3)) scale(0.94);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--particle-x4), var(--particle-y4), 0) rotate(var(--particle-r4)) scale(0.86);
+  }
+}
+
+@media (max-width: 767px) {
+  .ara-hero-shell {
+    padding-inline: 0;
+    padding-top: clamp(72px, 9svh, 88px);
+  }
+
+  .ara-hero-visual {
+    --ara-hero-visual-scale: 0.68;
+  }
+
+  .ara-hero-copy-shell {
+    max-width: min(100%, 560px);
+    padding-inline: 16px;
+  }
+
+  .ara-hero-particle-field {
+    height: 520px;
+    top: -8px;
+  }
+
+  .ara-hero-particle:nth-child(n + 15) {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 820px) {
+  .ara-hero-shell {
+    padding-bottom: 24px;
+    padding-top: 76px;
+  }
+
+  .ara-hero-visual {
+    --ara-hero-visual-scale: 0.68;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 720px) {
+  .ara-hero-shell {
+    padding-bottom: 16px;
+    padding-top: 64px;
+  }
+
+  .ara-hero-stack {
+    gap: 6px;
+  }
+
+  .ara-hero-visual {
+    --ara-hero-visual-scale: 0.6;
+  }
+
+  .ara-hero-copy {
+    gap: 10px;
+  }
+
+  .ara-hero-cta > div > div {
+    padding-block: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ara-hero-particle-field {
+    display: none;
+  }
+
+  .ara-hero-origin-particle {
+    animation: none;
+  }
 }
