@@ -36,6 +36,8 @@ const PARTICLE_SCALE_MIN = 0.7;
 const PARTICLE_SCALE_MAX = 1.16;
 const PARTICLE_SIZE_MIN = 0.96;
 const PARTICLE_SIZE_MAX = 1.056;
+const PARTICLE_RISE_MIN = -172;
+const PARTICLE_RISE_MAX = 154;
 
 const PARTICLES: Particle[] = [
   { side: -1, glyph: "coral-line", scale: 1, duration: 10.8, delay: -1.1, rise: -86, spread: 0, rotation: -520 },
@@ -68,8 +70,10 @@ type ParticleStyle = CSSProperties & Record<`--${string}`, string>;
 
 function particleStyle(particle: Particle, index: number): ParticleStyle {
   const direction = particle.side;
-  const arc = particle.rise;
-  const jitter = (index % 4) * 7 - 10;
+  const corridorPosition =
+    0.1 +
+    ((particle.rise - PARTICLE_RISE_MIN) / (PARTICLE_RISE_MAX - PARTICLE_RISE_MIN)) * 0.8;
+  const curveJitter = (((index * 13) % 9) - 4) * 1.4;
   const metrics = GLYPH_METRICS[particle.glyph];
   const sourceExtent = Math.max(metrics.width, metrics.height);
   const normalizedSize =
@@ -78,22 +82,32 @@ function particleStyle(particle: Particle, index: number): ParticleStyle {
       (PARTICLE_SIZE_MAX - PARTICLE_SIZE_MIN);
   const renderedScale = (PARTICLE_BASE_EXTENT * normalizedSize) / sourceExtent;
   const rotationAt = (progress: number) => metrics.rotation + particle.rotation * progress;
+  const corridorY = (upperBoundary: number, lowerBoundary: number, jitterWeight = 1) =>
+    upperBoundary +
+    (lowerBoundary - upperBoundary) * corridorPosition +
+    curveJitter * jitterWeight;
+
+  // These upper/lower values describe the two broad fan-shaped corridors from
+  // the book. Each particle follows a stable path inside the corridor rather
+  // than tracing either edge or choosing an unrelated random trajectory.
+  const farUpperBoundary = direction === 1 ? -310 : -270;
+  const farLowerBoundary = direction === 1 ? -112 : -62;
 
   return {
     "--particle-delay": `${particle.delay}s`,
     "--particle-duration": `${particle.duration * 0.82}s`,
     "--particle-height": `${metrics.height * renderedScale}px`,
     "--particle-width": `${metrics.width * renderedScale}px`,
-    "--particle-x0": `${direction * (16 + particle.spread * 0.7)}px`,
-    "--particle-x1": `${direction * (48 + particle.spread * 2.4)}px`,
-    "--particle-x2": `${direction * (18 + particle.spread * 0.55)}vw`,
-    "--particle-x3": `${direction * (40 + particle.spread * 0.72)}vw`,
-    "--particle-x4": `${direction * (65 + particle.spread * 0.9)}vw`,
-    "--particle-y0": `${6 + jitter * 0.15}px`,
-    "--particle-y1": `${-18 + jitter * 0.45}px`,
-    "--particle-y2": `${-56 + arc * 0.22}px`,
-    "--particle-y3": `${-72 + arc * 0.42}px`,
-    "--particle-y4": `${-64 + arc * 0.72}px`,
+    "--particle-x0": `${direction * (2 + particle.spread * 0.1)}px`,
+    "--particle-x1": `${direction * (30 + particle.spread * 0.8)}px`,
+    "--particle-x2": `${direction * (15 + particle.spread * 0.4)}vw`,
+    "--particle-x3": `${direction * (38 + particle.spread * 0.58)}vw`,
+    "--particle-x4": `${direction * (64 + particle.spread * 0.76)}vw`,
+    "--particle-y0": `${corridorY(1, 5, 0.08)}px`,
+    "--particle-y1": `${corridorY(-34, -10, 0.18)}px`,
+    "--particle-y2": `${corridorY(-118, -32, 0.42)}px`,
+    "--particle-y3": `${corridorY(-210, -58, 0.72)}px`,
+    "--particle-y4": `${corridorY(farUpperBoundary, farLowerBoundary)}px`,
     "--particle-r0": `${metrics.rotation}deg`,
     "--particle-r1": `${rotationAt(0.08)}deg`,
     "--particle-r2": `${rotationAt(0.38)}deg`,
