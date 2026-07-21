@@ -42,12 +42,13 @@ function Group18() {
 
 function Frame2() {
   return (
-    <div className="ara-hero-visual h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
-      <div className="ara-hero-circle absolute inset-[0_10.64%_37.76%_13.62%]">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
-          <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
-        </svg>
-      </div>
+    <div className="ara-hero-visual relative shrink-0 z-[1]">
+      <div className="ara-hero-visual-canvas absolute h-[507.911px] w-[417.339px]">
+        <div className="ara-hero-circle absolute inset-[0_10.64%_37.76%_13.62%]">
+          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
+            <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
+          </svg>
+        </div>
       <div className="ara-hero-origin-particle ara-hero-origin-particle--1 absolute flex items-center justify-center left-[252.18px] size-[104.9px] top-[169.6px]">
         <div className="flex-none rotate-[111.31deg]">
           <div className="relative size-[81.004px]">
@@ -111,13 +112,14 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <div className="ara-hero-origin-particle ara-hero-origin-particle--7 absolute flex h-[36.494px] items-center justify-center left-[14.21px] top-[146.51px] w-[39.162px]">
-        <div className="flex-none rotate-[-31.55deg]">
-          <div className="h-[23.447px] relative w-[31.558px]">
-            <div className="absolute inset-[-35.03%_-9.08%_0_-26.02%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42.6354 31.6596">
-                <path d={svgPaths.p797fac0} id="Ellipse 26" stroke="var(--stroke-0, #1DE4CB)" strokeWidth="16.426" />
-              </svg>
+        <div className="ara-hero-origin-particle ara-hero-origin-particle--7 absolute flex h-[36.494px] items-center justify-center left-[14.21px] top-[146.51px] w-[39.162px]">
+          <div className="flex-none rotate-[-31.55deg]">
+            <div className="h-[23.447px] relative w-[31.558px]">
+              <div className="absolute inset-[-35.03%_-9.08%_0_-26.02%]">
+                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42.6354 31.6596">
+                  <path d={svgPaths.p797fac0} id="Ellipse 26" stroke="var(--stroke-0, #1DE4CB)" strokeWidth="16.426" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
