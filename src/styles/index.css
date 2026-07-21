@@ -103,11 +103,11 @@ h6,
 .ara-hero-particle-field {
   contain: layout style;
   height: 1px;
-  left: 56%;
+  left: 61%;
   overflow: visible;
   pointer-events: none;
   position: absolute;
-  top: 47%;
+  top: 66%;
   width: 1px;
   z-index: 0;
 }
@@ -395,8 +395,8 @@ h6,
   }
 
   .ara-hero-particle-field {
-    left: 55%;
-    top: 46%;
+    left: 61%;
+    top: 66%;
   }
 
   .ara-hero-particle:nth-child(n + 19) {
