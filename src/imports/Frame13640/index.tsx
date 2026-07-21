@@ -43,7 +43,7 @@ function Group18() {
 function Frame2() {
   return (
     <div className="ara-hero-visual h-[507.911px] relative shrink-0 w-[417.339px] z-[1]">
-      <div className="absolute inset-[0_10.64%_37.76%_13.62%]">
+      <div className="ara-hero-circle absolute inset-[0_10.64%_37.76%_13.62%]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
           <circle cx="158.056" cy="158.056" fill="var(--fill-0, #FFBB1D)" id="Ellipse 16" r="158.056" />
         </svg>

@@ -3,6 +3,9 @@
 @import './theme.css';
 
 :root {
+  --ara-hero-logo-calibration: 0.93;
+  --ara-hero-circle-calibration: 0.6;
+  --ara-hero-boy-calibration: 0.97;
   --ara-space-1: 12px;
   --ara-space-2: 16px;
   --ara-space-3: 24px;
@@ -134,8 +137,8 @@ h6,
 }
 
 .ara-hero-logo {
-  height: 50.805px;
-  width: 120px;
+  height: calc(50.805px * var(--ara-hero-logo-calibration));
+  width: calc(120px * var(--ara-hero-logo-calibration));
 }
 
 .ara-hero-particle {
@@ -174,7 +177,13 @@ h6,
 /* The source PNG includes a wide left-hand shadow, so its visible subject is
    right-heavy even when the image bounds are mathematically centered. */
 .ara-hero-child-figure {
-  transform: translateX(-42px);
+  transform: translateX(-42px) scale(var(--ara-hero-boy-calibration));
+  transform-origin: center bottom;
+}
+
+.ara-hero-circle {
+  transform: scale(var(--ara-hero-circle-calibration));
+  transform-origin: center;
 }
 
 .ara-hero-origin-particle--1 {
