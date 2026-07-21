@@ -228,6 +228,12 @@ h6,
   transform-origin: center;
 }
 
+.ara-hero-circle > svg {
+  animation: ara-hero-circle-breathe 14s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
 .ara-hero-origin-particle--1 {
   --origin-delay: -1.4s;
   --origin-duration: 5.2s;
@@ -311,6 +317,15 @@ h6,
   }
   to {
     transform: translate3d(var(--origin-x2), var(--origin-y2), 0) rotate(var(--origin-r2));
+  }
+}
+
+@keyframes ara-hero-circle-breathe {
+  from {
+    transform: scale(0.985);
+  }
+  to {
+    transform: scale(1.025);
   }
 }
 
@@ -404,6 +419,10 @@ h6,
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ara-hero-circle > svg {
+    animation: none;
+  }
+
   .ara-hero-particle-field {
     display: none;
   }

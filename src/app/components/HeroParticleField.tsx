@@ -31,6 +31,8 @@ const GLYPH_METRICS: Record<ParticleGlyphName, { width: number; height: number; 
   "teal-arc": { width: 42.635, height: 31.66, rotation: -31.55 },
 };
 
+const PARTICLE_RENDER_SCALE = 0.88;
+
 const PARTICLES: Particle[] = [
   { side: -1, glyph: "coral-line", scale: 1, duration: 10.8, delay: -1.1, rise: -86, spread: 0, rotation: -520 },
   { side: 1, glyph: "lime-ring", scale: 0.92, duration: 12.4, delay: -7.7, rise: -142, spread: 5, rotation: 410 },
@@ -70,8 +72,8 @@ function particleStyle(particle: Particle, index: number): ParticleStyle {
   return {
     "--particle-delay": `${particle.delay}s`,
     "--particle-duration": `${particle.duration * 0.82}s`,
-    "--particle-height": `${metrics.height * particle.scale}px`,
-    "--particle-width": `${metrics.width * particle.scale}px`,
+    "--particle-height": `${metrics.height * particle.scale * PARTICLE_RENDER_SCALE}px`,
+    "--particle-width": `${metrics.width * particle.scale * PARTICLE_RENDER_SCALE}px`,
     "--particle-x0": `${direction * (16 + particle.spread * 0.7)}px`,
     "--particle-x1": `${direction * (48 + particle.spread * 2.4)}px`,
     "--particle-x2": `${direction * (18 + particle.spread * 0.55)}vw`,
