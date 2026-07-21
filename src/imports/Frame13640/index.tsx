@@ -990,7 +990,7 @@ function Frame24() {
 
 function Frame3() {
   return (
-    <div className="h-[412px] relative shrink-0 w-[412px]">
+    <div className="h-[350.2px] relative shrink-0 w-[350.2px]">
       <img alt="Mother reading with her child" className="absolute inset-0 object-contain size-full" src={imgRectangle} />
     </div>
   );

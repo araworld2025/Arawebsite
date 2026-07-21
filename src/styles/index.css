@@ -117,9 +117,9 @@ h6,
 }
 
 .ara-family-photo {
-  flex-basis: 46%;
+  flex-basis: 32.2%;
   flex-grow: 0;
-  max-width: 46%;
+  max-width: 32.2%;
 }
 
 .ara-featured-book-image {
@@ -368,8 +368,8 @@ h6,
 
 @media (max-width: 767px) {
   .ara-family-photo {
-    max-width: 92%;
-    width: 92%;
+    max-width: 64.4%;
+    width: 64.4%;
   }
 
   .ara-new-product-wordmark {
