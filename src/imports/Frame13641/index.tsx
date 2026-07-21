@@ -967,7 +967,7 @@ function Frame25() {
 function Frame14() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center max-w-[1250px] relative shrink-0 w-full">
-      <div className="aspect-[1170/1456] relative shrink-0 w-full" data-name="image 99">
+      <div className="ara-family-photo aspect-[1170/1456] relative shrink-0 w-full" data-name="image 99">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage100} />
       </div>
       <Frame25 />

@@ -31,7 +31,11 @@ const GLYPH_METRICS: Record<ParticleGlyphName, { width: number; height: number; 
   "teal-arc": { width: 42.635, height: 31.66, rotation: -31.55 },
 };
 
-const PARTICLE_RENDER_SCALE = 0.88;
+const PARTICLE_BASE_EXTENT = 44;
+const PARTICLE_SCALE_MIN = 0.7;
+const PARTICLE_SCALE_MAX = 1.16;
+const PARTICLE_SIZE_MIN = 0.96;
+const PARTICLE_SIZE_MAX = 1.056;
 
 const PARTICLES: Particle[] = [
   { side: -1, glyph: "coral-line", scale: 1, duration: 10.8, delay: -1.1, rise: -86, spread: 0, rotation: -520 },
@@ -67,13 +71,19 @@ function particleStyle(particle: Particle, index: number): ParticleStyle {
   const arc = particle.rise;
   const jitter = (index % 4) * 7 - 10;
   const metrics = GLYPH_METRICS[particle.glyph];
+  const sourceExtent = Math.max(metrics.width, metrics.height);
+  const normalizedSize =
+    PARTICLE_SIZE_MIN +
+    ((particle.scale - PARTICLE_SCALE_MIN) / (PARTICLE_SCALE_MAX - PARTICLE_SCALE_MIN)) *
+      (PARTICLE_SIZE_MAX - PARTICLE_SIZE_MIN);
+  const renderedScale = (PARTICLE_BASE_EXTENT * normalizedSize) / sourceExtent;
   const rotationAt = (progress: number) => metrics.rotation + particle.rotation * progress;
 
   return {
     "--particle-delay": `${particle.delay}s`,
     "--particle-duration": `${particle.duration * 0.82}s`,
-    "--particle-height": `${metrics.height * particle.scale * PARTICLE_RENDER_SCALE}px`,
-    "--particle-width": `${metrics.width * particle.scale * PARTICLE_RENDER_SCALE}px`,
+    "--particle-height": `${metrics.height * renderedScale}px`,
+    "--particle-width": `${metrics.width * renderedScale}px`,
     "--particle-x0": `${direction * (16 + particle.spread * 0.7)}px`,
     "--particle-x1": `${direction * (48 + particle.spread * 2.4)}px`,
     "--particle-x2": `${direction * (18 + particle.spread * 0.55)}vw`,

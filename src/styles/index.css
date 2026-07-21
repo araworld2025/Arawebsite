@@ -116,6 +116,12 @@ h6,
   font-size: var(--ara-text-product-backdrop);
 }
 
+.ara-family-photo {
+  flex-basis: 46%;
+  flex-grow: 0;
+  max-width: 46%;
+}
+
 /* Keep the complete opening story, including its CTA, inside standard viewport
    heights while preserving the proportions of the original hero artwork. */
 .ara-hero-shell {
@@ -356,6 +362,11 @@ h6,
 }
 
 @media (max-width: 767px) {
+  .ara-family-photo {
+    max-width: 92%;
+    width: 92%;
+  }
+
   .ara-new-product-wordmark {
     font-size: clamp(120px, 48vw, 180px);
   }
