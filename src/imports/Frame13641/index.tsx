@@ -682,7 +682,7 @@ function Frame45() {
         <div className="content-center flex flex-wrap gap-[48px] items-center justify-center px-[24px] py-[62px] relative size-full">
           <Frame4 />
           <div className="max-h-[600px] max-w-[600px] relative shrink-0 size-[600px]" data-name="image 98">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage98} />
+            <img alt="" className="ara-featured-book-image absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage98} />
           </div>
         </div>
       </div>
