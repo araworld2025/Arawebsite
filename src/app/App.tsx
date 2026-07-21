@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 import DesktopFrame from "@/imports/Frame13640/index";
 import MobileFrame from "@/imports/Frame13641/index";
@@ -6,7 +6,8 @@ import { ProductInterestDialog } from "@/app/components/ProductInterestDialog";
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { scrollYProgress } = useScroll();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ container: scrollContainerRef });
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -14,9 +15,13 @@ export default function App() {
   });
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    const handleScroll = () => setIsScrolled(scrollContainer.scrollTop > 50);
+    handleScroll();
+    scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
+    return () => scrollContainer.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Intersection observer for scroll-reveal animations
@@ -35,7 +40,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="size-full bg-white overflow-x-hidden" style={{ overflowX: "hidden" }}>
+    <div ref={scrollContainerRef} className="ara-page-scroll size-full bg-white overflow-x-hidden overflow-y-auto">
       {/* Scroll progress bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00a193] via-[#fd9e11] to-[#00a193] z-[100] origin-left"
@@ -98,7 +103,7 @@ export default function App() {
         animate={{ opacity: isScrolled ? 1 : 0, scale: isScrolled ? 1 : 0 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Scroll to top"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,14 +112,12 @@ export default function App() {
       </motion.button>
 
       <style>{`
-        html, body { overflow-x: hidden; max-width: 100vw; }
+        html, body, #root { overflow: hidden; max-width: 100vw; }
         html { scroll-behavior: smooth; }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #00a193; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #008b7f; }
+        /* Keep wheel, touch and keyboard scrolling while removing the visual rail. */
+        .ara-page-scroll { scrollbar-width: none; }
+        .ara-page-scroll::-webkit-scrollbar { display: none; height: 0; width: 0; }
 
         /* Focus states */
         button:focus-visible, a:focus-visible, input:focus-visible {

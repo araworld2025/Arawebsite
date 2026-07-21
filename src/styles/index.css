@@ -34,6 +34,7 @@
   --ara-text-heading-large: 40px;
   --ara-text-heading-xlarge: 48px;
   --ara-text-display: 54px;
+  --ara-text-product-backdrop: 293px;
 
   /* Semantic typography aliases */
   --ara-type-body: var(--ara-text-body);
@@ -44,6 +45,13 @@
 
 html {
   font-size: var(--ara-text-body);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
 }
 
 body,
@@ -103,6 +111,10 @@ h6,
   transform: translateX(-50%);
   width: 100vw;
   z-index: 0;
+}
+
+.ara-new-product-wordmark {
+  font-size: var(--ara-text-product-backdrop);
 }
 
 /* Keep the complete opening story, including its CTA, inside standard viewport
@@ -328,6 +340,10 @@ h6,
 }
 
 @media (max-width: 767px) {
+  .ara-new-product-wordmark {
+    font-size: clamp(120px, 48vw, 180px);
+  }
+
   .ara-hero-shell {
     padding-inline: 0;
     padding-top: clamp(72px, 9svh, 88px);

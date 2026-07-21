@@ -612,7 +612,7 @@ function Section2() {
 function Frame23() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex items-center justify-center left-[calc(50%+0.5px)] p-[10px] top-[-42px] w-[1437px]" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 1437 268' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(110.8 1.0836e-13 -1.7766e-13 46.656 690 338.09)'><stop stop-color='rgba(233,233,233,1)' offset='0'/><stop stop-color='rgba(255,255,255,0)' offset='0.66341'/></radialGradient></defs></svg>\")" }}>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-[length:var(--ara-text-display)] text-center tracking-[-14.8519px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="ara-new-product-wordmark [word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-center tracking-[-14.8519px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         New Product!
       </p>
     </div>
