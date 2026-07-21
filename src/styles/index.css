@@ -6,6 +6,7 @@
   --ara-hero-logo-calibration: 0.93;
   --ara-hero-circle-calibration: 0.6;
   --ara-hero-boy-calibration: 0.97;
+  --ara-hero-subject-group-calibration: 1.015;
   --ara-space-1: 12px;
   --ara-space-2: 16px;
   --ara-space-3: 24px;
@@ -177,12 +178,12 @@ h6,
 /* The source PNG includes a wide left-hand shadow, so its visible subject is
    right-heavy even when the image bounds are mathematically centered. */
 .ara-hero-child-figure {
-  transform: translateX(-42px) scale(var(--ara-hero-boy-calibration));
+  transform: translateX(-42px) scale(calc(var(--ara-hero-boy-calibration) * var(--ara-hero-subject-group-calibration)));
   transform-origin: center bottom;
 }
 
 .ara-hero-circle {
-  transform: scale(var(--ara-hero-circle-calibration));
+  transform: scale(calc(var(--ara-hero-circle-calibration) * var(--ara-hero-subject-group-calibration)));
   transform-origin: center;
 }
 
