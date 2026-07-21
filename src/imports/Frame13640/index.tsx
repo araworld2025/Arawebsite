@@ -186,7 +186,7 @@ function Frame37() {
 
 function Frame54() {
   return (
-    <div className="ara-hero-shell content-stretch flex flex-col items-center justify-center max-w-[1440px] pb-[150px] pt-[200px] relative shrink-0 w-full">
+    <div className="ara-hero-shell content-stretch flex flex-col items-center justify-center max-w-[1240px] pb-[150px] pt-[200px] relative shrink-0 w-full">
       <Frame37 />
     </div>
   );
@@ -406,7 +406,7 @@ function FlagSwipeSection() {
 
 function MaxOut() {
   return (
-    <div className="bg-white content-stretch flex gap-[16px] items-center justify-center max-w-[1440px] overflow-clip relative shrink-0 w-full" data-name="max-out">
+    <div className="bg-white content-stretch flex gap-[16px] items-center justify-center max-w-[1240px] overflow-clip relative shrink-0 w-full" data-name="max-out">
       <FlagSwipeSection />
       <div className="absolute bottom-0 flex items-center justify-center right-0 top-0 w-[267px]" style={{ containerType: "size" }}>
         <div className="-scale-x-100 flex-none h-[100cqh] w-[100cqw]">
@@ -591,7 +591,7 @@ function Frame51() {
 
 function MaxOut1() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[200px] relative shrink-0 w-full" data-name="max-out">
+    <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[200px] relative shrink-0 w-full" data-name="max-out">
       <Frame51 />
     </div>
   );
@@ -791,7 +791,7 @@ function Wrapper() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="wrapper">
       <TopSection />
-      <div className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1440px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
+      <div className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1240px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
         <Frame45 />
         <Frame44 />
         <Frame1 />
@@ -802,7 +802,7 @@ function Wrapper() {
 
 function MaxOut2() {
   return (
-    <div className="content-stretch flex flex-col items-center max-w-[1440px] relative shrink-0 w-full" data-name="max-out">
+    <div className="content-stretch flex flex-col items-center max-w-[1240px] relative shrink-0 w-full" data-name="max-out">
       <Wrapper />
     </div>
   );
@@ -974,7 +974,7 @@ function Frame14() {
 
 function Frame52() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[150px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[150px] relative shrink-0 w-full">
       <Frame14 />
     </div>
   );
@@ -1041,7 +1041,7 @@ function Frame53() {
 
 function Frame15() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[120px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[120px] relative shrink-0 w-full">
       <Frame53 />
     </div>
   );
@@ -1231,7 +1231,7 @@ function Frame19() {
 
 function Frame55() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[150px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[150px] relative shrink-0 w-full">
       <Frame19 />
     </div>
   );
@@ -1559,7 +1559,7 @@ function Frame56() {
 
 function Frame57() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[1440px] py-[100px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[100px] relative shrink-0 w-full">
       <Frame56 />
     </div>
   );
