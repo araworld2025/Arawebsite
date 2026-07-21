@@ -7,6 +7,10 @@
   --ara-hero-circle-calibration: 0.6;
   --ara-hero-boy-calibration: 0.97;
   --ara-hero-subject-group-calibration: 1.5;
+  --ara-hero-boy-x-offset: -38px;
+  --ara-hero-boy-y-offset: 0px;
+  --ara-hero-circle-x-offset: 0px;
+  --ara-hero-circle-y-offset: -97px;
   --ara-space-1: 12px;
   --ara-space-2: 16px;
   --ara-space-3: 24px;
@@ -135,6 +139,7 @@ h6,
 
 .ara-hero-logo-wrap {
   padding-block: 12px;
+  z-index: 2;
 }
 
 .ara-hero-logo {
@@ -178,12 +183,20 @@ h6,
 /* The source PNG includes a wide left-hand shadow, so its visible subject is
    right-heavy even when the image bounds are mathematically centered. */
 .ara-hero-child-figure {
-  transform: translateX(-42px) scale(calc(var(--ara-hero-boy-calibration) * var(--ara-hero-subject-group-calibration)));
+  transform:
+    translateX(calc(-42px + var(--ara-hero-boy-x-offset) / var(--ara-hero-visual-scale)))
+    translateY(calc(var(--ara-hero-boy-y-offset) / var(--ara-hero-visual-scale)))
+    scale(calc(var(--ara-hero-boy-calibration) * var(--ara-hero-subject-group-calibration)));
   transform-origin: center bottom;
 }
 
 .ara-hero-circle {
-  transform: scale(calc(var(--ara-hero-circle-calibration) * var(--ara-hero-subject-group-calibration)));
+  transform:
+    translate(
+      calc(var(--ara-hero-circle-x-offset) / var(--ara-hero-visual-scale)),
+      calc(var(--ara-hero-circle-y-offset) / var(--ara-hero-visual-scale))
+    )
+    scale(calc(var(--ara-hero-circle-calibration) * var(--ara-hero-subject-group-calibration)));
   transform-origin: center;
 }
 
