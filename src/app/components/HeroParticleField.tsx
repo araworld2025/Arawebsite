@@ -50,6 +50,12 @@ const PARTICLES: Particle[] = [
   { side: 1, glyph: "green-dot", scale: 1.06, duration: 11.3, delay: -5.7, rise: 118, spread: 10, rotation: 380 },
   { side: -1, glyph: "lime-ring", scale: 1.1, duration: 13.4, delay: -2.9, rise: 154, spread: 7, rotation: -560 },
   { side: 1, glyph: "blue-line", scale: 1.16, duration: 12.7, delay: -10.6, rise: -172, spread: 3, rotation: 430 },
+  { side: -1, glyph: "teal-arc", scale: 0.76, duration: 10.1, delay: -3.8, rise: -42, spread: 5, rotation: -470 },
+  { side: 1, glyph: "coral-line", scale: 0.94, duration: 11.8, delay: -8.4, rise: 82, spread: 8, rotation: 610 },
+  { side: -1, glyph: "peach-line", scale: 1.08, duration: 9.7, delay: -6.9, rise: 132, spread: 2, rotation: -540 },
+  { side: 1, glyph: "cyan-line", scale: 0.88, duration: 10.9, delay: -1.3, rise: -106, spread: 11, rotation: 690 },
+  { side: -1, glyph: "green-dot", scale: 0.72, duration: 12.1, delay: -9.8, rise: -138, spread: 9, rotation: -330 },
+  { side: 1, glyph: "lime-ring", scale: 0.8, duration: 9.9, delay: -4.9, rise: 44, spread: 4, rotation: 520 },
 ];
 
 type ParticleStyle = CSSProperties & Record<`--${string}`, string>;
@@ -63,14 +69,16 @@ function particleStyle(particle: Particle, index: number): ParticleStyle {
 
   return {
     "--particle-delay": `${particle.delay}s`,
-    "--particle-duration": `${particle.duration}s`,
+    "--particle-duration": `${particle.duration * 0.82}s`,
     "--particle-height": `${metrics.height * particle.scale}px`,
     "--particle-width": `${metrics.width * particle.scale}px`,
-    "--particle-x1": `${direction * (28 + particle.spread * 2)}px`,
-    "--particle-x2": `${direction * (14 + particle.spread * 0.5)}vw`,
-    "--particle-x3": `${direction * (33 + particle.spread * 0.7)}vw`,
-    "--particle-x4": `${direction * (56 + particle.spread * 0.8)}vw`,
-    "--particle-y1": `${jitter}px`,
+    "--particle-x0": `${direction * (16 + particle.spread * 0.7)}px`,
+    "--particle-x1": `${direction * (48 + particle.spread * 2.4)}px`,
+    "--particle-x2": `${direction * (18 + particle.spread * 0.55)}vw`,
+    "--particle-x3": `${direction * (40 + particle.spread * 0.72)}vw`,
+    "--particle-x4": `${direction * (65 + particle.spread * 0.9)}vw`,
+    "--particle-y0": `${jitter * 0.35}px`,
+    "--particle-y1": `${jitter * 0.75}px`,
     "--particle-y2": `${arc * 0.68}px`,
     "--particle-y3": `${arc * 0.42 + 38}px`,
     "--particle-y4": `${arc + 88}px`,
