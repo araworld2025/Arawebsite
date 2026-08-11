@@ -41,14 +41,16 @@ jobs:
           cp -R dist/. release/
           cp api/bootstrap.php api/leads.php api/payment-webhook.php release/api/
 
-      - name: Deploy to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      - name: Deploy to Hostinger over SFTP
+        uses: appleboy/scp-action@v1
         with:
-          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          host: 46.202.172.141
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./release/
-          server-dir: ./
-          log-level: standard
+          port: 65002
+          source: "release/*"
+          target: "/home/u589531741/domains/ara.kids/public_html"
+          strip_components: 1
+          overwrite: true
+          timeout: 60s
+          command_timeout: 10m
