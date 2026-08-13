@@ -133,25 +133,14 @@ export default function App() {
         }
         button:active:not(:disabled), [role="button"]:active { transform: translateY(0); }
 
-        /* Card hover lift */
-        [data-name="country-tag"] {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          cursor: pointer;
-        }
-        [data-name="country-tag"]:hover {
-          transform: translateY(-4px) scale(1.04);
-          box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        }
+        /* Country tags are flat and inert — no hover effect, marquee never pauses */
 
         /* Image hover zoom */
         img { transition: transform 0.3s ease; }
 
-        /* Carousel auto-scroll via CSS animation */
+        /* Carousel auto-scroll via CSS animation — keeps running on hover */
         [data-name="flag-swipe-section"] {
           animation: flagScroll 60s linear infinite;
-        }
-        [data-name="flag-swipe-section"]:hover {
-          animation-play-state: paused;
         }
         @keyframes flagScroll {
           0%   { transform: translateX(0); }
