@@ -23,7 +23,8 @@ export function ProductInterestDialog() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     setStatus("submitting");
     setMessage("");
     try {
@@ -39,7 +40,7 @@ export function ProductInterestDialog() {
       });
       setStatus("success");
       setMessage("Thanks — your interest has been recorded. We’ll email you when paid preorder opens.");
-      event.currentTarget.reset();
+      form.reset();
       setLanguage(featuredProduct.language);
     } catch (error) {
       setStatus("error");
