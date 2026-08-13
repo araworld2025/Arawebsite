@@ -38,7 +38,7 @@ export function ProductInterestDialog() {
         website: String(data.get("website") || ""),
       });
       setStatus("success");
-      setMessage("Check your inbox to confirm your email. We’ll keep you updated about this book.");
+      setMessage("Thanks — your interest has been recorded. We’ll email you when paid preorder opens.");
       event.currentTarget.reset();
       setLanguage(featuredProduct.language);
     } catch (error) {
@@ -67,7 +67,7 @@ export function ProductInterestDialog() {
             <input name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             {status === "error" && <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-red-700" role="alert">{message}</p>}
             <button disabled={status === "submitting"} className="rounded-[11px] bg-[#00a193] px-[43px] py-[23px] font-['Inter:Semi_Bold',sans-serif] text-[length:var(--ara-text-lead)] font-semibold leading-[1.2] text-white shadow-[0_4px_0_#006057] disabled:opacity-60">{status === "submitting" ? "Saving…" : featuredProductStage.cta}</button>
-            <p className="text-center font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive messages about this product. Double opt-in confirmation is required.</p>
+            <p className="text-center font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive updates about this product. General Ara newsletters are sent only if you tick the optional box above.</p>
           </form>
         )}
       </div>

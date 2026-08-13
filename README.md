@@ -15,13 +15,41 @@ The repository requires these GitHub Actions secrets:
 - `HOSTINGER_FTP_USERNAME`
 - `HOSTINGER_FTP_PASSWORD`
 
-Reach and checkout credentials are not GitHub deployment secrets. The site can
-be deployed without them; lead submissions return a temporary-unavailable
-response until Reach is enabled. When enabling Reach, create
+Google Forms, Reach and checkout credentials are not GitHub deployment secrets.
+Create
 `/home/u589531741/domains/ara.kids/ara-config.php` through Hostinger File
 Manager, outside `public_html`, using `api/config.example.php` as the template.
 The PHP API loads that file at runtime. Never place the real file or its values
 inside the repository or `public_html`.
+
+### Temporary Google Forms lead collection
+
+Lead collection currently uses two public Google Forms while Hostinger Reach is
+disabled. Create both forms under `araworld2025@gmail.com`, connect each form to
+its own response Sheet, turn off sign-in and "Limit to 1 response", and keep
+response collection enabled.
+
+The preorder-interest form must contain these questions in this order:
+
+1. Email address (short answer)
+2. Country of residence (short answer)
+3. Desired child language (short answer)
+4. Other language (short answer, optional)
+5. Child age range (short answer)
+6. Newsletter consent (short answer; the API submits `Yes` or `No`)
+
+The newsletter form contains one short-answer question: Email address.
+
+For each form, use **More → Get pre-filled link**, add recognizable test values,
+generate the link, and copy the `entry.<number>` query keys into the matching
+values in `ara-config.php`. Copy the published responder URL, replace its final
+`viewform` with `formResponse`, and use that as the corresponding form URL.
+These values stay server-side and are never added to a `VITE_` variable.
+
+Google Forms records repeated submissions as separate timestamped rows. When
+Reach is enabled, normalize emails to lowercase and import the newest complete
+product response per email. Preserve newsletter consent when any response says
+`Yes`; an unchecked consent box is not an unsubscribe request.
 
 ## 🚀 Quick Start
 
