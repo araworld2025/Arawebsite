@@ -63,6 +63,53 @@ function normalize_email(mixed $value): string {
     return $email;
 }
 
+function google_form_entry(string $name): string {
+    $entry = env_required($name);
+    if (!preg_match('/^entry\.\d+$/', $entry)) {
+        error_log("Invalid Google Forms field mapping: {$name}");
+        json_response(503, ['code' => 'service_unconfigured', 'message' => 'Signup is temporarily unavailable.']);
+    }
+    return $entry;
+}
+
+function google_form_endpoint(string $name): string {
+    $url = env_required($name);
+    $parts = parse_url($url);
+    $host = strtolower((string)($parts['host'] ?? ''));
+    $path = (string)($parts['path'] ?? '');
+    if (($parts['scheme'] ?? '') !== 'https' || $host !== 'docs.google.com' || !preg_match('#^/forms/d/e/[^/]+/formResponse$#', $path)) {
+        error_log("Invalid Google Forms endpoint: {$name}");
+        json_response(503, ['code' => 'service_unconfigured', 'message' => 'Signup is temporarily unavailable.']);
+    }
+    return $url;
+}
+
+function google_forms_submit(string $endpoint, array $fields): void {
+    $ch = curl_init($endpoint);
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => false,
+        CURLOPT_TIMEOUT => 15,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_HTTPHEADER => [
+            'Accept: text/html,application/xhtml+xml',
+            'Content-Type: application/x-www-form-urlencoded',
+            'User-Agent: AraKidsLeadCollector/1.0',
+        ],
+        CURLOPT_POSTFIELDS => http_build_query($fields, '', '&', PHP_QUERY_RFC3986),
+    ]);
+    $body = curl_exec($ch);
+    $status = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
+
+    if ($body === false || $status < 200 || $status >= 400) {
+        error_log('Google Forms request failed: status=' . $status . ' error=' . $error . ' response=' . substr((string)$body, 0, 500));
+        json_response(502, ['code' => 'provider_error', 'message' => 'We could not save your details. Please try again.']);
+    }
+}
+
 function reach_upsert(array $contact): array {
     $token = env_required('REACH_API_TOKEN');
     $url = config_value('REACH_CONTACTS_URL') ?: 'https://developers.hostinger.com/api/reach/v1/contacts';
