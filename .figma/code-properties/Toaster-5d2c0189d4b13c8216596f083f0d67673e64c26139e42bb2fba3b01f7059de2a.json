@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "Toaster",
+    "filePath": "src/app/components/ui/sonner.tsx"
+  },
+  "codeProperties": {
+    "theme": {
+      "type": "string",
+      "name": "Theme",
+      "description": "The visual theme of the toaster.",
+      "options": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "light": "Light",
+          "dark": "Dark",
+          "system": "System"
+        }
+      }
+    },
+    "position": {
+      "type": "string",
+      "name": "Position",
+      "description": "The position of the toaster on the screen.",
+      "options": [
+        "top-left",
+        "top-center",
+        "top-right",
+        "bottom-left",
+        "bottom-center",
+        "bottom-right"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "top-left": "Top Left",
+          "top-center": "Top Center",
+          "top-right": "Top Right",
+          "bottom-left": "Bottom Left",
+          "bottom-center": "Bottom Center",
+          "bottom-right": "Bottom Right"
+        }
+      }
+    },
+    "richColors": {
+      "type": "boolean",
+      "name": "Rich Colors",
+      "description": "When true, uses richer colors for toast variants."
+    },
+    "expand": {
+      "type": "boolean",
+      "name": "Expand",
+      "description": "When true, toasts are expanded by default."
+    },
+    "duration": {
+      "type": "number",
+      "name": "Duration",
+      "description": "The default duration in milliseconds for each toast."
+    },
+    "visibleToasts": {
+      "type": "number",
+      "name": "Visible Toasts",
+      "description": "The maximum number of toasts that are visible at once."
+    },
+    "closeButton": {
+      "type": "boolean",
+      "name": "Close Button",
+      "description": "When true, adds a close button to each toast."
+    },
+    "invert": {
+      "type": "boolean",
+      "name": "Invert",
+      "description": "Dark toasts in light mode and vice versa."
+    },
+    "hotkey": {
+      "type": "string",
+      "name": "Hotkey",
+      "description": "Keyboard shortcut to focus the toast area."
+    },
+    "pauseWhenPageIsHidden": {
+      "type": "boolean",
+      "name": "Pause When Page Is Hidden",
+      "description": "When true, toasts pause their timers when the page is hidden."
+    }
+  }
+}

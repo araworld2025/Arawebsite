@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "Collapsible",
+    "filePath": "src/app/components/ui/collapsible.tsx"
+  },
+  "codeProperties": {
+    "open": {
+      "type": "boolean",
+      "name": "Open",
+      "description": "Whether the collapsible is open."
+    },
+    "defaultOpen": {
+      "type": "boolean",
+      "name": "Default Open",
+      "description": "The open state of the collapsible when it is initially rendered."
+    },
+    "disabled": {
+      "type": "boolean",
+      "name": "Disabled",
+      "description": "When true, prevents the user from interacting with the collapsible."
+    }
+  }
+}

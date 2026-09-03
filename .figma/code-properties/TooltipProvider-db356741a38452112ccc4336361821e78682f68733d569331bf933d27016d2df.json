@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "TooltipProvider",
+    "filePath": "src/app/components/ui/tooltip.tsx"
+  },
+  "codeProperties": {
+    "delayDuration": {
+      "type": "number",
+      "name": "Delay Duration",
+      "defaultValue": 0
+    }
+  }
+}

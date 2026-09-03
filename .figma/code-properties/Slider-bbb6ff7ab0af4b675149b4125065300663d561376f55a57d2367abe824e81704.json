@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "Slider",
+    "filePath": "src/app/components/ui/slider.tsx"
+  },
+  "codeProperties": {
+    "min": {
+      "type": "number",
+      "name": "Min",
+      "defaultValue": 0
+    },
+    "max": {
+      "type": "number",
+      "name": "Max",
+      "defaultValue": 100
+    },
+    "step": {
+      "type": "number",
+      "name": "Step"
+    },
+    "disabled": {
+      "type": "boolean",
+      "name": "Disabled"
+    },
+    "orientation": {
+      "type": "string",
+      "name": "Orientation",
+      "options": [
+        "horizontal",
+        "vertical"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
+        }
+      }
+    }
+  }
+}

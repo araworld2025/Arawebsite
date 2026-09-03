@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "AspectRatio",
+    "filePath": "src/app/components/ui/aspect-ratio.tsx"
+  },
+  "codeProperties": {
+    "ratio": {
+      "type": "number",
+      "name": "Ratio"
+    }
+  }
+}

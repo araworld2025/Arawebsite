@@ -1,0 +1,86 @@
+{
+  "pointAndEdit": {
+    "priorityPaths": {
+      "prefer": [
+        "src/app/App.tsx",
+        "src/app/components/*.tsx",
+        "src/imports/Frame13640/index.tsx",
+        "src/imports/Frame13641/index.tsx",
+        "src/imports/Frame13575.tsx",
+        "src/config/featuredProduct.ts",
+        "src/services/leads.ts",
+        "src/main.tsx"
+      ],
+      "deprioritize": [
+        "src/app/components/ui/**",
+        "src/app/components/figma/**",
+        "src/imports/Frame13640/svg-*.ts",
+        "src/imports/Frame13641/svg-*.ts",
+        "src/imports/svg-*.ts",
+        "src/styles/**",
+        "src/assets/**"
+      ],
+      "exclude": [
+        "src/imports/Frame13575.tsx",
+        "api/**",
+        "public/**",
+        ".github/**",
+        "guidelines/**",
+        "images/**",
+        "new-file.tsx"
+      ]
+    },
+    "libraryPaths": {
+      "local": [
+        "src/app/components/ui/**"
+      ],
+      "external": [
+        "node_modules/@radix-ui/**",
+        "node_modules/@mui/**",
+        "node_modules/lucide-react/**"
+      ]
+    },
+    "pathClassification": {
+      "classifier": "sonnet"
+    },
+    "exclusions": [
+      {
+        "glob": "src/imports/Frame13575.tsx",
+        "reason": "This file uses figma:asset/ imports indicating it is an unprocessed Figma-generated source file that has not been adapted for the live app; the adapted equivalents are in src/imports/Frame13640 and src/imports/Frame13641."
+      },
+      {
+        "glob": "api/**",
+        "reason": "Server-side PHP backend files; not part of the React rendering surface and cannot be a UI source anchor."
+      },
+      {
+        "glob": "public/**",
+        "reason": "Static server assets (.htaccess etc.); not UI source code."
+      },
+      {
+        "glob": ".github/**",
+        "reason": "CI/CD workflow configuration; not UI source code."
+      },
+      {
+        "glob": "guidelines/**",
+        "reason": "Documentation files; not UI source code."
+      },
+      {
+        "glob": "images/**",
+        "reason": "Static image reference files used for design documentation; not UI source code."
+      },
+      {
+        "glob": "new-file.tsx",
+        "reason": "Appears to be an uncommitted scratch or placeholder file at the repo root; not part of the active app rendering surface."
+      }
+    ],
+    "generated": {
+      "schemaVersion": 2,
+      "source": "setup-agent.point-and-edit-path-classifier",
+      "prompt": "same-turn-setup-subagent-v5",
+      "model": "claude-sonnet-4-6",
+      "createdAt": "2026-09-03T00:00:00.000Z",
+      "confidence": 0.88,
+      "explanation": "The repo is a single Vite + React app with a clear active root (src/app/App.tsx) composing two large page-frame components (Frame13640/index.tsx for desktop, Frame13641/index.tsx for mobile) plus named app-specific components in src/app/components; the shadcn/ui primitives in src/app/components/ui are confidently identified as a local design-system library, and the figma:asset-importing Frame13575.tsx is clearly a raw generated file superseded by its adapted counterparts, all of which yields high classification confidence."
+    }
+  }
+}
