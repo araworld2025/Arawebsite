@@ -433,7 +433,7 @@ function Section1() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / partner">
         <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%-2.65px)] size-[75px] top-[calc(50%+2.5px)]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -466,7 +466,7 @@ function Frame9() {
 
 function Frame10() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / bloosom">
         <div className="absolute left-0 size-[75px] top-[5px]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -496,7 +496,7 @@ function Frame10() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / star">
         <div className="absolute left-0 size-[75px] top-[5.01px]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -535,7 +535,7 @@ function Frame11() {
 
 function Frame13() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / speech">
         <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%-2.5px)] size-[75px] top-[calc(50%+2.5px)]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -677,11 +677,9 @@ function Frame45() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-center flex flex-wrap gap-[48px] items-center justify-center px-[24px] py-[62px] relative size-full">
+        <div className="content-center flex flex-wrap gap-y-[48px] gap-x-[24px] items-center justify-center px-[24px] py-[62px] relative size-full">
           <Frame4 />
-          <div className="max-h-[600px] max-w-[600px] relative shrink-0 size-[600px]" data-name="image 98">
-            <img alt="" className="ara-featured-book-image absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage98} />
-          </div>
+          <img alt="" className="ara-featured-book-image max-w-none object-cover pointer-events-none w-[500px]" src={imgImage98} />
         </div>
       </div>
     </div>
@@ -954,7 +952,7 @@ function Frame29() {
 
 function Frame25() {
   return (
-    <div className="flex-[1_0_0] min-w-px relative">
+    <div className="grow-0 basis-auto w-[505px] min-w-px relative">
       <div className="content-stretch flex flex-col gap-[48px] items-start px-[24px] relative size-full">
         <Frame31 />
         <Frame29 />
@@ -966,7 +964,7 @@ function Frame25() {
 function Frame14() {
   return (
     <div className="content-stretch flex gap-[24px] items-center justify-center max-w-[1250px] relative shrink-0 w-full">
-      <div className="ara-family-photo aspect-[1170/1456] flex-[1_0_0] min-w-px relative" data-name="image 99">
+      <div className="ara-family-photo aspect-[1170/1456] flex-[1_0_0] w-[505px] min-w-px relative" data-name="image 99">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage100} />
       </div>
       <Frame25 />
@@ -1000,7 +998,7 @@ function Frame3() {
 
 function Frame18() {
   return (
-    <div className="content-stretch flex flex-wrap gap-[17px] items-center justify-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-wrap gap-y-[17px] gap-x-[11px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[35px] items-center justify-center relative shrink-0 w-[34px]">
         <div className="flex-none rotate-90">
           <div className="h-[34px] relative w-[35px]">
@@ -1010,7 +1008,7 @@ function Frame18() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] flex-1 font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-[220px] relative text-[#554739] text-[length:var(--ara-text-body)] text-center whitespace-normal">Prof. Jim Cummins — University of Toronto</p>
+      <p className="[word-break:break-word] grow-0 basis-auto w-fit font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-[220px] relative text-[#554739] text-[length:var(--ara-text-body)] text-center whitespace-normal">Prof. Jim Cummins — University of Toronto</p>
     </div>
   );
 }

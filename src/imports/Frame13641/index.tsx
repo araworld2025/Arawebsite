@@ -1001,7 +1001,7 @@ function Frame3() {
 
 function Frame18() {
   return (
-    <div className="content-stretch flex flex-wrap gap-[17px] items-center justify-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-wrap gap-y-[17px] gap-x-[11px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[35px] items-center justify-center relative shrink-0 w-[34px]">
         <div className="flex-none rotate-90">
           <div className="h-[34px] relative w-[35px]">
