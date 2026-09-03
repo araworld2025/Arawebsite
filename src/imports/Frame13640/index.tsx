@@ -154,7 +154,8 @@ function Frame8() {
       <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-full whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         {`Bring home closer `}
         <br aria-hidden />
-        to your child.
+        {`to your child`}
+        <span className="text-[#ffbb1d]">.</span>
       </p>
       <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] text-center w-full">Beautiful books, learning tools, and cultural experiences designed for African families raising children abroad.</p>
       <Frame7 />
@@ -583,7 +584,7 @@ function Frame12() {
 function Frame51() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at time</span><span className="text-[#fd9e11]">.</span></p>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at time</span><span className="text-[#ffbb1d]">.</span></p>
       <Frame12 />
     </div>
   );
@@ -824,7 +825,8 @@ function Frame31() {
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[-3.96px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
-        Raise children who know where they come from.
+        {`Raise children who know where they come from`}
+        <span className="text-[#ffbb1d]">.</span>
       </p>
       <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-small)] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
     </div>
