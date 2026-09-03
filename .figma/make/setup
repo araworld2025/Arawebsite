@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# First-open setup: install system-level prerequisites.
+# This project needs Node.js and the pnpm package manager.
+set -euo pipefail
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "Node.js is required but was not found. Please install Node.js 18+." >&2
+  exit 1
+fi
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  echo "pnpm not found; enabling it via corepack..."
+  corepack enable >/dev/null 2>&1 || true
+  corepack prepare pnpm@latest --activate >/dev/null 2>&1 || true
+fi
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  echo "pnpm is required but could not be enabled. Install it from https://pnpm.io." >&2
+  exit 1
+fi
+
+echo "Setup complete: node $(node -v), pnpm $(pnpm -v)."
