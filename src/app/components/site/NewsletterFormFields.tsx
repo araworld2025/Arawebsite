@@ -38,16 +38,19 @@ function fieldClass(align: FieldAlign) {
  * Row wrapper that draws the shared dashed top/bottom divider plus, on focus, a
  * single rounded teal ring that sits just OUTSIDE the field with a ~2px margin.
  * The dashed divider fades out on focus so only ONE border is ever visible (no
- * double border). The ring uses a small negative inset so it wraps around the
- * outside of the field; the containing card has its clipping lifted so the ring
- * is never cropped.
+ * double border).
+ *
+ * The ring is drawn with a box-shadow (a 2px white gap + a 2px teal ring) rather
+ * than a negatively-inset element. box-shadow paints outside the box WITHOUT
+ * adding to scrollable overflow, so it never triggers a scrollbar inside a
+ * scrollable container such as the preorder dialog.
  */
 function FieldRow({ children }: { children: React.ReactNode }) {
   return (
     <div className="group/field relative w-full bg-white">
       {children}
       <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9] transition-opacity group-focus-within/field:opacity-0" />
-      <div aria-hidden className="pointer-events-none absolute inset-[-2px] rounded-[10px] border-2 border-[#00a193] opacity-0 transition-opacity group-focus-within/field:opacity-100" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 rounded-[10px] opacity-0 shadow-[0_0_0_2px_#ffffff,0_0_0_4px_#00a193] transition-opacity group-focus-within/field:opacity-100" />
     </div>
   );
 }

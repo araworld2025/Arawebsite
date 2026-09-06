@@ -129,6 +129,16 @@ export default function App() {
           outline-offset: 2px;
         }
 
+        /* Newsletter / preorder fields draw their own single focus ring
+           (see NewsletterFormFields.tsx), so suppress the generic outline here
+           to avoid a double border. */
+        .group\\/field input:focus,
+        .group\\/field input:focus-visible,
+        .group\\/field select:focus,
+        .group\\/field select:focus-visible {
+          outline: none;
+        }
+
         /* Button hover lift */
         button, [role="button"] { transition: all 0.3s ease; }
         button:hover:not(:disabled), [role="button"]:hover {

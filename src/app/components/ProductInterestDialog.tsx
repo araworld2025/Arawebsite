@@ -52,7 +52,7 @@ export function ProductInterestDialog() {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#07364a]/55 p-[16px]" role="presentation" onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}>
-      <div className="flex max-h-[92vh] w-full max-w-[680px] flex-col overflow-y-auto rounded-2xl bg-white pt-[48px] shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="interest-title">
+      <div className="flex max-h-[92vh] w-full max-w-[680px] flex-col overflow-x-hidden overflow-y-auto overscroll-contain rounded-2xl bg-white pt-[48px] shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="interest-title">
         <div className="mb-[16px] flex items-start justify-between gap-[16px] px-[24px]">
           <div className="min-w-0">
             <p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[var(--ara-tracking-eyebrow)] text-[#00a193]">{featuredProduct.language} book</p>

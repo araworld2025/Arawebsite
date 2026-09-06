@@ -13,6 +13,7 @@ import { NewsletterField, NewsletterSubmitButton } from "@/app/components/site/N
 import { HeroParticleField } from "@/app/components/HeroParticleField";
 import { HeroHeadline } from "@/app/components/HeroHeadline";
 import { ParallaxRow } from "@/app/components/ParallaxRow";
+import { ScrollRevealGroup, ScrollRevealItem } from "@/app/components/ScrollRevealList";
 import { AFRICAN_COUNTRIES } from "@/data/countries";
 import { Footer } from "@/app/components/site/Footer";
 const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23e8e4dc'/%3E%3Cpath d='M0 640 300 360l190 180 170-140 540 400H0Z' fill='%23c9c2b5'/%3E%3Ccircle cx='850' cy='230' r='90' fill='%23d6cfc3'/%3E%3C/svg%3E";
@@ -770,12 +771,16 @@ function Section3() {
 
 function Frame31() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[var(--ara-tracking-display)] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
-        Raise children who know where they come from.
-      </p>
-      <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-small)] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
-    </div>
+    <ScrollRevealGroup className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+      <ScrollRevealItem index={0} count={2}>
+        <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[var(--ara-tracking-display)] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+          Raise children who know where they come from.
+        </p>
+      </ScrollRevealItem>
+      <ScrollRevealItem index={1} count={2}>
+        <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-small)] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
+      </ScrollRevealItem>
+    </ScrollRevealGroup>
   );
 }
 
@@ -889,12 +894,20 @@ function Frame34() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <Frame26 />
-      <Frame28 />
-      <Frame32 />
-      <Frame34 />
-    </div>
+    <ScrollRevealGroup className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+      <ScrollRevealItem index={0} count={4}>
+        <Frame26 />
+      </ScrollRevealItem>
+      <ScrollRevealItem index={1} count={4}>
+        <Frame28 />
+      </ScrollRevealItem>
+      <ScrollRevealItem index={2} count={4}>
+        <Frame32 />
+      </ScrollRevealItem>
+      <ScrollRevealItem index={3} count={4}>
+        <Frame34 />
+      </ScrollRevealItem>
+    </ScrollRevealGroup>
   );
 }
 
