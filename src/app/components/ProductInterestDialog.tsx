@@ -2,6 +2,11 @@ import { FormEvent, useEffect, useState } from "react";
 import { PRODUCT_CTA_EVENT, featuredProduct, featuredProductStage } from "@/config/featuredProduct";
 import { childAgeRanges, countries, desiredLanguages, submitLead } from "@/services/leads";
 
+// Shared style for each edge-to-edge form row (input / select) — a hairline
+// divider underneath, transparent fill, and the prompt shown as placeholder text.
+const rowClass =
+  "block w-full border-b border-[#dfdac9] bg-transparent px-[24px] py-[20px] font-['DM_Sans:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739] outline-none placeholder:text-[#554739] focus:bg-[#faf8f2] disabled:cursor-not-allowed disabled:opacity-60";
+
 export function ProductInterestDialog() {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -51,24 +56,35 @@ export function ProductInterestDialog() {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#07364a]/55 p-[16px]" role="presentation" onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}>
-      <div className="max-h-[92vh] w-full max-w-[680px] overflow-y-auto rounded-2xl bg-[#fffdf8] p-[24px] shadow-2xl md:p-[48px]" role="dialog" aria-modal="true" aria-labelledby="interest-title">
-        <div className="mb-[24px] flex items-start justify-between gap-[16px]">
-          <div className="min-w-0"><p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[0.98px] text-[#00a193]">{featuredProduct.language} book</p><h2 id="interest-title" className="font-['DM_Sans:Bold',sans-serif] text-[length:var(--ara-text-heading-medium)] font-bold leading-none tracking-[-2.16px] text-[#2d251d]">{featuredProductStage.cta}</h2></div>
+      <div className="flex max-h-[92vh] w-full max-w-[680px] flex-col overflow-y-auto rounded-2xl bg-white pt-[48px] shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="interest-title">
+        <div className="mb-[16px] flex items-start justify-between gap-[16px] px-[24px]">
+          <div className="min-w-0">
+            <p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[0.98px] text-[#00a193]">{featuredProduct.language} book</p>
+            <h2 id="interest-title" className="font-['DM_Sans:Bold',sans-serif] text-[length:var(--ara-text-heading-medium)] font-bold leading-none tracking-[-2.16px] text-[#2d251d]">{featuredProductStage.cta}</h2>
+            <p className="mt-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739]">{featuredProductStage.note}</p>
+          </div>
           <button type="button" onClick={() => setOpen(false)} className="grid size-[48px] shrink-0 place-items-center rounded-full border border-[#dfdac9] font-['Inter:Regular',sans-serif] text-[length:var(--ara-text-heading-small)] leading-none" aria-label="Close">×</button>
         </div>
-        <p className="mb-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739]">{featuredProductStage.note}</p>
-        {status === "success" ? <div className="rounded-xl bg-[#eaf8f5] p-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#006057]" role="status">{message}</div> : (
-          <form className="grid gap-[24px]" onSubmit={handleSubmit}>
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Email address<input required name="email" type="email" autoComplete="email" className="w-full rounded-lg border-2 border-[#dfdac9] bg-white px-6 py-4 text-lg font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] transition-all focus:border-[#00a193] focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-100" /></label>
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Country of residence<select required name="residenceCountry" defaultValue="" className="w-full rounded-lg border-2 border-[#dfdac9] bg-white px-6 py-4 text-lg font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] transition-all focus:border-[#00a193] focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-100"><option value="" disabled>Select a country</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</select></label>
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Language you want for your child<select required name="desiredLanguage" value={language} onChange={e => setLanguage(e.target.value)} className="w-full rounded-lg border-2 border-[#dfdac9] bg-white px-6 py-4 text-lg font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] transition-all focus:border-[#00a193] focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-100">{desiredLanguages.map(item => <option key={item}>{item}</option>)}</select></label>
-            {language === "Other" && <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Which language?<input required name="otherLanguage" className="w-full rounded-lg border-2 border-[#dfdac9] bg-white px-6 py-4 text-lg font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] transition-all focus:border-[#00a193] focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-100" /></label>}
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Child age range<select required name="childAgeRange" defaultValue="" className="w-full rounded-lg border-2 border-[#dfdac9] bg-white px-6 py-4 text-lg font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] transition-all focus:border-[#00a193] focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-100"><option value="" disabled>Select an age range</option>{childAgeRanges.map(item => <option key={item}>{item}</option>)}</select></label>
-            <label className="flex items-start gap-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#554739]"><input name="newsletterConsent" type="checkbox" className="mt-[4px] size-[20px] accent-[#00a193]" /><span>Also send me Ara stories, resources and general updates. I can unsubscribe at any time.</span></label>
+        {status === "success" ? <div className="mx-[24px] mb-[24px] rounded-xl bg-[#eaf8f5] p-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#006057]" role="status">{message}</div> : (
+          <form onSubmit={handleSubmit}>
+            <div className="border-t border-[#dfdac9]">
+              <input required name="email" type="email" autoComplete="email" aria-label="Email address" placeholder="Type your email address here" className={rowClass} />
+              <select required name="residenceCountry" defaultValue="" aria-label="Country of residence" className={rowClass}><option value="" disabled>What&apos;s your Country of Residence</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</select>
+              <select required name="desiredLanguage" value={language} onChange={e => setLanguage(e.target.value)} aria-label="Language you want for your child" className={rowClass}>{desiredLanguages.map(item => <option key={item}>{item}</option>)}</select>
+              {language === "Other" && <input required name="otherLanguage" aria-label="Which language?" placeholder="Which language?" className={rowClass} />}
+              <select required name="childAgeRange" defaultValue="" aria-label="Child age range" className={rowClass}><option value="" disabled>What&apos;s your Child age range</option>{childAgeRanges.map(item => <option key={item}>{item}</option>)}</select>
+            </div>
+            <div className="flex flex-col gap-[8px] px-[24px] py-[16px]">
+              <label className="flex items-start gap-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#554739]"><input name="newsletterConsent" type="checkbox" className="mt-[4px] size-[20px] accent-[#00a193]" /><span>Also send me Ara stories, resources and general updates. I can unsubscribe at any time.</span></label>
+              <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive updates about this product. General Ara newsletters are sent only if you tick the optional box above.</p>
+              {status === "error" && <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-red-700" role="alert">{message}</p>}
+            </div>
             <input name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-            {status === "error" && <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-red-700" role="alert">{message}</p>}
-            <button disabled={status === "submitting"} className="w-full rounded-lg bg-[#00a193] py-4 text-lg font-semibold leading-[1.2] text-white transition-all hover:bg-[#008d80] disabled:cursor-not-allowed disabled:bg-gray-400">{status === "submitting" ? "Saving…" : featuredProductStage.cta}</button>
-            <p className="text-center font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive updates about this product. General Ara newsletters are sent only if you tick the optional box above.</p>
+            <button disabled={status === "submitting"} className="flex w-full items-center justify-between border-t border-dashed border-[#dfdac9] px-[24px] py-[30px] disabled:opacity-60">
+              <span aria-hidden className="font-['DM_Sans:Medium',sans-serif] text-[18px] font-medium leading-none tracking-[1.62px] text-[#dfdac9]">::</span>
+              <span className="font-['DM_Sans:SemiBold',sans-serif] text-[18px] font-semibold leading-none tracking-[0.36px] text-[#7f694f]">{status === "submitting" ? "Saving…" : featuredProductStage.cta}</span>
+              <span aria-hidden className="font-['DM_Sans:Medium',sans-serif] text-[18px] font-medium leading-none tracking-[1.62px] text-[#dfdac9]">::</span>
+            </button>
           </form>
         )}
       </div>
