@@ -161,8 +161,17 @@ function ProductInterestInstance() {
 }
 
 export function ComponentsOverview() {
+  // Smooth-scroll to a section without touching the URL hash — changing the
+  // hash would flip the router back to the main site.
+  const scrollTo = (id: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="min-h-screen bg-[#faf7f0] text-[#2d251d]">
+    // `overflow-y-auto` makes this its own scroll container, since the global
+    // stylesheet locks `html, body, #root` to `overflow: hidden`.
+    <div className="h-full overflow-y-auto bg-[#faf7f0] text-[#2d251d]">
       {/* The real product-interest dialog lives here so the "open" trigger below
           shows the exact instance used on the live site. */}
       <ProductInterestDialog />
@@ -170,20 +179,27 @@ export function ComponentsOverview() {
       <div className="mx-auto w-full max-w-[960px] px-6 pb-24 pt-16">
         {/* Header */}
         <header className="mb-8">
-          <a
-            href="#"
-            className="mb-6 inline-block font-['Nunito:SemiBold',sans-serif] text-sm font-semibold text-[#00a193] hover:underline"
+          <button
+            type="button"
+            onClick={() => {
+              window.location.hash = "";
+            }}
+            className="mb-6 inline-block cursor-pointer font-['Nunito:SemiBold',sans-serif] text-sm font-semibold text-[#00a193] hover:underline"
           >
             ← Back to the website
-          </a>
+          </button>
           <h1 className="font-['DM_Sans:Bold',sans-serif] text-5xl font-bold tracking-tight">
             Components Overview
           </h1>
           <p className="mt-4 max-w-[640px] font-['Nunito:Regular',sans-serif] text-lg leading-relaxed text-[#554739]">
             Every reusable component on the Ara Kids website, in one place. The{" "}
-            <a href="#forms" className="font-semibold text-[#00a193] hover:underline">
+            <button
+              type="button"
+              onClick={scrollTo("forms")}
+              className="cursor-pointer font-semibold text-[#00a193] hover:underline"
+            >
               Forms
-            </a>{" "}
+            </button>{" "}
             section shows the live form instances — edit the underlying component once and every
             instance updates together.
           </p>
@@ -198,13 +214,14 @@ export function ComponentsOverview() {
             ["structure", "Structure & Layout"],
             ["primitives", "UI Primitives"],
           ].map(([id, label]) => (
-            <a
+            <button
               key={id}
-              href={`#${id}`}
-              className="rounded-full border border-[#e7e2d3] bg-white px-4 py-2 font-['Nunito:SemiBold',sans-serif] text-sm font-semibold text-[#554739] transition-colors hover:border-[#00a193] hover:text-[#00a193]"
+              type="button"
+              onClick={scrollTo(id)}
+              className="cursor-pointer rounded-full border border-[#e7e2d3] bg-white px-4 py-2 font-['Nunito:SemiBold',sans-serif] text-sm font-semibold text-[#554739] transition-colors hover:border-[#00a193] hover:text-[#00a193]"
             >
               {label}
-            </a>
+            </button>
           ))}
         </nav>
 
