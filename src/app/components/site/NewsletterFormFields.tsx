@@ -1,16 +1,35 @@
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
 
 /**
  * The Ara "subscribe" form style, shared by the homepage newsletter form and
  * the product interest dialog so both stay visually in sync.
  *
- * A field is an edge-to-edge row with a dashed hairline divider and centred
- * DM Sans text; the submit button is a full-width row with `::` grip marks
- * either side of a centred label.
+ * A field is an edge-to-edge row with a dashed hairline divider and DM Sans
+ * text; the submit button is a full-width row with `::` grip marks either side
+ * of a centred label.
+ *
+ * Alignment variant:
+ *  - "center" (default) — the newsletter form's single centred email field.
+ *  - "left" — used by the preorder dialog; left-aligned, and selects show a
+ *    dropdown chevron.
+ *
+ * Interaction: the row rests with a faint pill (light brown "100" tone,
+ * #dfdac9) and text at 80%; hovering lets the pill come out fully; clicking in
+ * (focus) lifts the text to 100% so the active field reads as sharpest.
  */
 
-const fieldClass =
-  "w-full bg-transparent px-[36px] py-[24px] text-center font-['DM_Sans:Regular',sans-serif] text-[length:var(--ara-text-body-large)] font-normal leading-none text-[#554739] outline-none [font-variation-settings:'opsz'_14] placeholder:text-[#554739] placeholder:opacity-40 disabled:cursor-not-allowed disabled:opacity-60";
+type FieldAlign = "center" | "left";
+
+function fieldClass(align: FieldAlign) {
+  return [
+    "w-full py-[24px] font-['DM_Sans:Regular',sans-serif] text-[length:var(--ara-text-body-large)] font-normal leading-none text-[#554739] opacity-80 outline-none transition [font-variation-settings:'opsz'_14]",
+    align === "left" ? "text-left" : "text-center",
+    "placeholder:text-[#554739]",
+    "bg-[#dfdac9]/30 hover:bg-[#dfdac9] focus:bg-[#dfdac9] focus:opacity-100",
+    "disabled:cursor-not-allowed disabled:opacity-60",
+  ].join(" ");
+}
 
 /** Row wrapper that draws the shared dashed top/bottom divider. */
 function FieldRow({ children }: { children: React.ReactNode }) {
@@ -22,20 +41,26 @@ function FieldRow({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function NewsletterField({ className = "", ...props }: React.ComponentProps<"input">) {
+export function NewsletterField({ align = "center", className = "", ...props }: React.ComponentProps<"input"> & { align?: FieldAlign }) {
   return (
     <FieldRow>
-      <input {...props} className={`${fieldClass} ${className}`} />
+      <input {...props} className={`${fieldClass(align)} px-[36px] ${className}`} />
     </FieldRow>
   );
 }
 
-export function NewsletterSelectField({ children, className = "", ...props }: React.ComponentProps<"select">) {
+export function NewsletterSelectField({ align = "center", children, className = "", ...props }: React.ComponentProps<"select"> & { align?: FieldAlign }) {
   return (
     <FieldRow>
-      <select {...props} className={`${fieldClass} appearance-none ${className}`}>
-        {children}
-      </select>
+      <div className="group relative w-full">
+        <select {...props} className={`${fieldClass(align)} appearance-none pl-[36px] pr-[52px] ${className}`}>
+          {children}
+        </select>
+        <ChevronDown
+          aria-hidden
+          className="pointer-events-none absolute right-[24px] top-1/2 size-[20px] -translate-y-1/2 text-[#554739] opacity-80 transition group-focus-within:opacity-100"
+        />
+      </div>
     </FieldRow>
   );
 }
