@@ -544,6 +544,22 @@ h6,
   animation-delay: var(--ara-reveal-line-delay, 0s);
 }
 
+/* Citation ("Prof. Jim Cummins…"): fade in only — no rise/translation. */
+[data-reveal-sequence="after-heading"] .ara-reveal-text .ara-reveal-word,
+[data-reveal-sequence="after-heading"] .ara-reveal-bullet {
+  transform: none;
+}
+
+[data-reveal-sequence="after-heading"] .ara-reveal-text.is-revealed .ara-reveal-word,
+[data-reveal-sequence="after-heading"] .ara-reveal-bullet.is-revealed {
+  animation-name: ara-reveal-fade-in;
+}
+
+@keyframes ara-reveal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Images: fade and lift into view as their section reveals. */
 .ara-reveal-image {
   opacity: 0;

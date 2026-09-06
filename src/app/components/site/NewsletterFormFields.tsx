@@ -35,17 +35,18 @@ function fieldClass(align: FieldAlign) {
 }
 
 /**
- * Row wrapper that draws the shared dashed top/bottom divider plus, on focus,
- * a single rounded teal ring set a little inside the row. The ring is an
- * overlay inside the field, so it shows fully on every side with rounded
- * corners and is never cropped by the card's clipping edge.
+ * Row wrapper that draws the shared dashed top/bottom divider plus, on focus, a
+ * single rounded teal ring that hugs the field with a ~2px margin. The dashed
+ * divider fades out on focus so only ONE border is ever visible (no double
+ * border). The ring sits just inside the row edges so it reads as wrapping the
+ * field closely and is never cropped by the card's clipping edge.
  */
 function FieldRow({ children }: { children: React.ReactNode }) {
   return (
     <div className="group/field relative w-full bg-white">
       {children}
-      <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9]" />
-      <div aria-hidden className="pointer-events-none absolute inset-[10px] rounded-[12px] border-2 border-[#00a193] opacity-0 transition-opacity group-focus-within/field:opacity-100" />
+      <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9] transition-opacity group-focus-within/field:opacity-0" />
+      <div aria-hidden className="pointer-events-none absolute inset-[2px] rounded-[10px] border-2 border-[#00a193] opacity-0 transition-opacity group-focus-within/field:opacity-100" />
     </div>
   );
 }
