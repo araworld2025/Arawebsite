@@ -14,9 +14,11 @@ import { ChevronDown } from "lucide-react";
  *  - "left" — used by the preorder dialog; left-aligned, and selects show a
  *    dropdown chevron.
  *
- * Interaction: the row rests with a faint pill (light brown "100" tone,
- * #dfdac9) and text at 80%; hovering lets the pill come out fully; clicking in
- * (focus) lifts the text to 100% so the active field reads as sharpest.
+ * Interaction: text rests at 80% with no fill; hovering washes the row with a
+ * very light pale brown (#dfdac9 at 40%) while the text holds at 80%; clicking
+ * in (focus) lifts the text to 100% and keeps the same pale wash. Focus also
+ * draws a teal ring inset just inside the row so it reads clearly across the
+ * field and is never clipped by the card's rounded, scrolling edge.
  */
 
 type FieldAlign = "center" | "left";
@@ -26,7 +28,8 @@ function fieldClass(align: FieldAlign) {
     "w-full py-[24px] font-['DM_Sans:Regular',sans-serif] text-[length:var(--ara-text-body-large)] font-normal leading-none text-[#554739] opacity-80 outline-none transition [font-variation-settings:'opsz'_14]",
     align === "left" ? "text-left" : "text-center",
     "placeholder:text-[#554739]",
-    "bg-[#dfdac9]/30 hover:bg-[#dfdac9] focus:bg-[#dfdac9] focus:opacity-100",
+    "hover:bg-[#dfdac9]/40 focus:bg-[#dfdac9]/40 focus:opacity-100",
+    "focus:[outline:2px_solid_#00a193] focus:[outline-offset:-6px]",
     "disabled:cursor-not-allowed disabled:opacity-60",
   ].join(" ");
 }
