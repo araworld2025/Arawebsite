@@ -81,7 +81,7 @@ type NewsletterSubmitButtonProps = React.ComponentProps<"button"> & {
 
 export function NewsletterSubmitButton({ children, tone = "default", className = "", ...props }: NewsletterSubmitButtonProps) {
   const labelColor = tone === "success" ? "text-[#00a193]" : "text-[#7f694f]";
-  const grip = "shrink-0 font-['DM_Sans:Medium',sans-serif] font-medium tracking-[1.62px] text-[#dfdac9] [font-variation-settings:'opsz'_14]";
+  const grip = "shrink-0 font-['DM_Sans:Medium',sans-serif] font-medium tracking-[var(--ara-tracking-grip)] text-[#dfdac9] [font-variation-settings:'opsz'_14]";
   return (
     <button
       {...props}
@@ -89,7 +89,7 @@ export function NewsletterSubmitButton({ children, tone = "default", className =
     >
       <div className="flex w-full items-center justify-between whitespace-nowrap px-[24px] py-[30px] text-center text-[length:var(--ara-text-body-large)] leading-none [word-break:break-word]">
         <span aria-hidden className={grip}>::</span>
-        <span className={`shrink-0 font-['DM_Sans:SemiBold',sans-serif] font-semibold tracking-[0.36px] transition-colors [font-variation-settings:'opsz'_14] ${labelColor}`}>{children}</span>
+        <span className={`shrink-0 font-['DM_Sans:SemiBold',sans-serif] font-semibold tracking-[var(--ara-tracking-label)] transition-colors [font-variation-settings:'opsz'_14] ${labelColor}`}>{children}</span>
         <span aria-hidden className={grip}>::</span>
       </div>
     </button>

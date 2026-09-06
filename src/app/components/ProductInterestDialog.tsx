@@ -55,8 +55,8 @@ export function ProductInterestDialog() {
       <div className="flex max-h-[92vh] w-full max-w-[680px] flex-col overflow-y-auto rounded-2xl bg-white pt-[48px] shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="interest-title">
         <div className="mb-[16px] flex items-start justify-between gap-[16px] px-[24px]">
           <div className="min-w-0">
-            <p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[0.98px] text-[#00a193]">{featuredProduct.language} book</p>
-            <h2 id="interest-title" className="font-['DM_Sans:Bold',sans-serif] text-[length:var(--ara-text-heading-medium)] font-bold leading-none tracking-[-2.16px] text-[#2d251d]">{featuredProductStage.cta}</h2>
+            <p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[var(--ara-tracking-eyebrow)] text-[#00a193]">{featuredProduct.language} book</p>
+            <h2 id="interest-title" className="font-['DM_Sans:Bold',sans-serif] text-[length:var(--ara-text-heading-medium)] font-bold leading-none tracking-[var(--ara-tracking-heading-medium)] text-[#2d251d]">{featuredProductStage.cta}</h2>
             <p className="mt-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739]">{featuredProductStage.note}</p>
           </div>
           <button type="button" onClick={() => setOpen(false)} className="grid size-[48px] shrink-0 place-items-center rounded-full border border-[#dfdac9] font-['Inter:Regular',sans-serif] text-[length:var(--ara-text-heading-small)] leading-none" aria-label="Close">×</button>
