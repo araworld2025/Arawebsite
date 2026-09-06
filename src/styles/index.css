@@ -218,7 +218,7 @@ h6,
    right-heavy even when the image bounds are mathematically centered. */
 .ara-hero-child-figure {
   animation: ara-hero-boy-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 0.6s;
+  animation-delay: 0.15s;
   isolation: isolate;
   transform:
     translateY(var(--ara-hero-boy-rise, 0px))
@@ -235,7 +235,7 @@ h6,
 
 .ara-hero-circle {
   animation: ara-hero-circle-in 0.72s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  animation-delay: 0.15s;
+  animation-delay: 0.75s;
   transform:
     translate(
       calc(var(--ara-hero-circle-x-offset) / var(--ara-hero-visual-scale)),

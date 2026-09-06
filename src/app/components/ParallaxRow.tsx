@@ -14,12 +14,13 @@ import { useEffect, useRef, type ReactNode } from "react";
  */
 
 // How far below its resting spot each child begins, in pixels.
-const MAX_OFFSET = 140;
+const MAX_OFFSET = 240;
 
 // Scroll progress (0 = row centre at viewport bottom, 1 = at viewport middle)
 // at which each child has fully arrived. Earlier index → arrives sooner, so the
 // left-most card leads and the last one lands exactly at the halfway point.
-const FINISH_POINTS = [0.45, 0.63, 0.81, 1];
+// Wider gaps between values = looser stagger between cards.
+const FINISH_POINTS = [0.28, 0.52, 0.76, 1];
 
 export function ParallaxRow({
   children,

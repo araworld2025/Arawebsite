@@ -16,9 +16,9 @@ import { ChevronDown } from "lucide-react";
  *
  * Interaction: text rests at 80% with no fill; hovering washes the row with a
  * very light pale brown (#dfdac9 at 40%) while the text holds at 80%; clicking
- * in (focus) lifts the text to 100% and keeps the same pale wash. Focus draws a
- * teal ring as an inset box-shadow, painted inside the field's own box so it
- * shows on every side and is never cropped by the card's clipping edge.
+ * in (focus) lifts the text to 100% and keeps the same pale wash. Focus reveals
+ * a single rounded teal ring (see FieldRow) that reads clearly around the field
+ * and is never cropped by the card's clipping edge.
  */
 
 type FieldAlign = "center" | "left";
@@ -29,17 +29,23 @@ function fieldClass(align: FieldAlign) {
     align === "left" ? "text-left" : "text-center",
     "placeholder:text-[#554739]",
     "hover:bg-[#dfdac9]/40 focus:bg-[#dfdac9]/40 focus:opacity-100",
-    "focus:shadow-[inset_0_0_0_2px_#00a193]",
+    "focus:outline-none focus-visible:outline-none",
     "disabled:cursor-not-allowed disabled:opacity-60",
   ].join(" ");
 }
 
-/** Row wrapper that draws the shared dashed top/bottom divider. */
+/**
+ * Row wrapper that draws the shared dashed top/bottom divider plus, on focus,
+ * a single rounded teal ring set a little inside the row. The ring is an
+ * overlay inside the field, so it shows fully on every side with rounded
+ * corners and is never cropped by the card's clipping edge.
+ */
 function FieldRow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative w-full bg-white">
+    <div className="group/field relative w-full bg-white">
       {children}
       <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9]" />
+      <div aria-hidden className="pointer-events-none absolute inset-[10px] rounded-[12px] border-2 border-[#00a193] opacity-0 transition-opacity group-focus-within/field:opacity-100" />
     </div>
   );
 }
