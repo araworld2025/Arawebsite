@@ -2,40 +2,58 @@
   "pointAndEdit": {
     "priorityPaths": {
       "prefer": [
-        "src/imports/**/*.{tsx,ts}",
-        "src/app/components/*.{tsx,ts}",
-        "src/app/App.tsx"
+        "src/app/App.tsx",
+        "src/imports/Frame13640/index.tsx",
+        "src/imports/Frame13641/index.tsx",
+        "src/app/components/EditableFrame50.tsx",
+        "src/app/components/EditableFrame63.tsx",
+        "src/app/components/EditableFrame68.tsx",
+        "src/app/components/EditableFrame70.tsx",
+        "src/app/components/HeroParticleField.tsx",
+        "src/app/components/InteractiveCard.tsx",
+        "src/app/components/InteractiveLanding.tsx",
+        "src/app/components/NewsletterForm.tsx",
+        "src/app/components/ProductInterestDialog.tsx",
+        "src/app/components/ResponsiveWrapper.tsx",
+        "src/app/components/ScrollAnimations.tsx",
+        "src/app/components/EnhancedCarousel.tsx",
+        "src/config/featuredProduct.ts",
+        "src/services/leads.ts"
       ],
       "deprioritize": [
-        "src/app/components/ui/**/*.{tsx,ts}",
-        "src/app/components/figma/**/*.{tsx,ts}",
-        "src/config/**",
-        "src/services/**"
+        "src/app/components/ui/**",
+        "src/app/components/figma/**",
+        "src/styles/**",
+        "src/imports/Frame13575.tsx"
       ],
       "exclude": [
         "src/imports/Frame13575.tsx",
         "src/imports/**/*.ts",
-        "src/styles/**",
         "src/assets/**",
-        "api/**",
-        "node_modules/**",
         ".figma/**",
+        "api/**",
         "public/**",
-        "dist/**",
-        "**/*.test.{ts,tsx}",
-        "**/*.spec.{ts,tsx}",
-        "vite.config.ts",
+        "images/**",
+        "guidelines/**",
+        "*.config.*",
+        "*.config.mjs",
         "postcss.config.mjs",
         "new-file.tsx"
       ]
     },
     "libraryPaths": {
       "local": [
-        "src/app/components/ui/**/*.{tsx,ts}"
+        "src/app/components/ui/**"
       ],
       "external": [
-        "node_modules/.pnpm/@radix-ui/**",
-        "node_modules/.pnpm/@mui/**"
+        "node_modules/@radix-ui/**",
+        "node_modules/@mui/material/**",
+        "node_modules/@mui/icons-material/**",
+        "node_modules/lucide-react/**",
+        "node_modules/sonner/**",
+        "node_modules/cmdk/**",
+        "node_modules/vaul/**",
+        "node_modules/embla-carousel-react/**"
       ]
     },
     "pathClassification": {
@@ -44,59 +62,47 @@
     "exclusions": [
       {
         "glob": "src/imports/Frame13575.tsx",
-        "reason": "This is the original Figma-exported source file that uses figma:asset/ imports not valid in production; the active rendering files are Frame13640 and Frame13641."
+        "reason": "Uses 'figma:asset/' protocol imports — this is the original Figma-generated source frame that was superseded by the rebuilt Frame13640/Frame13641 variants; it is not a live UI composition surface."
       },
       {
         "glob": "src/imports/**/*.ts",
-        "reason": "These are SVG path data files (svg-*.ts) that contain only static coordinate data, not renderable UI components."
-      },
-      {
-        "glob": "src/styles/**",
-        "reason": "CSS-only files with no renderable component logic; not valid source anchors for point-and-edit."
+        "reason": "SVG path data files (e.g. svg-4bw8vxn8mh.ts, svg-adpljy3te6.ts) are raw vector data constants, not UI components and not valid source anchors for point-and-edit."
       },
       {
         "glob": "src/assets/**",
-        "reason": "Static image assets; not source code and cannot be a point-and-edit anchor."
-      },
-      {
-        "glob": "api/**",
-        "reason": "PHP backend files; not part of the frontend UI and cannot be a source anchor."
-      },
-      {
-        "glob": "node_modules/**",
-        "reason": "Third-party package code; not editable project source."
+        "reason": "Static image assets — PNG files are not source anchors for UI-originated edits."
       },
       {
         "glob": ".figma/**",
-        "reason": "Figma Make tooling configuration and generated code-properties files; not UI source anchors."
+        "reason": "Figma Make tooling config, code-properties manifests, and environment files — infrastructure, not UI source."
+      },
+      {
+        "glob": "api/**",
+        "reason": "PHP backend files (leads.php, payment-webhook.php, bootstrap.php) are server-side only and do not participate in rendering UI."
       },
       {
         "glob": "public/**",
-        "reason": "Static public assets served directly; not renderable component source."
+        "reason": "Static public directory with .htaccess — not UI source."
       },
       {
-        "glob": "dist/**",
-        "reason": "Build output; not source."
+        "glob": "images/**",
+        "reason": "Static design reference images — not UI source."
       },
       {
-        "glob": "**/*.test.{ts,tsx}",
-        "reason": "Test files are not UI source anchors."
+        "glob": "guidelines/**",
+        "reason": "Documentation markdown — not UI source."
       },
       {
-        "glob": "**/*.spec.{ts,tsx}",
-        "reason": "Spec/test files are not UI source anchors."
-      },
-      {
-        "glob": "vite.config.ts",
-        "reason": "Build tooling configuration; not a UI source anchor."
+        "glob": "*.config.*",
+        "reason": "Build tooling configuration files (vite, tailwind, postcss) — not UI source anchors."
       },
       {
         "glob": "postcss.config.mjs",
-        "reason": "CSS post-processing configuration; not a UI source anchor."
+        "reason": "PostCSS build configuration — not a UI source anchor."
       },
       {
         "glob": "new-file.tsx",
-        "reason": "Root-level scratch/placeholder file not wired into the app render tree."
+        "reason": "Scratch/temporary file at repo root with no established role in the app render tree."
       }
     ],
     "generated": {
@@ -104,9 +110,9 @@
       "source": "setup-agent.point-and-edit-path-classifier",
       "prompt": "same-turn-setup-subagent-v5",
       "model": "claude-sonnet-4-6",
-      "createdAt": "2026-09-04T00:00:00.000Z",
-      "confidence": 0.91,
-      "explanation": "The repository has a clear single-app structure with well-separated Figma-generated layout files in src/imports/ as the primary rendering surface, app-specific composition components in src/app/components/, and a shadcn/ui library copy in src/app/components/ui/ — boundaries are unambiguous."
+      "createdAt": "2026-09-06T00:00:00.000Z",
+      "confidence": 0.92,
+      "explanation": "The repo has a clear single-app structure rooted at src/main.tsx → src/app/App.tsx, with two primary rendering surfaces (Frame13640 desktop and Frame13641 mobile) and a small set of named app-specific components, all of which are unambiguous UI composition targets; the shadcn/ui components in src/app/components/ui/ are a well-scoped local library bucket but should be deprioritized as source anchors since edits there affect all consumers."
     }
   }
 }

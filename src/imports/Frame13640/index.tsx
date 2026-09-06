@@ -369,13 +369,16 @@ const AFRICAN_COUNTRIES = [
   { code: "ZW", name: "Zimbabwe", flag: "🇿🇼" },
 ];
 
-function CountryTag({ name, flag }: { name: string; flag: string }) {
+function CountryTag({ code, name }: { code: string; name: string }) {
   return (
     <div className="content-stretch flex gap-[10px] h-full items-center px-[24px] relative shrink-0" data-name="country-tag">
       <div className="relative shrink-0 size-[36px] rounded-full overflow-hidden bg-gray-100 flex items-center justify-center" data-name="Component 1">
-        <span style={{ fontSize: "var(--ara-text-heading-small)", lineHeight: 1, display: "block", textAlign: "center" }} role="img" aria-label={name}>
-          {flag}
-        </span>
+        <img
+          src={`https://flagcdn.com/w160/${code.toLowerCase()}.png`}
+          alt={`${name} flag`}
+          loading="lazy"
+          className="absolute inset-0 size-full object-cover pointer-events-none"
+        />
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="text">
         <p className="[word-break:break-word] font-['Montserrat:SemiBold',sans-serif] font-semibold leading-[27px] relative shrink-0 text-[#344054] text-[length:var(--ara-text-lead)] whitespace-nowrap">{name}</p>
@@ -388,7 +391,7 @@ function FlagStack() {
   return (
     <div className="content-stretch flex gap-[4px] h-[101px] items-center relative shrink-0 w-max" data-name="flag-stack">
       {AFRICAN_COUNTRIES.map((country) => (
-        <CountryTag key={country.code} name={country.name} flag={country.flag} />
+        <CountryTag key={country.code} code={country.code} name={country.name} />
       ))}
     </div>
   );
@@ -643,11 +646,6 @@ function Group20() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1">
       <Frame />
-      <div className="col-1 ml-[213px] mt-[52.88px] relative row-1 size-[12px]">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-          <circle cx="6" cy="6" fill="var(--fill-0, #FD9E11)" id="Ellipse 45" r="6" />
-        </svg>
-      </div>
     </div>
   );
 }
