@@ -11,3 +11,4 @@ export {
 export { EnhancedCarousel } from "./EnhancedCarousel";
 export { NewsletterForm } from "./NewsletterForm";
 export { InteractiveLanding } from "./InteractiveLanding";
+export { ParallaxRow } from "./ParallaxRow";

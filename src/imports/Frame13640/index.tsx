@@ -8,6 +8,8 @@ import childReading from "../../assets/child-reading.png";
 import kidsReading from "../../assets/kids-reading.png";
 import { activateFeaturedProduct, featuredProductStage } from "@/config/featuredProduct";
 import { submitLead } from "@/services/leads";
+import { AraButton } from "@/app/components/site/AraButton";
+import { ParallaxRow } from "@/app/components/ParallaxRow";
 import { HeroParticleField } from "@/app/components/HeroParticleField";
 import { HeroHeadline } from "@/app/components/HeroHeadline";
 import { AFRICAN_COUNTRIES } from "@/data/countries";
@@ -134,20 +136,9 @@ function Frame2() {
 
 function Frame7() {
   return (
-    <button type="button" onClick={activateFeaturedProduct} className="ara-hero-cta relative rounded-[11px] shadow-[0px_2.5px_0px_0px_#006057] shrink-0 w-full cursor-pointer">
-      <div aria-hidden className="absolute bg-[#00a193] inset-0 pointer-events-none rounded-[11px]" />
-      <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-center px-[43px] py-[23px] relative size-full">
-          <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative shrink-0 text-[length:var(--ara-text-lead)] text-center text-white whitespace-nowrap">{featuredProductStage.cta}</p>
-          <div className="flex h-[30px] items-center justify-center relative shrink-0 w-[27px]">
-            <div className="flex-none rotate-90">
-              <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] not-italic relative text-[length:var(--ara-text-lead)] text-center text-white whitespace-nowrap">{`-->`}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_4px_0px_0px_rgba(255,255,255,0.25)]" />
-    </button>
+    <AraButton color="teal" onClick={activateFeaturedProduct} className="ara-hero-cta w-full">
+      {featuredProductStage.cta}
+    </AraButton>
   );
 }
 
@@ -527,19 +518,19 @@ function Frame13() {
 
 function Frame12() {
   return (
-    <div className="content-stretch flex gap-[20px] items-start justify-center relative shrink-0 w-full">
+    <ParallaxRow className="content-stretch flex gap-[20px] items-start justify-center relative shrink-0 w-full">
       <Frame9 />
       <Frame10 />
       <Frame11 />
       <Frame13 />
-    </div>
+    </ParallaxRow>
   );
 }
 
 function Frame51() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at time</span><span className="text-[#ffbb1d]">.</span></p>
+      <p data-noreveal className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at time</span><span className="text-[#ffbb1d]">.</span></p>
       <Frame12 />
     </div>
   );
@@ -585,12 +576,9 @@ function TopSection() {
 
 function Frame() {
   return (
-    <button type="button" onClick={activateFeaturedProduct} className="col-1 content-stretch flex gap-[10px] items-center justify-center max-w-[396px] ml-0 mt-0 px-[43px] py-[23px] relative rounded-[12px] row-1 cursor-pointer">
-      <div aria-hidden className="absolute bg-[#0abded] inset-0 pointer-events-none rounded-[12px]" />
-      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-white whitespace-nowrap">{featuredProductStage.cta}</p>
-      <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] not-italic relative shrink-0 text-[length:var(--ara-text-body)] text-white whitespace-nowrap">{`>`}</p>
-      <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-4px_0px_0px_rgba(0,0,0,0.25),inset_0px_2px_0px_0px_rgba(255,255,255,0.5)]" />
-    </button>
+    <AraButton color="blue" onClick={activateFeaturedProduct} className="col-1 max-w-[396px] ml-0 mt-0 row-1">
+      {featuredProductStage.cta}
+    </AraButton>
   );
 }
 

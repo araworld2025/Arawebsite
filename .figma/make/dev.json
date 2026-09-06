@@ -3,58 +3,37 @@
     "priorityPaths": {
       "prefer": [
         "src/app/App.tsx",
+        "src/app/components/*.tsx",
+        "src/app/components/site/*.tsx",
         "src/imports/Frame13640/index.tsx",
-        "src/imports/Frame13641/index.tsx",
-        "src/app/components/EditableFrame50.tsx",
-        "src/app/components/EditableFrame63.tsx",
-        "src/app/components/EditableFrame68.tsx",
-        "src/app/components/EditableFrame70.tsx",
-        "src/app/components/HeroParticleField.tsx",
-        "src/app/components/InteractiveCard.tsx",
-        "src/app/components/InteractiveLanding.tsx",
-        "src/app/components/NewsletterForm.tsx",
-        "src/app/components/ProductInterestDialog.tsx",
-        "src/app/components/ResponsiveWrapper.tsx",
-        "src/app/components/ScrollAnimations.tsx",
-        "src/app/components/EnhancedCarousel.tsx",
-        "src/config/featuredProduct.ts",
-        "src/services/leads.ts"
+        "src/imports/Frame13641/index.tsx"
       ],
       "deprioritize": [
-        "src/app/components/ui/**",
-        "src/app/components/figma/**",
-        "src/styles/**",
-        "src/imports/Frame13575.tsx"
+        "src/app/components/ui/**/*.tsx",
+        "src/app/components/ui/**/*.ts",
+        "src/config/**",
+        "src/services/**",
+        "src/data/**",
+        "src/styles/**"
       ],
       "exclude": [
         "src/imports/Frame13575.tsx",
         "src/imports/**/*.ts",
+        "src/app/components/figma/**",
         "src/assets/**",
-        ".figma/**",
-        "api/**",
         "public/**",
+        "api/**",
+        ".github/**",
         "images/**",
-        "guidelines/**",
-        "*.config.*",
-        "*.config.mjs",
-        "postcss.config.mjs",
-        "new-file.tsx"
+        "guidelines/**"
       ]
     },
     "libraryPaths": {
       "local": [
-        "src/app/components/ui/**"
+        "src/app/components/ui/**/*.tsx",
+        "src/app/components/ui/**/*.ts"
       ],
-      "external": [
-        "node_modules/@radix-ui/**",
-        "node_modules/@mui/material/**",
-        "node_modules/@mui/icons-material/**",
-        "node_modules/lucide-react/**",
-        "node_modules/sonner/**",
-        "node_modules/cmdk/**",
-        "node_modules/vaul/**",
-        "node_modules/embla-carousel-react/**"
-      ]
+      "external": []
     },
     "pathClassification": {
       "classifier": "sonnet"
@@ -62,47 +41,39 @@
     "exclusions": [
       {
         "glob": "src/imports/Frame13575.tsx",
-        "reason": "Uses 'figma:asset/' protocol imports — this is the original Figma-generated source frame that was superseded by the rebuilt Frame13640/Frame13641 variants; it is not a live UI composition surface."
+        "reason": "This file uses figma:asset/ import syntax and is a Figma-generated source file, not an editable app UI anchor."
       },
       {
         "glob": "src/imports/**/*.ts",
-        "reason": "SVG path data files (e.g. svg-4bw8vxn8mh.ts, svg-adpljy3te6.ts) are raw vector data constants, not UI components and not valid source anchors for point-and-edit."
+        "reason": "SVG path data modules (e.g. svg-4bw8vxn8mh.ts, svg-adpljy3te6.ts) are generated data files with no UI rendering of their own."
+      },
+      {
+        "glob": "src/app/components/figma/**",
+        "reason": "Figma-specific utility subfolder containing infrastructure helpers (ImageWithFallback) that are not UI composition surfaces intended as point-and-edit targets."
       },
       {
         "glob": "src/assets/**",
-        "reason": "Static image assets — PNG files are not source anchors for UI-originated edits."
-      },
-      {
-        "glob": ".figma/**",
-        "reason": "Figma Make tooling config, code-properties manifests, and environment files — infrastructure, not UI source."
-      },
-      {
-        "glob": "api/**",
-        "reason": "PHP backend files (leads.php, payment-webhook.php, bootstrap.php) are server-side only and do not participate in rendering UI."
+        "reason": "Static image assets; not source code and cannot be a UI edit anchor."
       },
       {
         "glob": "public/**",
-        "reason": "Static public directory with .htaccess — not UI source."
+        "reason": "Static public directory; not UI source code."
+      },
+      {
+        "glob": "api/**",
+        "reason": "Backend PHP files; not part of the frontend UI at all."
+      },
+      {
+        "glob": ".github/**",
+        "reason": "CI/deployment workflow configuration; not UI source."
       },
       {
         "glob": "images/**",
-        "reason": "Static design reference images — not UI source."
+        "reason": "Static image reference files; not UI source code."
       },
       {
         "glob": "guidelines/**",
-        "reason": "Documentation markdown — not UI source."
-      },
-      {
-        "glob": "*.config.*",
-        "reason": "Build tooling configuration files (vite, tailwind, postcss) — not UI source anchors."
-      },
-      {
-        "glob": "postcss.config.mjs",
-        "reason": "PostCSS build configuration — not a UI source anchor."
-      },
-      {
-        "glob": "new-file.tsx",
-        "reason": "Scratch/temporary file at repo root with no established role in the app render tree."
+        "reason": "Documentation/guidelines markdown; not UI source code."
       }
     ],
     "generated": {
@@ -111,8 +82,8 @@
       "prompt": "same-turn-setup-subagent-v5",
       "model": "claude-sonnet-4-6",
       "createdAt": "2026-09-06T00:00:00.000Z",
-      "confidence": 0.92,
-      "explanation": "The repo has a clear single-app structure rooted at src/main.tsx → src/app/App.tsx, with two primary rendering surfaces (Frame13640 desktop and Frame13641 mobile) and a small set of named app-specific components, all of which are unambiguous UI composition targets; the shadcn/ui components in src/app/components/ui/ are a well-scoped local library bucket but should be deprioritized as source anchors since edits there affect all consumers."
+      "confidence": 0.88,
+      "explanation": "The repository has a clear single-page React app structure with well-separated rendering surfaces (App.tsx, Frame13640/index.tsx for desktop, Frame13641/index.tsx for mobile, and named app components), a local shadcn-based UI library under components/ui/, and several clearly non-UI paths (api/, assets, generated SVG data modules, and the Figma-asset-referencing Frame13575.tsx); confidence is slightly below 1.0 because Frame13575.tsx's role as a prior Figma canvas file vs. an active rendering path required inference from import syntax rather than explicit project documentation."
     }
   }
 }
