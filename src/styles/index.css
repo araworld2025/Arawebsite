@@ -217,12 +217,16 @@ h6,
 /* The source PNG includes a wide left-hand shadow, so its visible subject is
    right-heavy even when the image bounds are mathematically centered. */
 .ara-hero-child-figure {
+  animation: ara-hero-boy-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.6s;
   isolation: isolate;
   transform:
+    translateY(var(--ara-hero-boy-rise, 0px))
     translateX(calc(-42px + var(--ara-hero-boy-x-offset) / var(--ara-hero-visual-scale)))
     translateY(calc(var(--ara-hero-boy-y-offset) / var(--ara-hero-visual-scale)))
     scale(calc(var(--ara-hero-boy-calibration) * var(--ara-hero-subject-group-calibration)));
   transform-origin: center bottom;
+  will-change: transform, opacity;
 }
 
 .ara-hero-child-figure > img {
@@ -230,13 +234,16 @@ h6,
 }
 
 .ara-hero-circle {
+  animation: ara-hero-circle-in 0.72s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.15s;
   transform:
     translate(
       calc(var(--ara-hero-circle-x-offset) / var(--ara-hero-visual-scale)),
       calc(var(--ara-hero-circle-y-offset) / var(--ara-hero-visual-scale))
     )
-    scale(calc(var(--ara-hero-circle-calibration) * var(--ara-hero-subject-group-calibration)));
+    scale(calc(var(--ara-hero-circle-calibration) * var(--ara-hero-subject-group-calibration) * var(--ara-hero-circle-intro-scale, 1)));
   transform-origin: center;
+  will-change: transform, opacity;
 }
 
 .ara-hero-circle > svg {
@@ -340,6 +347,99 @@ h6,
   }
 }
 
+/* --- Hero intro orchestration ---------------------------------------------
+   The opening plays as a sequence on load: the circle pops in, the boy floats
+   up from below, then the particles rise (see HeroParticleField), followed by
+   the headline breezing in character by character, the subcopy, and the CTA.
+   Registering the transform inputs as typed custom properties lets us tween
+   them inside keyframes without clobbering each element's positioning
+   transform. */
+@property --ara-hero-circle-intro-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --ara-hero-boy-rise {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@keyframes ara-hero-circle-in {
+  from {
+    --ara-hero-circle-intro-scale: 0.4;
+    opacity: 0;
+  }
+  to {
+    --ara-hero-circle-intro-scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes ara-hero-boy-in {
+  from {
+    --ara-hero-boy-rise: 56px;
+    opacity: 0;
+  }
+  to {
+    --ara-hero-boy-rise: 0px;
+    opacity: 1;
+  }
+}
+
+/* Headline: split into per-character spans (HeroHeadline) that fade in one at a
+   time, following the natural reading order down each line. */
+.ara-hero-headline-line {
+  display: block;
+}
+
+.ara-hero-headline-char {
+  animation: ara-hero-char-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(1.25s + var(--ara-hero-char-index, 0) * 0.028s);
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes ara-hero-char-in {
+  from {
+    filter: blur(4px);
+    opacity: 0;
+    transform: translateY(0.32em);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subcopy and CTA follow the headline, each rising in as a single line. The
+   subcopy delay lands just after the last headline character settles. */
+.ara-hero-subcopy {
+  animation: ara-hero-line-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 2.35s;
+  will-change: transform, opacity;
+}
+
+.ara-hero-cta-reveal {
+  animation: ara-hero-line-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 2.85s;
+  will-change: transform, opacity;
+}
+
+@keyframes ara-hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes ara-particle-flight {
   0% {
     opacity: 0;
@@ -363,6 +463,80 @@ h6,
   100% {
     opacity: 0;
     transform: translate3d(var(--particle-x4), var(--particle-y4), 0) rotate(var(--particle-r4)) scale(0.86);
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Scroll-triggered section reveals (ScrollReveal components)
+ * Shares the hero's language, but each element animates the first time
+ * it scrolls into view (`.is-revealed`) rather than once on load.
+ * ------------------------------------------------------------------ */
+
+/* Headers: split into per-character spans that breeze in one at a time,
+   following the natural reading order. Words wrap as whole units. */
+.ara-reveal-word {
+  display: inline-block;
+}
+
+.ara-reveal-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.32em);
+  filter: blur(4px);
+  white-space: pre;
+  will-change: transform, opacity, filter;
+}
+
+.ara-reveal-headline.is-revealed .ara-reveal-char {
+  animation: ara-hero-char-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--ara-reveal-char-index, 0) * var(--ara-reveal-char-stagger, 0.028s));
+}
+
+/* Subtitles and bullets: rise in one visual line at a time. The line index
+   is measured at runtime so the stagger tracks real wrapping. */
+.ara-reveal-text .ara-reveal-word {
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: transform, opacity;
+}
+
+.ara-reveal-text.is-revealed .ara-reveal-word {
+  animation: ara-hero-line-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--ara-reveal-line-index, 0) * var(--ara-reveal-line-stagger, 0.12s));
+}
+
+/* Images: fade and lift into view as their section reveals. */
+.ara-reveal-image {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  will-change: transform, opacity;
+}
+
+.ara-reveal-image.is-revealed {
+  animation: ara-reveal-image-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--ara-reveal-image-delay, 0s);
+}
+
+@keyframes ara-reveal-image-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reduced motion: skip the reveal entirely, show the final state. */
+@media (prefers-reduced-motion: reduce) {
+  .ara-reveal-char,
+  .ara-reveal-text .ara-reveal-word,
+  .ara-reveal-image {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
 }
 
@@ -445,5 +619,16 @@ h6,
 
   .ara-hero-origin-particle {
     animation: none;
+  }
+
+  /* Skip the intro sequence entirely; show every element in its final state. */
+  .ara-hero-circle,
+  .ara-hero-child-figure,
+  .ara-hero-headline-char,
+  .ara-hero-subcopy,
+  .ara-hero-cta-reveal {
+    animation: none;
+    filter: none;
+    opacity: 1;
   }
 }

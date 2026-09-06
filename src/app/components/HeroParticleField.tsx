@@ -163,6 +163,11 @@ function ParticleGlyph({ glyph }: { glyph: ParticleGlyphName }) {
   }
 }
 
+// Hold the particles until the boy has floated into place, so they read as
+// rising out of the book once he lands rather than on first paint. Kept in sync
+// with the boy's intro timing in index.css (.ara-hero-child-figure).
+const PARTICLE_INTRO_DELAY_MS = 1200;
+
 export function HeroParticleField() {
   const fieldRef = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
@@ -171,13 +176,25 @@ export function HeroParticleField() {
     const field = fieldRef.current;
     if (!field) return;
 
+    let introTimer: ReturnType<typeof setTimeout> | undefined;
+
     const observer = new IntersectionObserver(
-      ([entry]) => setIsActive(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          introTimer = setTimeout(() => setIsActive(true), PARTICLE_INTRO_DELAY_MS);
+        } else {
+          if (introTimer) clearTimeout(introTimer);
+          setIsActive(false);
+        }
+      },
       { rootMargin: "120px 0px", threshold: 0.05 },
     );
 
     observer.observe(field);
-    return () => observer.disconnect();
+    return () => {
+      if (introTimer) clearTimeout(introTimer);
+      observer.disconnect();
+    };
   }, []);
 
   return (

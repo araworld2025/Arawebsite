@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from "motion/react";
 import DesktopFrame from "@/imports/Frame13640/index";
 import MobileFrame from "@/imports/Frame13641/index";
 import { ProductInterestDialog } from "@/app/components/ProductInterestDialog";
+import { SectionReveal } from "@/app/components/ScrollReveal";
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,6 +42,9 @@ export default function App() {
 
   return (
     <div ref={scrollContainerRef} className="ara-page-scroll size-full bg-white overflow-x-hidden overflow-y-auto">
+      {/* Progressive character/line/image reveals as each section scrolls in */}
+      <SectionReveal />
+
       {/* Scroll progress bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00a193] via-[#fd9e11] to-[#00a193] z-[100] origin-left"
