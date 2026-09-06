@@ -518,7 +518,10 @@ function Frame13() {
 
 function Frame12() {
   return (
-    <ParallaxRow className="content-stretch flex gap-[20px] items-start justify-center relative shrink-0 w-full">
+    <ParallaxRow
+      className="content-stretch flex gap-[20px] items-start justify-center relative shrink-0 w-full"
+      itemClassName="flex min-w-px shrink"
+    >
       <Frame9 />
       <Frame10 />
       <Frame11 />
