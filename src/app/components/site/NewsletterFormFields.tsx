@@ -29,17 +29,22 @@ function fieldClass(align: FieldAlign) {
     align === "left" ? "text-left" : "text-center",
     "placeholder:text-[#554739]",
     "hover:bg-[#dfdac9]/40 focus:bg-[#dfdac9]/40 focus:opacity-100",
-    "focus:[outline:2px_solid_#00a193] focus:[outline-offset:-6px]",
     "disabled:cursor-not-allowed disabled:opacity-60",
   ].join(" ");
 }
 
-/** Row wrapper that draws the shared dashed top/bottom divider. */
+/**
+ * Row wrapper that draws the shared dashed top/bottom divider plus, on focus,
+ * a teal ring inset just inside the row. Drawing the ring as an overlay (rather
+ * than a browser outline) keeps it fully within the card, so its left and right
+ * sides are never cropped by the card's scrolling, rounded edge.
+ */
 function FieldRow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative w-full bg-white">
+    <div className="group/field relative w-full bg-white">
       {children}
       <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9]" />
+      <div aria-hidden className="pointer-events-none absolute inset-[6px] rounded-[8px] border-2 border-[#00a193] opacity-0 transition-opacity group-focus-within/field:opacity-100" />
     </div>
   );
 }
