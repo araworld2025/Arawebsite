@@ -1,11 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { PRODUCT_CTA_EVENT, featuredProduct, featuredProductStage } from "@/config/featuredProduct";
 import { childAgeRanges, countries, desiredLanguages, submitLead } from "@/services/leads";
-
-// Shared style for each edge-to-edge form row (input / select) — a hairline
-// divider underneath, transparent fill, and the prompt shown as placeholder text.
-const rowClass =
-  "block w-full border-b border-[#dfdac9] bg-transparent px-[24px] py-[20px] font-['DM_Sans:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739] outline-none placeholder:text-[#554739] focus:bg-[#faf8f2] disabled:cursor-not-allowed disabled:opacity-60";
+import { NewsletterField, NewsletterSelectField, NewsletterSubmitButton } from "@/app/components/site/NewsletterFormFields";
 
 export function ProductInterestDialog() {
   const [open, setOpen] = useState(false);
@@ -67,24 +63,18 @@ export function ProductInterestDialog() {
         </div>
         {status === "success" ? <div className="mx-[24px] mb-[24px] rounded-xl bg-[#eaf8f5] p-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#006057]" role="status">{message}</div> : (
           <form onSubmit={handleSubmit}>
-            <div className="border-t border-[#dfdac9]">
-              <input required name="email" type="email" autoComplete="email" aria-label="Email address" placeholder="Type your email address here" className={rowClass} />
-              <select required name="residenceCountry" defaultValue="" aria-label="Country of residence" className={rowClass}><option value="" disabled>What&apos;s your Country of Residence</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</select>
-              <select required name="desiredLanguage" value={language} onChange={e => setLanguage(e.target.value)} aria-label="Language you want for your child" className={rowClass}>{desiredLanguages.map(item => <option key={item}>{item}</option>)}</select>
-              {language === "Other" && <input required name="otherLanguage" aria-label="Which language?" placeholder="Which language?" className={rowClass} />}
-              <select required name="childAgeRange" defaultValue="" aria-label="Child age range" className={rowClass}><option value="" disabled>What&apos;s your Child age range</option>{childAgeRanges.map(item => <option key={item}>{item}</option>)}</select>
-            </div>
+            <NewsletterField required name="email" type="email" autoComplete="email" aria-label="Email address" placeholder="Type your email address here" />
+            <NewsletterSelectField required name="residenceCountry" defaultValue="" aria-label="Country of residence"><option value="" disabled>What&apos;s your Country of Residence</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</NewsletterSelectField>
+            <NewsletterSelectField required name="desiredLanguage" value={language} onChange={e => setLanguage(e.target.value)} aria-label="Language you want for your child">{desiredLanguages.map(item => <option key={item}>{item}</option>)}</NewsletterSelectField>
+            {language === "Other" && <NewsletterField required name="otherLanguage" aria-label="Which language?" placeholder="Which language?" />}
+            <NewsletterSelectField required name="childAgeRange" defaultValue="" aria-label="Child age range"><option value="" disabled>What&apos;s your Child age range</option>{childAgeRanges.map(item => <option key={item}>{item}</option>)}</NewsletterSelectField>
             <div className="flex flex-col gap-[8px] px-[24px] py-[16px]">
               <label className="flex items-start gap-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#554739]"><input name="newsletterConsent" type="checkbox" className="mt-[4px] size-[20px] accent-[#00a193]" /><span>Also send me Ara stories, resources and general updates. I can unsubscribe at any time.</span></label>
               <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive updates about this product. General Ara newsletters are sent only if you tick the optional box above.</p>
               {status === "error" && <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-red-700" role="alert">{message}</p>}
             </div>
             <input name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-            <button disabled={status === "submitting"} className="flex w-full items-center justify-between border-t border-dashed border-[#dfdac9] px-[24px] py-[30px] disabled:opacity-60">
-              <span aria-hidden className="font-['DM_Sans:Medium',sans-serif] text-[18px] font-medium leading-none tracking-[1.62px] text-[#dfdac9]">::</span>
-              <span className="font-['DM_Sans:SemiBold',sans-serif] text-[18px] font-semibold leading-none tracking-[0.36px] text-[#7f694f]">{status === "submitting" ? "Saving…" : featuredProductStage.cta}</span>
-              <span aria-hidden className="font-['DM_Sans:Medium',sans-serif] text-[18px] font-medium leading-none tracking-[1.62px] text-[#dfdac9]">::</span>
-            </button>
+            <NewsletterSubmitButton type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Saving…" : featuredProductStage.cta}</NewsletterSubmitButton>
           </form>
         )}
       </div>

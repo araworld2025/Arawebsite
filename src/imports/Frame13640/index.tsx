@@ -9,6 +9,7 @@ import kidsReading from "../../assets/kids-reading.png";
 import { activateFeaturedProduct, featuredProductStage } from "@/config/featuredProduct";
 import { submitLead } from "@/services/leads";
 import { AraButton } from "@/app/components/site/AraButton";
+import { NewsletterField, NewsletterSubmitButton } from "@/app/components/site/NewsletterFormFields";
 import { ParallaxRow } from "@/app/components/ParallaxRow";
 import { HeroParticleField } from "@/app/components/HeroParticleField";
 import { HeroHeadline } from "@/app/components/HeroHeadline";
@@ -1137,37 +1138,21 @@ function Frame19() {
       <div className="content-stretch flex flex-col isolate items-center justify-center max-w-[inherit] overflow-clip relative rounded-[inherit] size-full">
         <Frame20 />
         {/* Email input row */}
-        <div className="bg-white relative shrink-0 w-full z-[2]">
-          <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
-            <div className="content-stretch flex items-center px-[36px] py-[24px] relative size-full">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
-                placeholder="Type your email address here"
-                className="font-['DM_Sans:Regular',sans-serif] font-normal leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-body-large)] text-center w-full bg-transparent border-none outline-none placeholder:opacity-40 placeholder:text-[#554739]"
-                style={{ fontVariationSettings: '"opsz" 14' }}
-              />
-            </div>
-          </div>
-          <div aria-hidden className="absolute border-[#dfdac9] border-b border-dashed border-t inset-[-1px_0] pointer-events-none" />
+        <div className="relative w-full z-[2]">
+          <NewsletterField
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
+            placeholder="Type your email address here"
+          />
         </div>
         {/* Subscribe button row */}
-        <button
-          onClick={handleSubscribe}
-          className="bg-white relative shrink-0 w-full z-[1] cursor-pointer hover:bg-[#fdfaf5] transition-colors"
-        >
-          <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-            <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-none px-[24px] py-[30px] relative size-full text-[length:var(--ara-text-body-large)] text-center whitespace-nowrap">
-              <p className="font-['DM_Sans:Medium',sans-serif] font-medium relative shrink-0 text-[#dfdac9] tracking-[1.62px]" style={{ fontVariationSettings: '"opsz" 14' }}>::</p>
-              <p className="font-['DM_Sans:SemiBold',sans-serif] font-semibold relative shrink-0 tracking-[0.36px] transition-colors" style={{ fontVariationSettings: '"opsz" 14', color: subscribed ? "#00a193" : "#7f694f" }}>
-                {subscribed ? "SUBSCRIBED ✓" : "SUBSCRIBE"}
-              </p>
-              <p className="font-['DM_Sans:Medium',sans-serif] font-medium relative shrink-0 text-[#dfdac9] tracking-[1.62px]" style={{ fontVariationSettings: '"opsz" 14' }}>::</p>
-            </div>
-          </div>
-        </button>
+        <div className="relative w-full z-[1]">
+          <NewsletterSubmitButton onClick={handleSubscribe} tone={subscribed ? "success" : "default"}>
+            {subscribed ? "SUBSCRIBED ✓" : "SUBSCRIBE"}
+          </NewsletterSubmitButton>
+        </div>
       </div>
       <div aria-hidden className="absolute border-2 border-[rgba(203,194,166,0.3)] border-solid inset-0 pointer-events-none rounded-[16px]" />
     </div>
