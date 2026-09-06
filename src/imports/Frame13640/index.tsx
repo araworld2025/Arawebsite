@@ -406,7 +406,7 @@ function Frame9() {
         <span className="leading-none">{`Partnering with `}</span>
         <span className="leading-none text-[#628506]">parents</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">We stand with families at home, making it simple to pass on language and heritage every day.</p>
     </div>
   );
 }
@@ -436,7 +436,7 @@ function Frame10() {
         <span className="leading-none text-[#e07100]">{`culturally grounded `}</span>
         <span className="leading-none">children</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Rooted in where they come from, children grow into their most confident selves - wherever life takes them.</p>
     </div>
   );
 }
@@ -475,7 +475,7 @@ function Frame11() {
         <span className="leading-none">{`Providing complete `}</span>
         <span className="leading-none text-[#058076]">learning resources</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">From books, to learning resources, to toys, to games and everything to engage a child we are bring</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">From books to toys, games, and more - everything your child needs to learn through play, all in one place.</p>
     </div>
   );
 }
@@ -512,7 +512,7 @@ function Frame13() {
         <span className="leading-none">{`Supporting early `}</span>
         <span className="leading-none text-[#f43e3c]">language development</span>
       </p>
-      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">Partnering with parents to raise children rooted in African language and heritage.</p>
+      <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] w-[min-content]">The earlier a child hears their mother tongue, the deeper it takes root - in stories, songs, and everyday play.</p>
     </div>
   );
 }
@@ -534,7 +534,7 @@ function Frame12() {
 function Frame51() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p data-noreveal className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at time</span><span className="text-[#ffbb1d]">.</span></p>
+      <p data-noreveal className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at a time</span><span className="text-[#ffbb1d]">.</span></p>
       <Frame12 />
     </div>
   );

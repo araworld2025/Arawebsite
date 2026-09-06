@@ -93,8 +93,13 @@ function particleStyle(particle: Particle, index: number): ParticleStyle {
   const farUpperBoundary = direction === 1 ? -310 : -270;
   const farLowerBoundary = direction === 1 ? -112 : -62;
 
+  // A small positive cascade so particles emerge one after another once the
+  // field activates. Negative delays would freeze each particle mid-flight
+  // while the animation is paused, making them visible before their turn.
+  const introDelay = 0.1 + (index % 10) * 0.16;
+
   return {
-    "--particle-delay": `${particle.delay}s`,
+    "--particle-delay": `${introDelay}s`,
     "--particle-duration": `${particle.duration * 0.82}s`,
     "--particle-height": `${metrics.height * renderedScale}px`,
     "--particle-width": `${metrics.width * renderedScale}px`,
@@ -163,10 +168,10 @@ function ParticleGlyph({ glyph }: { glyph: ParticleGlyphName }) {
   }
 }
 
-// Hold the particles until the boy has floated in and the circle has popped in
-// behind him, so they read as rising out of the book last rather than on first
-// paint. Kept in sync with the intro timing in index.css (boy, then circle).
-const PARTICLE_INTRO_DELAY_MS = 1600;
+// Particles are the final beat: hold them until the boy, the content, and the
+// circle have all played in, so they read as rising out of the book last rather
+// than on first paint. Kept in sync with the intro timing in index.css.
+const PARTICLE_INTRO_DELAY_MS = 3900;
 
 export function HeroParticleField() {
   const fieldRef = useRef<HTMLDivElement>(null);
