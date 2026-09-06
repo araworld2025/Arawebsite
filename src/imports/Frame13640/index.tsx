@@ -1135,7 +1135,7 @@ function Frame19() {
 
   return (
     <div className="bg-white max-w-[800px] relative rounded-[16px] shrink-0 w-full">
-      <div className="content-stretch flex flex-col isolate items-center justify-center max-w-[inherit] overflow-clip relative rounded-[inherit] size-full">
+      <div className="content-stretch flex flex-col isolate items-center justify-center max-w-[inherit] relative rounded-[inherit] size-full">
         <Frame20 />
         {/* Email input row */}
         <div className="relative w-full z-[2]">
@@ -1148,7 +1148,7 @@ function Frame19() {
           />
         </div>
         {/* Subscribe button row */}
-        <div className="relative w-full z-[1]">
+        <div className="relative w-full z-[1] overflow-hidden rounded-b-[16px]">
           <NewsletterSubmitButton onClick={handleSubscribe} tone={subscribed ? "success" : "default"}>
             {subscribed ? "SUBSCRIBED ✓" : "SUBSCRIBE"}
           </NewsletterSubmitButton>
