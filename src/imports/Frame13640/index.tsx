@@ -11,8 +11,10 @@ import { submitLead } from "@/services/leads";
 import { AraButton } from "@/app/components/site/AraButton";
 import { NewsletterField, NewsletterSubmitButton } from "@/app/components/site/NewsletterFormFields";
 import { ParallaxRow } from "@/app/components/ParallaxRow";
+import { ParallaxCard } from "@/app/components/ParallaxCard";
 import { HeroParticleField } from "@/app/components/HeroParticleField";
 import { HeroHeadline } from "@/app/components/HeroHeadline";
+import { ScrollRevealGroup, ScrollRevealItem } from "@/app/components/ScrollRevealList";
 import { AFRICAN_COUNTRIES } from "@/data/countries";
 import { Footer } from "@/app/components/site/Footer";
 const placeholderImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23e8e4dc'/%3E%3Cpath d='M0 640 300 360l190 180 170-140 540 400H0Z' fill='%23c9c2b5'/%3E%3Ccircle cx='850' cy='230' r='90' fill='%23d6cfc3'/%3E%3C/svg%3E";
@@ -49,7 +51,7 @@ function Group18() {
 
 function Frame2() {
   return (
-    <div className="ara-hero-visual relative shrink-0 z-[1]">
+    <div className="ara-hero-visual relative shrink-0 z-[1]" style={{ marginTop: 0, marginRight: 0, marginLeft: 0, marginBottom: "-170px" }}>
       <div className="ara-hero-visual-canvas absolute h-[507.911px] w-[417.339px]">
         <div className="ara-hero-circle absolute inset-[0_10.64%_37.76%_13.62%]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
@@ -147,7 +149,7 @@ function Frame8() {
   return (
     <div className="ara-hero-copy content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <HeroHeadline
-        className="ara-hero-headline [word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px] w-full whitespace-pre-wrap"
+        className="ara-hero-headline [word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[var(--ara-tracking-display)] w-full whitespace-pre-wrap"
         style={{ fontVariationSettings: '"opsz" 14' }}
         ariaLabel="Bring home closer to your child."
         lines={[
@@ -380,7 +382,7 @@ function Section1() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / partner">
         <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%-2.65px)] size-[75px] top-[calc(50%+2.5px)]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -402,7 +404,7 @@ function Frame9() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[var(--ara-tracking-heading-medium)] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Partnering with `}</span>
         <span className="leading-none text-[#628506]">parents</span>
       </p>
@@ -413,7 +415,7 @@ function Frame9() {
 
 function Frame10() {
   return (
-    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / bloosom">
         <div className="absolute left-0 size-[75px] top-[5px]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -431,7 +433,7 @@ function Frame10() {
           </svg>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[var(--ara-tracking-heading-medium)] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Raising confident, `}</span>
         <span className="leading-none text-[#e07100]">{`culturally grounded `}</span>
         <span className="leading-none">children</span>
@@ -443,7 +445,7 @@ function Frame10() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / star">
         <div className="absolute left-0 size-[75px] top-[5.01px]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -471,7 +473,7 @@ function Frame11() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[var(--ara-tracking-heading-medium)] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Providing complete `}</span>
         <span className="leading-none text-[#058076]">learning resources</span>
       </p>
@@ -482,7 +484,7 @@ function Frame11() {
 
 function Frame13() {
   return (
-    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-[33px] items-start min-w-px relative">
+    <div className="content-stretch flex grow-0 basis-auto w-[505px] flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start min-w-px relative">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / speech">
         <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%-2.5px)] size-[75px] top-[calc(50%+2.5px)]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 75 75">
@@ -508,7 +510,7 @@ function Frame13() {
           </div>
         </div>
       </div>
-      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[-2.16px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] tracking-[var(--ara-tracking-heading-medium)] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`Supporting early `}</span>
         <span className="leading-none text-[#f43e3c]">language development</span>
       </p>
@@ -534,7 +536,7 @@ function Frame12() {
 function Frame51() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
-      <p data-noreveal className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[-3.96px]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at a time</span><span className="text-[#ffbb1d]">.</span></p>
+      <p data-noreveal className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[var(--ara-tracking-display)]" style={{ fontVariationSettings: '"opsz" 14' }}><span>On a mission to bring home closer, one product at a time</span><span className="text-[#ffbb1d]">.</span></p>
       <Frame12 />
     </div>
   );
@@ -563,7 +565,7 @@ function Section2() {
 function Frame23() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex items-center justify-center left-[calc(50%+0.5px)] p-[10px] top-[-42px] w-[1437px]" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 1437 268' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(110.8 1.0836e-13 -1.7766e-13 46.656 690 338.09)'><stop stop-color='rgba(233,233,233,1)' offset='0'/><stop stop-color='rgba(255,255,255,0)' offset='0.66341'/></radialGradient></defs></svg>\")" }}>
-      <p className="ara-new-product-wordmark [word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-center tracking-[-14.8519px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="ara-new-product-wordmark [word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-center tracking-[var(--ara-tracking-wordmark)] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         New Product!
       </p>
     </div>
@@ -605,7 +607,7 @@ function Group21() {
 function Frame4() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[23px] items-start max-w-[400px] min-w-[340px] relative">
-      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[length:var(--ara-text-heading-xlarge)] tracking-[-3.48px] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[length:var(--ara-text-heading-xlarge)] tracking-[var(--ara-tracking-heading-xlarge)] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">{`My first 500 yoruba `}</span>
         <span className="leading-none text-[#0099cb]">Book</span>
       </p>
@@ -631,7 +633,7 @@ function Frame45() {
 function Frame40() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
-      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[-2.4px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[var(--ara-tracking-stat)] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none text-[length:var(--ara-text-heading-large)]">Flipcard</span>
         <span className="leading-none text-[#fd9e11] text-[length:var(--ara-text-heading-large)]">.</span>
       </p>
@@ -659,7 +661,7 @@ function Frame48() {
 function Frame43() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
-      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[-2.4px] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
+      <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[var(--ara-tracking-stat)] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none text-[length:var(--ara-text-heading-large)]">Poster</span>
         <span className="leading-none text-[#fd9e11] text-[length:var(--ara-text-heading-large)]">.</span>
       </p>
@@ -686,22 +688,25 @@ function Frame50() {
 
 function Frame39() {
   return (
-    <div className="content-center flex flex-wrap gap-[24px] items-center relative shrink-0 w-full">
-      <div className="bg-[#fcffe5] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
+    <ParallaxRow
+      className="content-center flex flex-wrap gap-[24px] items-center relative shrink-0 w-full"
+      itemClassName="flex flex-[1_0_0] min-w-[350px]"
+    >
+      <div className="bg-[#fcffe5] content-stretch flex gap-[11px] items-start overflow-clip relative rounded-[8px] w-full">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage97} />
         </div>
         <Frame48 />
         <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
-      <div className="bg-[#effefb] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
+      <div className="bg-[#effefb] content-stretch flex gap-[11px] items-start overflow-clip relative rounded-[8px] w-full">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage99} />
         </div>
         <Frame50 />
         <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
-    </div>
+    </ParallaxRow>
   );
 }
 
@@ -709,7 +714,7 @@ function Frame44() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="content-stretch flex flex-col gap-[17px] items-start px-[24px] relative size-full">
-        <p className="[word-break:break-word] font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] tracking-[0.98px] w-full">{`MORE ON THESE SERIES >>`}</p>
+        <p className="[word-break:break-word] font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] tracking-[var(--ara-tracking-eyebrow)] w-full">{`MORE ON THESE SERIES >>`}</p>
         <Frame39 />
       </div>
     </div>
@@ -732,11 +737,11 @@ function Wrapper() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="wrapper">
       <TopSection />
-      <div className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1240px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
+      <ParallaxCard className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1240px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
         <Frame45 />
         <Frame44 />
         <Frame1 />
-      </div>
+      </ParallaxCard>
     </div>
   );
 }
@@ -763,13 +768,17 @@ function Section3() {
 
 function Frame31() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-      <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[-3.96px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
-        {`Raise children who know where they come from`}
-        <span className="text-[#ffbb1d]">.</span>
-      </p>
-      <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-small)] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
-    </div>
+    <ScrollRevealGroup className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+      <ScrollRevealItem index={0} count={2}>
+        <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] tracking-[var(--ara-tracking-display)] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+          {`Raise children who know where they come from`}
+          <span className="text-[#ffbb1d]">.</span>
+        </p>
+      </ScrollRevealItem>
+      <ScrollRevealItem index={1} count={2}>
+        <p className="font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-small)] w-full">When children grow up hearing their mother tongue - in stories, songs, and play - they carry that home with them, wherever they go.</p>
+      </ScrollRevealItem>
+    </ScrollRevealGroup>
   );
 }
 
@@ -883,12 +892,20 @@ function Frame34() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <Frame26 />
-      <Frame28 />
-      <Frame32 />
-      <Frame34 />
-    </div>
+    <ScrollRevealGroup className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+      <ScrollRevealItem index={0} count={4}>
+        <Frame26 />
+      </ScrollRevealItem>
+      <ScrollRevealItem index={1} count={4}>
+        <Frame28 />
+      </ScrollRevealItem>
+      <ScrollRevealItem index={2} count={4}>
+        <Frame32 />
+      </ScrollRevealItem>
+      <ScrollRevealItem index={3} count={4}>
+        <Frame34 />
+      </ScrollRevealItem>
+    </ScrollRevealGroup>
   );
 }
 
@@ -940,7 +957,7 @@ function Frame3() {
 
 function Frame18() {
   return (
-    <div className="content-stretch flex flex-wrap gap-y-[17px] gap-x-[11px] items-center justify-center relative shrink-0 w-full">
+    <div data-reveal-sequence="after-heading" className="content-stretch flex flex-wrap gap-y-[17px] gap-x-[11px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[35px] items-center justify-center relative shrink-0 w-[34px]">
         <div className="flex-none rotate-90">
           <div className="h-[34px] relative w-[35px]">
@@ -1106,7 +1123,7 @@ function Frame20() {
     <div className="relative shrink-0 w-full z-[3]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[16px] md:px-[97px] relative size-full">
-          <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[-2.16px] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
+          <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[var(--ara-tracking-heading-medium)] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
             Connect with us to get a dooze of{" "}
             <span className="inline-flex h-[40.644px] overflow-clip relative align-middle w-[96px]" data-name="ara-logo-base"><LogoGroup1 /></span>{" "}
             to connect with your child
@@ -1135,7 +1152,7 @@ function Frame19() {
 
   return (
     <div className="bg-white max-w-[800px] relative rounded-[16px] shrink-0 w-full">
-      <div className="content-stretch flex flex-col isolate items-center justify-center max-w-[inherit] overflow-clip relative rounded-[inherit] size-full">
+      <div className="content-stretch flex flex-col isolate items-center justify-center max-w-[inherit] relative rounded-[inherit] size-full">
         <Frame20 />
         {/* Email input row */}
         <div className="relative w-full z-[2]">
@@ -1148,7 +1165,7 @@ function Frame19() {
           />
         </div>
         {/* Subscribe button row */}
-        <div className="relative w-full z-[1]">
+        <div className="relative w-full z-[1] overflow-hidden rounded-b-[16px]">
           <NewsletterSubmitButton onClick={handleSubscribe} tone={subscribed ? "success" : "default"}>
             {subscribed ? "SUBSCRIBED ✓" : "SUBSCRIBE"}
           </NewsletterSubmitButton>

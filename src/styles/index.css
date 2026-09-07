@@ -41,6 +41,20 @@
   --ara-type-action: var(--ara-text-lead);
   --ara-type-statement: var(--ara-text-heading-medium);
   --ara-type-display: var(--ara-text-display);
+
+  /* Letter-spacing (tracking) tokens — one per type role.
+     Defaults are the desktop values, so desktop tracking is unchanged. The
+     mobile/tablet blocks below tighten them proportionally so tracking tracks
+     the responsive font size. Every text element binds to one of these via
+     tracking-[var(--ara-tracking-*)]. */
+  --ara-tracking-display: -3.96px;         /* DM Sans Bold, display (54px) */
+  --ara-tracking-heading-xlarge: -3.48px;  /* DM Sans Black, xlarge (48px) */
+  --ara-tracking-heading-medium: -2.16px;  /* DM Sans Bold, medium (32px) */
+  --ara-tracking-stat: -2.4px;             /* DM Sans Black, stat numerals */
+  --ara-tracking-wordmark: -14.8519px;     /* backdrop "NEW" wordmark */
+  --ara-tracking-eyebrow: 0.98px;          /* Nunito SemiBold uppercase small */
+  --ara-tracking-label: 0.36px;            /* DM Sans SemiBold form label */
+  --ara-tracking-grip: 1.62px;             /* DM Sans Medium newsletter grip */
 }
 
 html {
@@ -69,6 +83,13 @@ select {
     --ara-text-heading-large: 32px;
     --ara-text-heading-xlarge: 40px;
     --ara-text-display: 40px;
+
+    /* Tracking scaled to the smaller mobile font sizes (same ratio as desktop). */
+    --ara-tracking-display: -2.93px;         /* 40px  */
+    --ara-tracking-heading-xlarge: -2.9px;   /* 40px  */
+    --ara-tracking-heading-medium: -1.62px;  /* 24px  */
+    --ara-tracking-stat: -1.6px;
+    --ara-tracking-wordmark: -8px;
   }
 }
 
@@ -77,6 +98,11 @@ select {
     --ara-text-heading-medium: 32px;
     --ara-text-heading-xlarge: 40px;
     --ara-text-display: 48px;
+
+    /* Tracking scaled to the tablet font sizes (same ratio as desktop).
+       heading-medium keeps its 32px size, so its tracking is left at default. */
+    --ara-tracking-display: -3.52px;         /* 48px  */
+    --ara-tracking-heading-xlarge: -2.9px;   /* 40px  */
   }
 }
 
@@ -396,7 +422,7 @@ h6,
 
 .ara-hero-headline-char {
   animation: ara-hero-char-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(0.95s + var(--ara-hero-char-index, 0) * 0.028s);
+  animation-delay: calc(0.5s + var(--ara-hero-char-index, 0) * 0.016s);
   display: inline-block;
   white-space: pre;
   will-change: transform, opacity, filter;
@@ -419,13 +445,13 @@ h6,
    subcopy delay lands just after the last headline character settles. */
 .ara-hero-subcopy {
   animation: ara-hero-line-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 2.0s;
+  animation-delay: 1.25s;
   will-change: transform, opacity;
 }
 
 .ara-hero-cta-reveal {
   animation: ara-hero-line-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 2.5s;
+  animation-delay: 1.6s;
   will-change: transform, opacity;
 }
 
@@ -502,7 +528,36 @@ h6,
 
 .ara-reveal-text.is-revealed .ara-reveal-word {
   animation: ara-hero-line-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--ara-reveal-line-index, 0) * var(--ara-reveal-line-stagger, 0.12s));
+  animation-delay: calc(var(--ara-reveal-line-delay, 0s) + var(--ara-reveal-line-index, 0) * var(--ara-reveal-line-stagger, 0.12s));
+}
+
+/* Bullet dots: rise in together with their bullet line's first line, so the
+   marker appears alongside the text instead of sitting there statically. */
+.ara-reveal-bullet {
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: transform, opacity;
+}
+
+.ara-reveal-bullet.is-revealed {
+  animation: ara-hero-line-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--ara-reveal-line-delay, 0s);
+}
+
+/* Citation ("Prof. Jim Cummins…"): fade in only — no rise/translation. */
+[data-reveal-sequence="after-heading"] .ara-reveal-text .ara-reveal-word,
+[data-reveal-sequence="after-heading"] .ara-reveal-bullet {
+  transform: none;
+}
+
+[data-reveal-sequence="after-heading"] .ara-reveal-text.is-revealed .ara-reveal-word,
+[data-reveal-sequence="after-heading"] .ara-reveal-bullet.is-revealed {
+  animation-name: ara-reveal-fade-in;
+}
+
+@keyframes ara-reveal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Images: fade and lift into view as their section reveals. */
@@ -532,6 +587,7 @@ h6,
 @media (prefers-reduced-motion: reduce) {
   .ara-reveal-char,
   .ara-reveal-text .ara-reveal-word,
+  .ara-reveal-bullet,
   .ara-reveal-image {
     animation: none !important;
     opacity: 1 !important;

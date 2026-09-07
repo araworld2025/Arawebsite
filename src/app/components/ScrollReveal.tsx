@@ -102,6 +102,44 @@ function splitWords(root: Node) {
   }
 }
 
+/** Find the bullet dot marker that sits alongside a bullet paragraph, so the
+ *  dot can be revealed in step with the paragraph's first line rather than
+ *  sitting there statically. Only matches real dot markers (an svg ellipse). */
+function findBulletMarker(p: HTMLElement): HTMLElement | null {
+  const row = p.parentElement;
+  if (!row) return null;
+  for (const child of Array.from(row.children)) {
+    if (child === p) continue;
+    if (child.querySelector("svg ellipse")) return child as HTMLElement;
+  }
+  return null;
+}
+
+// Character reveal timing (kept in sync with the .ara-reveal-headline rules in
+// index.css), used to work out when a heading finishes animating.
+const CHAR_STAGGER = 0.028;
+const CHAR_DURATION = 0.5;
+const SEQUENCE_BUFFER = 0.05;
+
+/** For an element flagged to reveal after its heading, find that heading (the
+ *  nearest preceding .ara-reveal-headline in a shared ancestor). */
+function findPrecedingHeadline(el: HTMLElement): HTMLElement | null {
+  let ancestor = el.parentElement;
+  for (let depth = 0; depth < 4 && ancestor; depth++) {
+    const headline = ancestor.querySelector<HTMLElement>(".ara-reveal-headline");
+    if (headline) return headline;
+    ancestor = ancestor.parentElement;
+  }
+  return null;
+}
+
+/** Seconds a character-split heading takes to fully animate in. */
+function headlineRevealDuration(headline: HTMLElement): number {
+  const chars = headline.querySelectorAll(".ara-reveal-char").length;
+  if (chars === 0) return 0;
+  return (chars - 1) * CHAR_STAGGER + CHAR_DURATION;
+}
+
 /** Group the already-split words by vertical offset and stamp each with its
  *  line index, so the stylesheet staggers real (post-wrap) lines. */
 function assignLineIndices(el: HTMLElement) {
@@ -127,7 +165,22 @@ export function SectionReveal() {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
         const el = entry.target as HTMLElement;
-        if (el.dataset.revealType === "text") assignLineIndices(el);
+        if (el.dataset.revealType === "text") {
+          assignLineIndices(el);
+          const marker = (el as HTMLElement & { _araBullet?: HTMLElement })._araBullet;
+          // If this block is flagged to follow a heading, hold its reveal until
+          // that heading's character animation has finished playing.
+          const sequenced = el.closest<HTMLElement>('[data-reveal-sequence="after-heading"]');
+          if (sequenced) {
+            const headline = findPrecedingHeadline(sequenced);
+            if (headline) {
+              const delay = `${headlineRevealDuration(headline) + SEQUENCE_BUFFER}s`;
+              el.style.setProperty("--ara-reveal-line-delay", delay);
+              if (marker) marker.style.setProperty("--ara-reveal-line-delay", delay);
+            }
+          }
+          if (marker) marker.classList.add("is-revealed");
+        }
         el.classList.add("is-revealed");
         obs.unobserve(el);
       }
@@ -143,6 +196,11 @@ export function SectionReveal() {
       } else if (type === "text") {
         el.classList.add("ara-reveal-text");
         splitWords(el);
+        const marker = findBulletMarker(el);
+        if (marker) {
+          marker.classList.add("ara-reveal-bullet");
+          (el as HTMLElement & { _araBullet?: HTMLElement })._araBullet = marker;
+        }
       } else {
         el.classList.add("ara-reveal-image");
       }

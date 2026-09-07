@@ -35,17 +35,22 @@ function fieldClass(align: FieldAlign) {
 }
 
 /**
- * Row wrapper that draws the shared dashed top/bottom divider plus, on focus,
- * a single rounded teal ring set a little inside the row. The ring is an
- * overlay inside the field, so it shows fully on every side with rounded
- * corners and is never cropped by the card's clipping edge.
+ * Row wrapper that draws the shared dashed top/bottom divider plus, on focus, a
+ * single rounded teal ring that sits just OUTSIDE the field with a ~2px margin.
+ * The dashed divider fades out on focus so only ONE border is ever visible (no
+ * double border).
+ *
+ * The ring is drawn with a box-shadow (a 2px white gap + a 2px teal ring) rather
+ * than a negatively-inset element. box-shadow paints outside the box WITHOUT
+ * adding to scrollable overflow, so it never triggers a scrollbar inside a
+ * scrollable container such as the preorder dialog.
  */
 function FieldRow({ children }: { children: React.ReactNode }) {
   return (
     <div className="group/field relative w-full bg-white">
       {children}
-      <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9]" />
-      <div aria-hidden className="pointer-events-none absolute inset-[10px] rounded-[12px] border-2 border-[#00a193] opacity-0 transition-opacity group-focus-within/field:opacity-100" />
+      <div aria-hidden className="pointer-events-none absolute inset-[-1px_0] border-y border-dashed border-[#dfdac9] transition-opacity group-focus-within/field:opacity-0" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 rounded-[10px] opacity-0 shadow-[0_0_0_2px_#ffffff,0_0_0_4px_#00a193] transition-opacity group-focus-within/field:opacity-100" />
     </div>
   );
 }
@@ -81,7 +86,7 @@ type NewsletterSubmitButtonProps = React.ComponentProps<"button"> & {
 
 export function NewsletterSubmitButton({ children, tone = "default", className = "", ...props }: NewsletterSubmitButtonProps) {
   const labelColor = tone === "success" ? "text-[#00a193]" : "text-[#7f694f]";
-  const grip = "shrink-0 font-['DM_Sans:Medium',sans-serif] font-medium tracking-[1.62px] text-[#dfdac9] [font-variation-settings:'opsz'_14]";
+  const grip = "shrink-0 font-['DM_Sans:Medium',sans-serif] font-medium tracking-[var(--ara-tracking-grip)] text-[#dfdac9] [font-variation-settings:'opsz'_14]";
   return (
     <button
       {...props}
@@ -89,7 +94,7 @@ export function NewsletterSubmitButton({ children, tone = "default", className =
     >
       <div className="flex w-full items-center justify-between whitespace-nowrap px-[24px] py-[30px] text-center text-[length:var(--ara-text-body-large)] leading-none [word-break:break-word]">
         <span aria-hidden className={grip}>::</span>
-        <span className={`shrink-0 font-['DM_Sans:SemiBold',sans-serif] font-semibold tracking-[0.36px] transition-colors [font-variation-settings:'opsz'_14] ${labelColor}`}>{children}</span>
+        <span className={`shrink-0 font-['DM_Sans:SemiBold',sans-serif] font-semibold tracking-[var(--ara-tracking-label)] transition-colors [font-variation-settings:'opsz'_14] ${labelColor}`}>{children}</span>
         <span aria-hidden className={grip}>::</span>
       </div>
     </button>
