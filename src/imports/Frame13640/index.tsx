@@ -688,22 +688,25 @@ function Frame50() {
 
 function Frame39() {
   return (
-    <div className="content-center flex flex-wrap gap-[24px] items-center relative shrink-0 w-full">
-      <div className="bg-[#fcffe5] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
+    <ParallaxRow
+      className="content-center flex flex-wrap gap-[24px] items-center relative shrink-0 w-full"
+      itemClassName="flex flex-[1_0_0] min-w-[350px]"
+    >
+      <div className="bg-[#fcffe5] content-stretch flex gap-[11px] items-start overflow-clip relative rounded-[8px] w-full">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage97} />
         </div>
         <Frame48 />
         <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
-      <div className="bg-[#effefb] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
+      <div className="bg-[#effefb] content-stretch flex gap-[11px] items-start overflow-clip relative rounded-[8px] w-full">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage99} />
         </div>
         <Frame50 />
         <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
-    </div>
+    </ParallaxRow>
   );
 }
 

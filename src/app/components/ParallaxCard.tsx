@@ -14,7 +14,7 @@ import { useEffect, useRef, type ReactNode } from "react";
  */
 
 // How far below its resting spot the card begins, in pixels.
-const START_OFFSET = 140;
+const START_OFFSET = 0;
 
 // Extra lift applied once settled, so the card drifts up a touch faster than
 // the scroll for the parallax offset. Higher = more pronounced depth.

@@ -42,12 +42,17 @@ export function ScrollRevealGroup({ children, className, start = 0.85, end = 0.4
       frame = window.requestAnimationFrame(update);
     };
 
+    // The page scrolls inside the .ara-page-scroll container, not the window,
+    // so bind the scroll listener there (falling back to window). Without this
+    // the handler never fires and progress stays at 0 — items stuck invisible.
+    const scroller = el.closest<HTMLElement>(".ara-page-scroll") ?? window;
+
     update();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    scroller.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", onScroll);
+      scroller.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
   }, [start, end]);
