@@ -11,6 +11,7 @@ import { submitLead } from "@/services/leads";
 import { AraButton } from "@/app/components/site/AraButton";
 import { NewsletterField, NewsletterSubmitButton } from "@/app/components/site/NewsletterFormFields";
 import { ParallaxRow } from "@/app/components/ParallaxRow";
+import { ParallaxCard } from "@/app/components/ParallaxCard";
 import { HeroParticleField } from "@/app/components/HeroParticleField";
 import { HeroHeadline } from "@/app/components/HeroHeadline";
 import { ScrollRevealGroup, ScrollRevealItem } from "@/app/components/ScrollRevealList";
@@ -733,11 +734,11 @@ function Wrapper() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="wrapper">
       <TopSection />
-      <div className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1240px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
+      <ParallaxCard className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1240px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
         <Frame45 />
         <Frame44 />
         <Frame1 />
-      </div>
+      </ParallaxCard>
     </div>
   );
 }
