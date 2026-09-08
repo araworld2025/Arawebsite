@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "SelectContent",
+    "filePath": "src/app/components/ui/select.tsx"
+  },
+  "codeProperties": {
+    "position": {
+      "type": "string",
+      "name": "Position",
+      "defaultValue": "popper",
+      "options": [
+        "popper",
+        "item-aligned"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "popper": "Popper",
+          "item-aligned": "Item Aligned"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "pointAndEdit": {
+    "priorityPaths": {
+      "prefer": [
+        "src/app/App.tsx",
+        "src/app/components/*.tsx",
+        "src/app/components/site/*.tsx",
+        "src/imports/Frame13640/index.tsx",
+        "src/imports/Frame13641/index.tsx"
+      ],
+      "deprioritize": [
+        "src/app/components/ui/**/*.tsx",
+        "src/app/components/ui/**/*.ts",
+        "src/config/**",
+        "src/services/**",
+        "src/data/**",
+        "src/styles/**"
+      ],
+      "exclude": [
+        "src/imports/Frame13575.tsx",
+        "src/imports/**/*.ts",
+        "src/app/components/figma/**",
+        "src/assets/**",
+        "public/**",
+        "api/**",
+        ".github/**",
+        "images/**",
+        "guidelines/**"
+      ]
+    },
+    "libraryPaths": {
+      "local": [
+        "src/app/components/ui/**/*.tsx",
+        "src/app/components/ui/**/*.ts"
+      ],
+      "external": []
+    },
+    "pathClassification": {
+      "classifier": "sonnet"
+    },
+    "exclusions": [
+      {
+        "glob": "src/imports/Frame13575.tsx",
+        "reason": "This file uses figma:asset/ import syntax and is a Figma-generated source file, not an editable app UI anchor."
+      },
+      {
+        "glob": "src/imports/**/*.ts",
+        "reason": "SVG path data modules (e.g. svg-4bw8vxn8mh.ts, svg-adpljy3te6.ts) are generated data files with no UI rendering of their own."
+      },
+      {
+        "glob": "src/app/components/figma/**",
+        "reason": "Figma-specific utility subfolder containing infrastructure helpers (ImageWithFallback) that are not UI composition surfaces intended as point-and-edit targets."
+      },
+      {
+        "glob": "src/assets/**",
+        "reason": "Static image assets; not source code and cannot be a UI edit anchor."
+      },
+      {
+        "glob": "public/**",
+        "reason": "Static public directory; not UI source code."
+      },
+      {
+        "glob": "api/**",
+        "reason": "Backend PHP files; not part of the frontend UI at all."
+      },
+      {
+        "glob": ".github/**",
+        "reason": "CI/deployment workflow configuration; not UI source."
+      },
+      {
+        "glob": "images/**",
+        "reason": "Static image reference files; not UI source code."
+      },
+      {
+        "glob": "guidelines/**",
+        "reason": "Documentation/guidelines markdown; not UI source code."
+      }
+    ],
+    "generated": {
+      "schemaVersion": 2,
+      "source": "setup-agent.point-and-edit-path-classifier",
+      "prompt": "same-turn-setup-subagent-v5",
+      "model": "claude-sonnet-4-6",
+      "createdAt": "2026-09-06T00:00:00.000Z",
+      "confidence": 0.88,
+      "explanation": "The repository has a clear single-page React app structure with well-separated rendering surfaces (App.tsx, Frame13640/index.tsx for desktop, Frame13641/index.tsx for mobile, and named app components), a local shadcn-based UI library under components/ui/, and several clearly non-UI paths (api/, assets, generated SVG data modules, and the Figma-asset-referencing Frame13575.tsx); confidence is slightly below 1.0 because Frame13575.tsx's role as a prior Figma canvas file vs. an active rendering path required inference from import syntax rather than explicit project documentation."
+    }
+  }
+}

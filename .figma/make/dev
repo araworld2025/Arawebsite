@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Start the Vite dev server. Killed on project close.
+set -euo pipefail
+
+cd "$(dirname "$0")/../.."
+
+# Load the shared port definition.
+set -a
+. "$(dirname "$0")/env"
+set +a
+
+exec pnpm exec vite --host --port "${PORT}" --strictPort

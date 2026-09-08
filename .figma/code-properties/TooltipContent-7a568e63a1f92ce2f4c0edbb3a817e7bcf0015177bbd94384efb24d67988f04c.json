@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "TooltipContent",
+    "filePath": "src/app/components/ui/tooltip.tsx"
+  },
+  "codeProperties": {
+    "sideOffset": {
+      "type": "number",
+      "name": "Side Offset",
+      "defaultValue": 0
+    },
+    "side": {
+      "type": "string",
+      "name": "Side",
+      "options": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "top": "Top",
+          "right": "Right",
+          "bottom": "Bottom",
+          "left": "Left"
+        }
+      }
+    },
+    "align": {
+      "type": "string",
+      "name": "Align",
+      "options": [
+        "start",
+        "center",
+        "end"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "start": "Start",
+          "center": "Center",
+          "end": "End"
+        }
+      }
+    }
+  }
+}

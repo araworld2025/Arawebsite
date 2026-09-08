@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "Checkbox",
+    "filePath": "src/app/components/ui/checkbox.tsx"
+  },
+  "codeProperties": {
+    "checked": {
+      "type": "boolean",
+      "name": "Checked"
+    },
+    "disabled": {
+      "type": "boolean",
+      "name": "Disabled"
+    },
+    "required": {
+      "type": "boolean",
+      "name": "Required"
+    }
+  }
+}

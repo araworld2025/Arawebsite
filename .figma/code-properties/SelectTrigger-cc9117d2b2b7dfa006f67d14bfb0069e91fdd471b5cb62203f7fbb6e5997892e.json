@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "SelectTrigger",
+    "filePath": "src/app/components/ui/select.tsx"
+  },
+  "codeProperties": {
+    "size": {
+      "type": "string",
+      "name": "Size",
+      "defaultValue": "default",
+      "options": [
+        "default",
+        "sm"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "default": "Default",
+          "sm": "Small"
+        }
+      }
+    },
+    "disabled": {
+      "type": "boolean",
+      "name": "Disabled"
+    }
+  }
+}

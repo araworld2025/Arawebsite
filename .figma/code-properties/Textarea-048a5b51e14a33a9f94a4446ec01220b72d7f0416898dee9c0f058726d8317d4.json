@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "Textarea",
+    "filePath": "src/app/components/ui/textarea.tsx"
+  },
+  "codeProperties": {
+    "placeholder": {
+      "type": "string",
+      "name": "Placeholder"
+    },
+    "disabled": {
+      "type": "boolean",
+      "name": "Disabled"
+    },
+    "required": {
+      "type": "boolean",
+      "name": "Required"
+    },
+    "readOnly": {
+      "type": "boolean",
+      "name": "Read Only"
+    },
+    "rows": {
+      "type": "number",
+      "name": "Rows"
+    }
+  }
+}

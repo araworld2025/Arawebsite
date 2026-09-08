@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { PRODUCT_CTA_EVENT, featuredProduct, featuredProductStage } from "@/config/featuredProduct";
 import { childAgeRanges, countries, desiredLanguages, submitLead } from "@/services/leads";
+import { NewsletterField, NewsletterSelectField, NewsletterSubmitButton } from "@/app/components/site/NewsletterFormFields";
 
 export function ProductInterestDialog() {
   const [open, setOpen] = useState(false);
@@ -51,24 +52,29 @@ export function ProductInterestDialog() {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#07364a]/55 p-[16px]" role="presentation" onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}>
-      <div className="max-h-[92vh] w-full max-w-[680px] overflow-y-auto rounded-2xl bg-[#fffdf8] p-[24px] shadow-2xl md:p-[48px]" role="dialog" aria-modal="true" aria-labelledby="interest-title">
-        <div className="mb-[24px] flex items-start justify-between gap-[16px]">
-          <div className="min-w-0"><p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[0.98px] text-[#00a193]">{featuredProduct.language} book</p><h2 id="interest-title" className="font-['DM_Sans:Bold',sans-serif] text-[length:var(--ara-text-heading-medium)] font-bold leading-none tracking-[-2.16px] text-[#2d251d]">{featuredProductStage.cta}</h2></div>
+      <div className="flex max-h-[92vh] w-full max-w-[680px] flex-col overflow-x-hidden overflow-y-auto overscroll-contain rounded-2xl bg-white pt-[48px] shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="interest-title">
+        <div className="mb-[16px] flex items-start justify-between gap-[16px] px-[24px]">
+          <div className="min-w-0">
+            <p className="mb-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-small)] font-semibold uppercase leading-[1.5] tracking-[var(--ara-tracking-eyebrow)] text-[#00a193]">{featuredProduct.language} book</p>
+            <h2 id="interest-title" className="font-['DM_Sans:Bold',sans-serif] text-[length:var(--ara-text-heading-medium)] font-bold leading-none tracking-[var(--ara-tracking-heading-medium)] text-[#2d251d]">{featuredProductStage.cta}</h2>
+            <p className="mt-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739]">{featuredProductStage.note}</p>
+          </div>
           <button type="button" onClick={() => setOpen(false)} className="grid size-[48px] shrink-0 place-items-center rounded-full border border-[#dfdac9] font-['Inter:Regular',sans-serif] text-[length:var(--ara-text-heading-small)] leading-none" aria-label="Close">×</button>
         </div>
-        <p className="mb-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#554739]">{featuredProductStage.note}</p>
-        {status === "success" ? <div className="rounded-xl bg-[#eaf8f5] p-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#006057]" role="status">{message}</div> : (
-          <form className="grid gap-[24px]" onSubmit={handleSubmit}>
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Email address<input required name="email" type="email" autoComplete="email" className="rounded-xl border border-[#cfc6b5] bg-white px-[24px] py-[16px] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5]" /></label>
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Country of residence<select required name="residenceCountry" defaultValue="" className="rounded-xl border border-[#cfc6b5] bg-white px-[24px] py-[16px] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5]"><option value="" disabled>Select a country</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</select></label>
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Language you want for your child<select required name="desiredLanguage" value={language} onChange={e => setLanguage(e.target.value)} className="rounded-xl border border-[#cfc6b5] bg-white px-[24px] py-[16px] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5]">{desiredLanguages.map(item => <option key={item}>{item}</option>)}</select></label>
-            {language === "Other" && <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Which language?<input required name="otherLanguage" className="rounded-xl border border-[#cfc6b5] bg-white px-[24px] py-[16px] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5]" /></label>}
-            <label className="grid gap-[12px] font-['Nunito:SemiBold',sans-serif] text-[length:var(--ara-text-body)] font-semibold leading-[1.5] text-[#2d251d]">Child age range<select required name="childAgeRange" defaultValue="" className="rounded-xl border border-[#cfc6b5] bg-white px-[24px] py-[16px] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5]"><option value="" disabled>Select an age range</option>{childAgeRanges.map(item => <option key={item}>{item}</option>)}</select></label>
-            <label className="flex items-start gap-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#554739]"><input name="newsletterConsent" type="checkbox" className="mt-[4px] size-[20px] accent-[#00a193]" /><span>Also send me Ara stories, resources and general updates. I can unsubscribe at any time.</span></label>
+        {status === "success" ? <div className="mx-[24px] mb-[24px] rounded-xl bg-[#eaf8f5] p-[24px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-body)] leading-[1.5] text-[#006057]" role="status">{message}</div> : (
+          <form onSubmit={handleSubmit}>
+            <NewsletterField align="left" required name="email" type="email" autoComplete="email" aria-label="Email address" placeholder="Type your email address here" />
+            <NewsletterSelectField align="left" required name="residenceCountry" defaultValue="" aria-label="Country of residence"><option value="" disabled>What&apos;s your Country of Residence</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</NewsletterSelectField>
+            <NewsletterSelectField align="left" required name="desiredLanguage" value={language} onChange={e => setLanguage(e.target.value)} aria-label="Language you want for your child">{desiredLanguages.map(item => <option key={item}>{item}</option>)}</NewsletterSelectField>
+            {language === "Other" && <NewsletterField align="left" required name="otherLanguage" aria-label="Which language?" placeholder="Which language?" />}
+            <NewsletterSelectField align="left" required name="childAgeRange" defaultValue="" aria-label="Child age range"><option value="" disabled>What&apos;s your Child age range</option>{childAgeRanges.map(item => <option key={item}>{item}</option>)}</NewsletterSelectField>
+            <div className="flex flex-col gap-[8px] px-[24px] py-[16px]">
+              <label className="flex items-start gap-[12px] font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#554739]"><input name="newsletterConsent" type="checkbox" className="mt-[4px] size-[20px] accent-[#00a193]" /><span>Also send me Ara stories, resources and general updates. I can unsubscribe at any time.</span></label>
+              <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive updates about this product. General Ara newsletters are sent only if you tick the optional box above.</p>
+              {status === "error" && <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-red-700" role="alert">{message}</p>}
+            </div>
             <input name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
-            {status === "error" && <p className="font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-red-700" role="alert">{message}</p>}
-            <button disabled={status === "submitting"} className="rounded-[11px] bg-[#00a193] px-[43px] py-[23px] font-['Inter:Semi_Bold',sans-serif] text-[length:var(--ara-text-lead)] font-semibold leading-[1.2] text-white shadow-[0_4px_0_#006057] disabled:opacity-60">{status === "submitting" ? "Saving…" : featuredProductStage.cta}</button>
-            <p className="text-center font-['Nunito:Regular',sans-serif] text-[length:var(--ara-text-small)] leading-[1.5] text-[#7f694f]">By submitting, you agree to receive updates about this product. General Ara newsletters are sent only if you tick the optional box above.</p>
+            <NewsletterSubmitButton type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Saving…" : featuredProductStage.cta}</NewsletterSubmitButton>
           </form>
         )}
       </div>

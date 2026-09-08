@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "componentName": "AraButton",
+    "filePath": "src/app/components/site/AraButton.tsx"
+  },
+  "codeProperties": {
+    "color": {
+      "type": "string",
+      "name": "Color",
+      "defaultValue": "teal",
+      "options": [
+        "teal",
+        "blue"
+      ],
+      "control": {
+        "type": "select",
+        "labels": {
+          "teal": "Teal",
+          "blue": "Blue"
+        }
+      }
+    },
+    "showIcon": {
+      "type": "boolean",
+      "name": "Show Icon",
+      "defaultValue": true
+    }
+  }
+}
