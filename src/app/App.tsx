@@ -41,43 +41,37 @@ export default function App() {
   }, []);
 
   return (
-    <div ref={scrollContainerRef} className="ara-page-scroll size-full bg-white overflow-x-hidden overflow-y-auto">
-      {/* Progressive character/line/image reveals as each section scrolls in */}
+    <div
+      ref={scrollContainerRef}
+      data-name="app-scroll-container"
+      className="ara-page-scroll size-full bg-white overflow-x-hidden overflow-y-auto"
+    >
+      {/* Invisible helper — runs the scroll-into-view reveal animations, renders no markup */}
       <SectionReveal />
 
-      {/* Scroll progress bar */}
+      {/* Thin gradient bar pinned to the top that fills as you scroll */}
       <motion.div
+        data-name="scroll-progress-bar"
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00a193] via-[#fd9e11] to-[#00a193] z-[100] origin-left"
         style={{ scaleX: smoothProgress }}
       />
 
-      {/* Desktop layout — md and up */}
-      <div className="hidden md:block relative z-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <DesktopFrame />
-        </motion.div>
+      {/* Desktop layout — shown from md (768px) and up */}
+      <div data-name="desktop-layout" className="hidden md:block relative z-10">
+        <DesktopFrame />
       </div>
 
-      {/* Mobile layout — below md */}
-      <div className="block md:hidden relative z-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <MobileFrame />
-        </motion.div>
+      {/* Mobile layout — shown below md (768px) */}
+      <div data-name="mobile-layout" className="block md:hidden relative z-10">
+        <MobileFrame />
       </div>
 
-      {/* Scroll to Top Button */}
+      {/* Preorder / product-interest popup dialog */}
       <ProductInterestDialog />
 
-      {/* Scroll to Top Button */}
+      {/* Round button, bottom-right, that scrolls back to the top (appears once scrolled) */}
       <motion.button
+        data-name="scroll-to-top-button"
         className="fixed bottom-8 right-8 z-50 bg-[#00a193] text-white p-4 rounded-full shadow-lg hover:bg-[#008b7f] transition-colors"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: isScrolled ? 1 : 0, scale: isScrolled ? 1 : 0 }}
