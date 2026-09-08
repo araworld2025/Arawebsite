@@ -51,7 +51,7 @@ function HeroChildFigureLayer() {
 
 function HeroVisual() {
   return (
-    <div className="ara-hero-visual relative shrink-0 z-[1]" style={{ marginRight: 0, marginLeft: 0, marginBottom: 0 }}>
+    <div className="ara-hero-visual relative shrink-0 z-[1]">
       <div className="ara-hero-visual-canvas absolute h-[507.911px] w-[417.339px]">
         <div className="ara-hero-circle absolute inset-[0_10.64%_37.76%_13.62%]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">

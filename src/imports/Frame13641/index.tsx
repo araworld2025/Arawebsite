@@ -174,7 +174,7 @@ function HeroCopyShell() {
 
 function HeroStack() {
   return (
-    <div className="ara-hero-stack content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
+    <div className="ara-hero-stack content-stretch flex flex-col gap-[20px] h-fit items-center justify-center relative shrink-0 w-full">
       <HeroVisual />
       <HeroCopyShell />
     </div>
