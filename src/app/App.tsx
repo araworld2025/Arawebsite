@@ -93,6 +93,10 @@ export default function App() {
         .ara-page-scroll { scrollbar-width: none; }
         .ara-page-scroll::-webkit-scrollbar { display: none; height: 0; width: 0; }
 
+        /* Gentle fade-in of the whole page on first load */
+        .ara-page-scroll { animation: araPageFadeIn 0.8s ease-out both; }
+        @keyframes araPageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
         /* Focus states */
         button:focus-visible, a:focus-visible, input:focus-visible {
           outline: 2px solid #00a193;
