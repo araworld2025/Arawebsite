@@ -51,30 +51,6 @@ export default function App() {
         style={{ scaleX: smoothProgress }}
       />
 
-      {/* Animated background blobs */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.div
-          className="absolute top-10 right-10 w-64 h-64 bg-yellow-200 rounded-full blur-3xl opacity-20"
-          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20"
-          animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/3 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-15"
-          animate={{ scale: [1, 1.1, 1], y: [0, 50, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
-
       {/* Desktop layout — md and up */}
       <div className="hidden md:block relative z-10">
         <motion.div
