@@ -517,7 +517,7 @@ function ValueCardLanguage() {
 function ValueCardsRow() {
   return (
     <ParallaxRow
-      className="content-stretch flex gap-[20px] items-start justify-center relative shrink-0 w-full"
+      className="content-stretch flex gap-y-[100px] gap-x-[48px] items-start justify-center relative shrink-0 w-full"
       itemClassName="flex min-w-px shrink"
     >
       <ValueCardPartner />
@@ -569,7 +569,7 @@ function NewProductWordmark() {
 
 function NewProductBanner() {
   return (
-    <div className="h-[226px] mb-[-70px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
+    <div className="h-[226px] mb-[-133px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
       <NewProductWordmark />
     </div>
   );

@@ -513,7 +513,7 @@ function ValueCardLanguage() {
 function ValueCardsRow() {
   return (
     <ParallaxRow
-      className="content-stretch flex flex-col gap-[20px] items-center relative shrink-0 w-full"
+      className="content-stretch flex flex-col gap-y-[100px] gap-x-[48px] items-center relative shrink-0 w-full"
       itemClassName="w-full"
     >
       <ValueCardPartner />
@@ -568,7 +568,7 @@ function NewProductWordmark() {
 
 function NewProductBanner() {
   return (
-    <div className="h-[226px] mb-[-70px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
+    <div className="h-[226px] mb-[-133px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
       <NewProductWordmark />
     </div>
   );
@@ -586,11 +586,6 @@ function FeaturedBookCtaCell() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1">
       <FeaturedBookCtaButton />
-      <div className="col-1 ml-[213px] mt-[52.88px] relative row-1 size-[12px]">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-          <circle cx="6" cy="6" fill="var(--fill-0, #FD9E11)" id="Ellipse 45" r="6" />
-        </svg>
-      </div>
     </div>
   );
 }
