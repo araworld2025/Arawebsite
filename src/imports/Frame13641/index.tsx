@@ -164,15 +164,10 @@ function HeroCopy() {
   );
 }
 
-function HeroCopyExtras() {
-  return null;
-}
-
 function HeroCopyShell() {
   return (
-    <div className="ara-hero-copy-shell content-stretch flex flex-col gap-[77px] items-start max-w-[600px] relative shrink-0 w-full">
+    <div className="ara-hero-copy-shell content-stretch flex flex-col items-start max-w-[600px] relative shrink-0 w-full">
       <HeroCopy />
-      <HeroCopyExtras />
     </div>
   );
 }
