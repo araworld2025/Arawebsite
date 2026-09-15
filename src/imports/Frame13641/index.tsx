@@ -29,7 +29,7 @@ const imgImage100 = familyPhoto;
 const imgEllipse28 = placeholderImage;
 const imgRectangle = kidsReading;
 
-function Group19() {
+function HeroChildFigure() {
   return (
     <div className="absolute contents left-[53.28px] top-[43.51px]">
       <div className="ara-hero-child-figure absolute h-[464.11px] left-[53.28px] top-[43.51px] w-[309.897px]" data-name="image 75">
@@ -40,17 +40,17 @@ function Group19() {
   );
 }
 
-function Group18() {
+function HeroChildFigureLayer() {
   return (
     <div className="absolute contents left-[53.28px] top-[43.51px]">
-      <Group19 />
+      <HeroChildFigure />
     </div>
   );
 }
 
-function Frame2() {
+function HeroVisual() {
   return (
-    <div className="ara-hero-visual relative shrink-0 z-[1]">
+    <div className="ara-hero-visual relative shrink-0 z-[1]" style={{ marginBottom: "-183px" }}>
       <div className="ara-hero-visual-canvas absolute h-[507.911px] w-[417.339px]">
         <div className="ara-hero-circle absolute inset-[0_10.64%_37.76%_13.62%]">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 316.112 316.112">
@@ -66,7 +66,7 @@ function Frame2() {
           </div>
         </div>
       </div>
-      <Group18 />
+      <HeroChildFigureLayer />
       <div className="ara-hero-origin-particle ara-hero-origin-particle--2 absolute flex h-[6.637px] items-center justify-center left-[308.47px] top-[293.88px] w-[50.43px]">
         <div className="flex-none rotate-[175.15deg]">
           <div className="h-[2.387px] relative w-[50.408px]">
@@ -136,7 +136,7 @@ function Frame2() {
   );
 }
 
-function Frame7() {
+function HeroCtaButton() {
   return (
     <AraButton color="teal" onClick={activateFeaturedProduct} className="ara-hero-cta w-full">
       {featuredProductStage.cta}
@@ -144,7 +144,7 @@ function Frame7() {
   );
 }
 
-function Frame8() {
+function HeroCopy() {
   return (
     <div className="ara-hero-copy content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <HeroHeadline
@@ -158,43 +158,38 @@ function Frame8() {
       />
       <p className="ara-hero-subcopy [word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-body)] text-center w-full">Beautiful books, learning tools, and cultural experiences designed for African families raising children abroad.</p>
       <div className="ara-hero-cta-reveal flex w-full">
-        <Frame7 />
+        <HeroCtaButton />
       </div>
     </div>
   );
 }
 
-function Frame35() {
-  return null;
-}
-
-function Frame36() {
+function HeroCopyShell() {
   return (
-    <div className="ara-hero-copy-shell content-stretch flex flex-col gap-[77px] items-start max-w-[600px] relative shrink-0 w-full">
-      <Frame8 />
-      <Frame35 />
+    <div className="ara-hero-copy-shell content-stretch flex flex-col items-start max-w-[600px] relative shrink-0 w-full">
+      <HeroCopy />
     </div>
   );
 }
 
-function Frame37() {
+function HeroStack() {
   return (
-    <div className="ara-hero-stack content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
-      <Frame2 />
-      <Frame36 />
+    <div className="ara-hero-stack content-stretch flex flex-col gap-x-[20px] gap-y-0 h-fit items-center justify-center pt-[86px] pb-[17px] relative shrink-0 w-full">
+      <HeroVisual />
+      <HeroCopyShell />
     </div>
   );
 }
 
-function Frame54() {
+function HeroShell() {
   return (
     <div className="ara-hero-shell content-stretch flex flex-col items-center justify-center max-w-[1240px] pb-[150px] pt-[200px] relative shrink-0 w-full">
-      <Frame37 />
+      <HeroStack />
     </div>
   );
 }
 
-function Group7() {
+function HeroLogoShapeRight() {
   return (
     <div className="absolute contents inset-[22.37%_20.79%_21.41%_53.08%]">
       <div className="absolute inset-[22.37%_23.47%_22.26%_53.08%]" data-name="Ellipse 10 (Stroke)">
@@ -228,7 +223,7 @@ function Group7() {
   );
 }
 
-function Group5() {
+function HeroLogoShapeLeft() {
   return (
     <div className="absolute contents inset-[22.37%_64.33%_21.49%_9.61%]">
       <div className="absolute inset-[22.37%_66.94%_22.26%_9.61%]" data-name="Ellipse 7 (Stroke)">
@@ -262,7 +257,7 @@ function Group5() {
   );
 }
 
-function Group6() {
+function HeroLogoShapeMiddle() {
   return (
     <div className="absolute inset-[21.47%_45.77%_21.49%_37.92%]">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 23.1568 34.2895">
@@ -275,38 +270,38 @@ function Group6() {
   );
 }
 
-function LogoGroup() {
+function HeroLogoMark() {
   return (
     <div className="absolute contents inset-[21.47%_9.12%_21.41%_9.61%]" data-name="logo-group">
-      <Group7 />
+      <HeroLogoShapeRight />
       <div className="absolute inset-[56.11%_9.12%_22.5%_81.82%]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.8631 12.8631">
           <circle cx="6.43156" cy="6.43156" fill="var(--fill-0, #FD9E11)" id="Ellipse 16" r="6.43156" />
         </svg>
       </div>
-      <Group5 />
-      <Group6 />
+      <HeroLogoShapeLeft />
+      <HeroLogoShapeMiddle />
     </div>
   );
 }
 
-function Frame49() {
+function HeroLogoBar() {
   return (
     <div className="ara-hero-logo-wrap absolute content-stretch flex flex-col items-center justify-center left-0 py-[15px] right-0 top-0">
       <div className="ara-hero-logo h-[60.119px] overflow-clip relative shrink-0 w-[142px]" data-name="ara-logo-base">
-        <LogoGroup />
+        <HeroLogoMark />
       </div>
     </div>
   );
 }
 
-function Section() {
+function HeroSection() {
   return (
-    <div className="bg-gradient-to-b from-[#f8f7f3] from-[72.585%] relative shrink-0 to-[95.893%] to-white w-full z-[8]" data-name="section 01">
+    <div className="bg-gradient-to-b from-[#f8f7f3] from-[72.585%] relative shrink-0 to-[95.893%] to-white w-full z-[8]" data-name="hero-section">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-center justify-center px-[24px] relative size-full">
-          <Frame54 />
-          <Frame49 />
+          <HeroShell />
+          <HeroLogoBar />
         </div>
       </div>
     </div>
@@ -350,7 +345,7 @@ function FlagSwipeSection() {
   );
 }
 
-function MaxOut() {
+function FlagMarqueeContainer() {
   return (
     <div className="bg-white content-stretch flex gap-[16px] items-center justify-center max-w-[1240px] overflow-clip relative shrink-0 w-full" data-name="max-out">
       <FlagSwipeSection />
@@ -364,19 +359,19 @@ function MaxOut() {
   );
 }
 
-function Section1() {
+function FlagMarqueeSection() {
   return (
-    <div className="relative shrink-0 w-full z-[7]" data-name="section 02">
+    <div className="relative shrink-0 w-full z-[7]" data-name="flag-marquee-section">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col items-center px-[24px] relative size-full">
-          <MaxOut />
+          <FlagMarqueeContainer />
         </div>
       </div>
     </div>
   );
 }
 
-function Frame9() {
+function ValueCardPartner() {
   return (
     <div className="content-stretch flex flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start relative shrink-0 w-full">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / partner">
@@ -409,7 +404,7 @@ function Frame9() {
   );
 }
 
-function Frame10() {
+function ValueCardConfidence() {
   return (
     <div className="content-stretch flex flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start relative shrink-0 w-full">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / bloosom">
@@ -439,7 +434,7 @@ function Frame10() {
   );
 }
 
-function Frame11() {
+function ValueCardResources() {
   return (
     <div className="content-stretch flex flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start relative shrink-0 w-full">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / star">
@@ -478,7 +473,7 @@ function Frame11() {
   );
 }
 
-function Frame13() {
+function ValueCardLanguage() {
   return (
     <div className="content-stretch flex flex-col gap-x-[33px] gap-y-[16px] md:gap-y-[33px] items-start relative shrink-0 w-full">
       <div className="overflow-clip relative shrink-0 size-[80px]" data-name="icon / speech">
@@ -515,53 +510,53 @@ function Frame13() {
   );
 }
 
-function Frame12() {
+function ValueCardsRow() {
   return (
     <ParallaxRow
-      className="content-stretch flex flex-col gap-[20px] items-center relative shrink-0 w-full"
+      className="content-stretch flex flex-col gap-y-[100px] gap-x-[48px] items-center relative shrink-0 w-full"
       itemClassName="w-full"
     >
-      <Frame9 />
-      <Frame10 />
-      <Frame11 />
-      <Frame13 />
+      <ValueCardPartner />
+      <ValueCardConfidence />
+      <ValueCardResources />
+      <ValueCardLanguage />
     </ParallaxRow>
   );
 }
 
-function Frame51() {
+function MissionBlock() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center relative shrink-0 w-full">
       <p data-noreveal className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-[0] max-w-[800px] relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-display)] text-center tracking-[var(--ara-tracking-display)] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
         <span className="leading-none">On a mission to bring home closer, one product at a time</span>
         <span className="leading-none text-[#fd9e11]">.</span>
       </p>
-      <Frame12 />
+      <ValueCardsRow />
     </div>
   );
 }
 
-function MaxOut1() {
+function MissionContainer() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[200px] relative shrink-0 w-full" data-name="max-out">
-      <Frame51 />
+      <MissionBlock />
     </div>
   );
 }
 
-function Section2() {
+function MissionSection() {
   return (
-    <div className="bg-white relative shrink-0 w-full z-[6]" data-name="section 03">
+    <div className="bg-white relative shrink-0 w-full z-[6]" data-name="mission-section">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-center justify-center px-[24px] relative size-full">
-          <MaxOut1 />
+          <MissionContainer />
         </div>
       </div>
     </div>
   );
 }
 
-function Frame23() {
+function NewProductWordmark() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex items-center justify-center left-[calc(50%+0.5px)] p-[10px] top-[-42px] w-[1437px]" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 1437 268' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(110.8 1.0836e-13 -1.7766e-13 46.656 690 338.09)'><stop stop-color='rgba(233,233,233,1)' offset='0'/><stop stop-color='rgba(255,255,255,0)' offset='0.66341'/></radialGradient></defs></svg>\")" }}>
       <p className="ara-new-product-wordmark [word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f8f7f3] text-center tracking-[var(--ara-tracking-wordmark)] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
@@ -571,15 +566,15 @@ function Frame23() {
   );
 }
 
-function TopSection() {
+function NewProductBanner() {
   return (
-    <div className="h-[226px] mb-[-70px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
-      <Frame23 />
+    <div className="h-[226px] mb-[-133px] overflow-clip relative shrink-0 w-[1680px]" data-name="top-section">
+      <NewProductWordmark />
     </div>
   );
 }
 
-function Frame() {
+function FeaturedBookCtaButton() {
   return (
     <AraButton color="blue" onClick={activateFeaturedProduct} className="col-1 max-w-[396px] ml-0 mt-0 row-1">
       {featuredProductStage.cta}
@@ -587,28 +582,23 @@ function Frame() {
   );
 }
 
-function Group20() {
+function FeaturedBookCtaCell() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1">
-      <Frame />
-      <div className="col-1 ml-[213px] mt-[52.88px] relative row-1 size-[12px]">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-          <circle cx="6" cy="6" fill="var(--fill-0, #FD9E11)" id="Ellipse 45" r="6" />
-        </svg>
-      </div>
+      <FeaturedBookCtaButton />
     </div>
   );
 }
 
-function Group21() {
+function FeaturedBookCtaGrid() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-      <Group20 />
+      <FeaturedBookCtaCell />
     </div>
   );
 }
 
-function Frame4() {
+function FeaturedBookInfo() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[23px] items-start max-w-[400px] min-w-[340px] relative">
       <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] min-w-full relative shrink-0 text-[#07364a] text-[length:var(--ara-text-heading-xlarge)] tracking-[var(--ara-tracking-heading-xlarge)] w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>
@@ -616,17 +606,17 @@ function Frame4() {
         <span className="leading-none text-[#0099cb]">Book</span>
       </p>
       <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content]">A comprehensive introduction to essential Yoruba vocabulary through simple words, clear visuals, and everyday expressions. Crafted for children aged 2–8.</p>
-      <Group21 />
+      <FeaturedBookCtaGrid />
     </div>
   );
 }
 
-function Frame45() {
+function FeaturedBookRow() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-center flex flex-wrap gap-[48px] items-center justify-center px-[24px] py-[62px] relative size-full">
-          <Frame4 />
+          <FeaturedBookInfo />
           <div className="max-h-[600px] max-w-[600px] relative shrink-0 size-[600px]" data-name="image 98">
             <img alt="" className="ara-featured-book-image absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage98} />
           </div>
@@ -636,7 +626,7 @@ function Frame45() {
   );
 }
 
-function Frame40() {
+function FlipcardHeading() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
       <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[var(--ara-tracking-stat)] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
@@ -647,24 +637,24 @@ function Frame40() {
   );
 }
 
-function Frame41() {
+function FlipcardInfo() {
   return (
     <div className="content-stretch flex flex-col gap-[19px] items-start relative shrink-0 w-full">
-      <Frame40 />
+      <FlipcardHeading />
       <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content]">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
     </div>
   );
 }
 
-function Frame48() {
+function FlipcardCard() {
   return (
     <div className="content-stretch flex flex-col h-[260px] items-start p-[24px] relative shrink-0 w-[313px]" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 313 260' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(8.2 13.45 -17.561 10.706 128 115.96)'><stop stop-color='rgba(252,255,229,1)' offset='0.61058'/><stop stop-color='rgba(252,255,229,0)' offset='1'/></radialGradient></defs></svg>\")" }}>
-      <Frame41 />
+      <FlipcardInfo />
     </div>
   );
 }
 
-function Frame43() {
+function PosterHeading() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0">
       <p className="[word-break:break-word] font-['DM_Sans:Black',sans-serif] font-black leading-[0] relative shrink-0 text-[#79a200] text-[length:var(--ara-text-zero)] tracking-[var(--ara-tracking-stat)] whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14' }}>
@@ -675,56 +665,56 @@ function Frame43() {
   );
 }
 
-function Frame42() {
+function PosterInfo() {
   return (
     <div className="content-stretch flex flex-col gap-[19px] items-start relative shrink-0 w-full">
-      <Frame43 />
+      <PosterHeading />
       <p className="[word-break:break-word] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] w-[min-content]">My First 500 Yoruba Words introduces children to essential Yoruba vocabulary through simple words.</p>
     </div>
   );
 }
 
-function Frame50() {
+function PosterCard() {
   return (
     <div className="content-stretch flex flex-col h-[260px] items-start p-[24px] relative shrink-0 w-[313px]" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 313 260' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(8.2 13.45 -17.561 10.706 128 115.96)'><stop stop-color='rgba(239,254,251,1)' offset='0.61058'/><stop stop-color='rgba(239,254,251,0)' offset='1'/></radialGradient></defs></svg>\")" }}>
-      <Frame42 />
+      <PosterInfo />
     </div>
   );
 }
 
-function Frame39() {
+function SeriesCardsRow() {
   return (
     <div className="content-center flex flex-wrap gap-[24px] items-center relative shrink-0 w-full">
       <div className="bg-[#fcffe5] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage97} />
         </div>
-        <Frame48 />
+        <FlipcardCard />
         <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
       <div className="bg-[#effefb] content-stretch flex flex-[1_0_0] gap-[11px] items-start min-w-[350px] overflow-clip relative rounded-[8px]">
         <div className="absolute bottom-0 h-[260px] right-0 w-[400px]" data-name="image 97">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage99} />
         </div>
-        <Frame50 />
+        <PosterCard />
         <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[3592.5%] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.2] left-[calc(50%+685px)] not-italic text-[length:var(--ara-text-lead)] text-center text-white top-[-3503.13%] w-[81px]">Explore</p>
       </div>
     </div>
   );
 }
 
-function Frame44() {
+function SeriesSubsection() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="content-stretch flex flex-col gap-[17px] items-start px-[24px] relative size-full">
         <p className="[word-break:break-word] font-['Nunito:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#554739] text-[length:var(--ara-text-small)] tracking-[var(--ara-tracking-eyebrow)] w-full">{`MORE ON THESE SERIES >>`}</p>
-        <Frame39 />
+        <SeriesCardsRow />
       </div>
     </div>
   );
 }
 
-function Frame1() {
+function NewReleaseBadge() {
   return (
     <div className="absolute bg-[#dcfe58] h-[29px] left-[48px] max-w-[396px] rounded-[11px] top-[-12px] w-[150px]">
       <div className="flex flex-row items-center justify-center max-w-[inherit] size-full">
@@ -736,40 +726,40 @@ function Frame1() {
   );
 }
 
-function Wrapper() {
+function ProductShowcaseWrapper() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="wrapper">
-      <TopSection />
+      <NewProductBanner />
       <div className="bg-gradient-to-b content-stretch flex flex-col from-[#f0faff] from-[86.417%] items-start max-w-[1240px] pb-[24px] relative rounded-[16px] shrink-0 to-[101.87%] to-white w-full">
-        <Frame45 />
-        <Frame44 />
-        <Frame1 />
+        <FeaturedBookRow />
+        <SeriesSubsection />
+        <NewReleaseBadge />
       </div>
     </div>
   );
 }
 
-function MaxOut2() {
+function ProductShowcaseContainer() {
   return (
     <div className="content-stretch flex flex-col items-center max-w-[1240px] relative shrink-0 w-full" data-name="max-out">
-      <Wrapper />
+      <ProductShowcaseWrapper />
     </div>
   );
 }
 
-function Section3() {
+function ProductShowcaseSection() {
   return (
-    <div className="bg-white relative shrink-0 w-full z-[5]" data-name="section 04">
+    <div className="bg-white relative shrink-0 w-full z-[5]" data-name="product-showcase-section">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center px-[24px] relative size-full">
-          <MaxOut2 />
+          <ProductShowcaseContainer />
         </div>
       </div>
     </div>
   );
 }
 
-function Frame31() {
+function RootsHeading() {
   return (
     <ScrollRevealGroup className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <ScrollRevealItem index={0} count={2}>
@@ -784,7 +774,7 @@ function Frame31() {
   );
 }
 
-function Frame27() {
+function RootsBulletMarker1() {
   return (
     <div className="relative self-stretch shrink-0">
       <div className="content-stretch flex items-start py-[9px] relative size-full">
@@ -802,16 +792,16 @@ function Frame27() {
   );
 }
 
-function Frame26() {
+function RootsBullet1() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
-      <Frame27 />
+      <RootsBulletMarker1 />
       <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">Every word in their mother tongue is a thread connecting them to who they are and where they come from.</p>
     </div>
   );
 }
 
-function Frame30() {
+function RootsBulletMarker2() {
   return (
     <div className="relative self-stretch shrink-0">
       <div className="content-stretch flex items-start py-[9px] relative size-full">
@@ -829,16 +819,16 @@ function Frame30() {
   );
 }
 
-function Frame28() {
+function RootsBullet2() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
-      <Frame30 />
+      <RootsBulletMarker2 />
       <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">Children who know their roots grow up with a deeper sense of self - and that confidence shows everywhere.</p>
     </div>
   );
 }
 
-function Frame33() {
+function RootsBulletMarker3() {
   return (
     <div className="relative self-stretch shrink-0">
       <div className="content-stretch flex items-start py-[9px] relative size-full">
@@ -856,16 +846,16 @@ function Frame33() {
   );
 }
 
-function Frame32() {
+function RootsBullet3() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
-      <Frame33 />
+      <RootsBulletMarker3 />
       <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">Language is the bridge between your child and their grandparents, cousins, and the community back home.</p>
     </div>
   );
 }
 
-function Frame38() {
+function RootsBulletMarker4() {
   return (
     <div className="relative self-stretch shrink-0">
       <div className="content-stretch flex items-start py-[9px] relative size-full">
@@ -883,73 +873,73 @@ function Frame38() {
   );
 }
 
-function Frame34() {
+function RootsBullet4() {
   return (
     <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full">
-      <Frame38 />
+      <RootsBulletMarker4 />
       <p className="[word-break:break-word] flex-[1_0_0] font-['Nunito:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#554739] text-[length:var(--ara-text-body)]">ara brings the songs, stories, and rituals of home into daily life - making culture something they live, not just learn.</p>
     </div>
   );
 }
 
-function Frame29() {
+function RootsBulletList() {
   return (
     <ScrollRevealGroup className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
       <ScrollRevealItem index={0} count={4}>
-        <Frame26 />
+        <RootsBullet1 />
       </ScrollRevealItem>
       <ScrollRevealItem index={1} count={4}>
-        <Frame28 />
+        <RootsBullet2 />
       </ScrollRevealItem>
       <ScrollRevealItem index={2} count={4}>
-        <Frame32 />
+        <RootsBullet3 />
       </ScrollRevealItem>
       <ScrollRevealItem index={3} count={4}>
-        <Frame34 />
+        <RootsBullet4 />
       </ScrollRevealItem>
     </ScrollRevealGroup>
   );
 }
 
-function Frame25() {
+function RootsTextColumn() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="content-stretch flex flex-col gap-[48px] items-start px-[24px] relative size-full">
-        <Frame31 />
-        <Frame29 />
+        <RootsHeading />
+        <RootsBulletList />
       </div>
     </div>
   );
 }
 
-function Frame14() {
+function RootsRow() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center max-w-[1250px] relative shrink-0 w-full">
       <div className="ara-family-photo aspect-[1170/1456] relative shrink-0 w-full" data-name="image 99">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage100} />
       </div>
-      <Frame25 />
+      <RootsTextColumn />
     </div>
   );
 }
 
-function Frame52() {
+function RootsContainer() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[150px] relative shrink-0 w-full">
-      <Frame14 />
+      <RootsRow />
     </div>
   );
 }
 
-function Frame24() {
+function RootsSection() {
   return (
     <div className="bg-white content-stretch flex flex-col items-center justify-center overflow-clip relative shrink-0 w-full z-[4]">
-      <Frame52 />
+      <RootsContainer />
     </div>
   );
 }
 
-function Frame3() {
+function TestimonialImage() {
   return (
     <div className="h-[350.2px] relative shrink-0 w-[350.2px]">
       <img alt="Mother reading with her child" className="absolute inset-0 object-contain size-full" src={imgRectangle} />
@@ -957,7 +947,7 @@ function Frame3() {
   );
 }
 
-function Frame18() {
+function TestimonialAttribution() {
   return (
     <div data-reveal-sequence="after-heading" className="content-stretch flex flex-wrap gap-y-[17px] gap-x-[11px] items-center justify-center relative shrink-0 w-full">
       <div className="flex h-[35px] items-center justify-center relative shrink-0 w-[34px]">
@@ -974,57 +964,57 @@ function Frame18() {
   );
 }
 
-function Frame17() {
+function TestimonialQuote() {
   return (
     <div className="content-stretch flex flex-col gap-[33px] items-center max-w-[634px] relative shrink-0 w-full">
       <p className="[word-break:break-word] font-['DM_Sans:Regular',sans-serif] font-normal leading-[1.3] min-w-full relative shrink-0 text-[#2d251d] text-[length:var(--ara-text-heading-medium)] text-center w-[min-content]" style={{ fontVariationSettings: '"opsz" 14' }}>{`"Children with a strong foundation in their mother tongue develop stronger literacy abilities in every language they learn."`}</p>
       <div className="w-full">
-        <Frame18 />
+        <TestimonialAttribution />
       </div>
     </div>
   );
 }
 
-function Frame16() {
+function TestimonialContent() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-center justify-center relative shrink-0 w-full">
       <div>
-        <Frame3 />
+        <TestimonialImage />
       </div>
-      <Frame17 />
+      <TestimonialQuote />
     </div>
   );
 }
 
-function Frame53() {
+function TestimonialInner() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center max-w-[960px] relative shrink-0 w-full">
-      <Frame16 />
+      <TestimonialContent />
     </div>
   );
 }
 
-function Frame15() {
+function TestimonialContainer() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[120px] relative shrink-0 w-full">
-      <Frame53 />
+      <TestimonialInner />
     </div>
   );
 }
 
-function Frame5() {
+function TestimonialSection() {
   return (
     <div className="bg-white relative shrink-0 w-full z-[3]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-center justify-center px-[24px] relative size-full">
-          <Frame15 />
+          <TestimonialContainer />
         </div>
       </div>
     </div>
   );
 }
 
-function Group8() {
+function FooterLogoShapeRight() {
   return (
     <div className="absolute contents inset-[22.37%_20.79%_21.41%_53.08%]">
       <div className="absolute inset-[22.37%_23.47%_22.26%_53.08%]" data-name="Ellipse 10 (Stroke)">
@@ -1058,7 +1048,7 @@ function Group8() {
   );
 }
 
-function Group9() {
+function FooterLogoShapeLeft() {
   return (
     <div className="absolute contents inset-[22.37%_64.32%_21.49%_9.61%]">
       <div className="absolute inset-[22.37%_66.94%_22.26%_9.61%]" data-name="Ellipse 7 (Stroke)">
@@ -1092,7 +1082,7 @@ function Group9() {
   );
 }
 
-function Group10() {
+function FooterLogoShapeMiddle() {
   return (
     <div className="absolute inset-[21.47%_45.77%_21.49%_37.92%]">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.6553 23.1816">
@@ -1105,29 +1095,29 @@ function Group10() {
   );
 }
 
-function LogoGroup1() {
+function NewsletterLogoMark() {
   return (
     <div className="absolute contents inset-[21.47%_9.12%_21.41%_9.61%]" data-name="logo-group">
-      <Group8 />
+      <FooterLogoShapeRight />
       <div className="absolute inset-[56.11%_9.12%_22.5%_81.82%]">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.6962 8.6962">
           <circle cx="4.3481" cy="4.3481" fill="var(--fill-0, #FD9E11)" id="Ellipse 16" r="4.3481" />
         </svg>
       </div>
-      <Group9 />
-      <Group10 />
+      <FooterLogoShapeLeft />
+      <FooterLogoShapeMiddle />
     </div>
   );
 }
 
-function Frame20() {
+function NewsletterHeading() {
   return (
     <div className="relative shrink-0 w-full z-[3]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[16px] md:px-[97px] relative size-full">
           <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[var(--ara-tracking-heading-medium)] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
             Connect with us to get a dooze of{" "}
-            <span className="inline-flex h-[40.644px] overflow-clip relative align-middle w-[96px]" data-name="ara-logo-base"><LogoGroup1 /></span>{" "}
+            <span className="inline-flex h-[40.644px] overflow-clip relative align-middle w-[96px]" data-name="ara-logo-base"><NewsletterLogoMark /></span>{" "}
             to connect with your child
           </div>
         </div>
@@ -1136,7 +1126,7 @@ function Frame20() {
   );
 }
 
-function Frame19() {
+function NewsletterSignupForm() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -1155,7 +1145,7 @@ function Frame19() {
   return (
     <div className="bg-white max-w-[800px] relative rounded-[16px] shrink-0 w-full">
       <div className="content-stretch flex flex-col isolate items-center justify-center max-w-[inherit] relative rounded-[inherit] size-full">
-        <Frame20 />
+        <NewsletterHeading />
         {/* Email input row */}
         <div className="relative w-full z-[2]">
           <NewsletterField
@@ -1178,15 +1168,15 @@ function Frame19() {
   );
 }
 
-function Frame55() {
+function NewsletterInner() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center max-w-[1240px] py-[150px] relative shrink-0 w-full">
-      <Frame19 />
+      <NewsletterSignupForm />
     </div>
   );
 }
 
-function Frame6() {
+function NewsletterSection() {
   return (
     <div className="bg-gradient-to-b from-[rgba(255,255,255,0.78)] relative shrink-0 to-[rgba(255,255,255,0.78)] via-[45.203%] via-[rgba(240,238,228,0.78)] w-full z-[2]">
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
@@ -1200,7 +1190,7 @@ function Frame6() {
               </div>
             </div>
           </div>
-          <Frame55 />
+          <NewsletterInner />
         </div>
       </div>
     </div>
@@ -1208,16 +1198,16 @@ function Frame6() {
 }
 
 
-export default function Frame47() {
+export default function AraLandingPage() {
   return (
     <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full">
-      <Section />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Frame24 />
-      <Frame5 />
-      <Frame6 />
+      <HeroSection />
+      <FlagMarqueeSection />
+      <MissionSection />
+      <ProductShowcaseSection />
+      <RootsSection />
+      <TestimonialSection />
+      <NewsletterSection />
       <Footer />
     </div>
   );
