@@ -1,6 +1,7 @@
 // Shared site footer — logo wordmark, social links, and link columns.
 // Extracted from the Figma desktop/mobile frames (identical apart from the
 // responsive link-column layout below) so both frames render one source of truth.
+import type { ReactNode } from "react";
 import svgPaths from "./footerSvgPaths";
 
 function Group11() {
@@ -128,40 +129,6 @@ function LogoInstagram() {
   );
 }
 
-function LogoYouTube() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Logo YouTube">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g clipPath="url(#clip0_88_3288)" id="Logo YouTube">
-          <path d={svgPaths.p13f17d00} fill="var(--fill-0, #1E1E1E)" id="Icon" />
-        </g>
-        <defs>
-          <clipPath id="clip0_88_3288">
-            <rect fill="white" height="24" width="24" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function LinkedIn() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="LinkedIn">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g clipPath="url(#clip0_88_3283)" id="LinkedIn">
-          <path d={svgPaths.p167f5280} fill="var(--fill-0, #1E1E1E)" id="Icon" />
-        </g>
-        <defs>
-          <clipPath id="clip0_88_3283">
-            <rect fill="white" height="24" width="24" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
 /** One link in a footer column. Pages are reached by hash (`#about` etc.), see main.tsx. */
 function FooterLink({ href, children }: { href: string; children: string }) {
   return (
@@ -183,13 +150,24 @@ export function AraLogo() {
   );
 }
 
+/** A social icon that opens the account in a new tab. */
+function SocialLink({ href, label, children }: { href: string; label: string; children: ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="flex hover:opacity-70 transition-opacity">
+      {children}
+    </a>
+  );
+}
+
 function ButtonList() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Button List">
-      <XLogo />
-      <LogoInstagram />
-      <LogoYouTube />
-      <LinkedIn />
+      <SocialLink href="https://x.com/araworlddotkids" label="ara on X">
+        <XLogo />
+      </SocialLink>
+      <SocialLink href="https://www.instagram.com/araworld.kids/" label="ara on Instagram">
+        <LogoInstagram />
+      </SocialLink>
     </div>
   );
 }
