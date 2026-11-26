@@ -418,6 +418,19 @@ h6,
    time, following the natural reading order down each line. */
 .ara-hero-headline-line {
   display: block;
+  /* Each line is authored by hand. The letters are inline-blocks, so without
+     this the browser can wrap between any two of them, mid-word. */
+  white-space: nowrap;
+}
+
+/* Below about 384px the 40px mobile headline no longer fits beside the hero's
+   40px side margins, so scale it with the screen. The tracking stays in em to
+   keep the same -2.93px / 40px ratio at every size. */
+@media (max-width: 767px) {
+  .block.md\:hidden .ara-hero-headline {
+    font-size: min(var(--ara-text-display), calc((100vw - 80px) * 0.13));
+    letter-spacing: -0.0733em;
+  }
 }
 
 .ara-hero-headline-char {

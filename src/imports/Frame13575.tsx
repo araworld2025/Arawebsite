@@ -2599,7 +2599,7 @@ function Frame69() {
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[97px] relative w-full">
           <div className="font-['DM_Sans:Bold',sans-serif] font-bold leading-[1.3] relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[-2.16px] w-[480px]" style={{ fontVariationSettings: "\'opsz\' 14" }}>
-            Connect with us to get a dooze of <AraLogoBase1 /> to connect with your child
+            Connect with us to get a dose of <AraLogoBase1 /> to connect with your child
           </div>
         </div>
       </div>

@@ -1116,7 +1116,7 @@ function NewsletterHeading() {
       <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[19px] items-center justify-center pb-[54px] pt-[46px] px-[16px] md:px-[97px] relative size-full">
           <div className="[word-break:break-word] font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#554739] text-[length:var(--ara-text-heading-medium)] text-center tracking-[var(--ara-tracking-heading-medium)] max-w-[560px] w-full" style={{ fontVariationSettings: '"opsz" 14' }}>
-            Connect with us to get a dooze of{" "}
+            Connect with us to get a dose of{" "}
             <span className="inline-flex h-[40.644px] overflow-clip relative align-middle w-[96px]" data-name="ara-logo-base"><NewsletterLogoMark /></span>{" "}
             to connect with your child
           </div>
