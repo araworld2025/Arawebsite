@@ -103,7 +103,7 @@ function LogoGroup2() {
 
 function XLogo() {
   return (
-    <div className="h-[24px] relative shrink-0 w-[23.98px]" data-name="X Logo">
+    <div className="relative shrink-0 size-[23px]" data-name="X Logo">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 23.98 24">
         <g id="X Logo">
           <path d={svgPaths.p16d01100} fill="var(--fill-0, #1E1E1E)" id="Icon" />
@@ -115,7 +115,7 @@ function XLogo() {
 
 function LogoInstagram() {
   return (
-    <div className="relative shrink-0 size-[24px]" data-name="Logo Instagram">
+    <div className="relative shrink-0 size-[21px]" data-name="Logo Instagram">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g clipPath="url(#clip0_88_3318)" id="Logo Instagram">
           <path d={svgPaths.p3c382d72} fill="var(--fill-0, #1E1E1E)" id="Icon" />
@@ -170,9 +170,15 @@ function SocialLink({
   );
 }
 
+// The three icons are sized by eye, not to one number: the outlined X is the
+// lightest mark so it gets the most room (23px), the Instagram glyph is a
+// solid-feeling square so it comes down (21px), and the envelope is a wide,
+// short shape drawn at 24px with a slightly lighter line. -mx-px on the
+// envelope cancels the padding inside its box so the gaps between the
+// visible marks read as equal.
 function ButtonList() {
   return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Button List">
+    <div className="content-stretch flex gap-[18px] items-center relative shrink-0" data-name="Button List">
       <SocialLink href="https://x.com/araworlddotkids" label="ara on X">
         <XLogo />
       </SocialLink>
@@ -180,7 +186,7 @@ function ButtonList() {
         <LogoInstagram />
       </SocialLink>
       <SocialLink href="mailto:araworld2025@gmail.com" label="Email ara" newTab={false}>
-        <Mail className="size-[24px] text-[#1e1e1e]" strokeWidth={1.75} />
+        <Mail className="shrink-0 size-[24px] -mx-px text-[#1e1e1e]" strokeWidth={1.75} />
       </SocialLink>
     </div>
   );
