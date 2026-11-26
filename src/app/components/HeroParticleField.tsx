@@ -181,21 +181,42 @@ export function HeroParticleField() {
     const field = fieldRef.current;
     if (!field) return;
 
+    // Watch the whole hero, not the field itself. The field is a 1px anchor
+    // at the book, but the particles fly ~300px above it and across most of
+    // the screen, so watching the anchor froze them mid-flight while they
+    // were still on screen whenever the anchor scrolled out of view.
+    const target = field.closest<HTMLElement>('[data-name="hero-section"]') ?? field;
+
     let introTimer: ReturnType<typeof setTimeout> | undefined;
+    let hasIntroPlayed = false;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          introTimer = setTimeout(() => setIsActive(true), PARTICLE_INTRO_DELAY_MS);
-        } else {
-          if (introTimer) clearTimeout(introTimer);
+        if (introTimer) clearTimeout(introTimer);
+        introTimer = undefined;
+
+        if (!entry.isIntersecting) {
+          // Fully off screen: pausing costs nothing visible and saves work.
           setIsActive(false);
+          return;
         }
+
+        if (hasIntroPlayed) {
+          // Back in view after the intro: carry on straight away.
+          setIsActive(true);
+          return;
+        }
+
+        // First time in view: wait for the hero intro to finish, then start.
+        introTimer = setTimeout(() => {
+          hasIntroPlayed = true;
+          setIsActive(true);
+        }, PARTICLE_INTRO_DELAY_MS);
       },
-      { rootMargin: "120px 0px", threshold: 0.05 },
+      { threshold: 0 },
     );
 
-    observer.observe(field);
+    observer.observe(target);
     return () => {
       if (introTimer) clearTimeout(introTimer);
       observer.disconnect();
