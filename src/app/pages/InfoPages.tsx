@@ -140,7 +140,7 @@ export const PAGES: Record<string, PageContent> = {
     blocks: [
       {
         kind: "note",
-        body: "Draft for review. Please have this policy checked before the site goes live, and add your contact details.",
+        body: "Draft for review. Please have this policy checked before the site goes live.",
       },
       {
         kind: "text",
@@ -173,7 +173,7 @@ export const PAGES: Record<string, PageContent> = {
       {
         kind: "text",
         heading: "Contact us",
-        body: ["Questions about this policy? Email us at [contact email]."],
+        body: ["Questions about this policy? Email us at araworld2025@gmail.com."],
       },
     ],
   },
@@ -194,6 +194,24 @@ function Heading({ children }: { children: ReactNode }) {
 const bodyText =
   "font-['Nunito:Regular',sans-serif] text-[#554739] text-[length:var(--ara-text-body)] md:text-[length:var(--ara-text-body-large)] leading-[1.6]";
 
+/** Renders text with any email address turned into a mailto link. */
+function Linkified({ text }: { text: string }) {
+  const parts = text.split(/([\w.+-]+@[\w-]+\.[\w.]+[a-z])/i);
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <a key={i} href={`mailto:${part}`} className="text-[#00a193] underline underline-offset-2 hover:text-[#006057]">
+            {part}
+          </a>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
+
 function BlockView({ block }: { block: Block }) {
   switch (block.kind) {
     case "text":
@@ -202,7 +220,7 @@ function BlockView({ block }: { block: Block }) {
           {block.heading && <Heading>{block.heading}</Heading>}
           {block.body.map((p) => (
             <p key={p} className={bodyText}>
-              {p}
+              <Linkified text={p} />
             </p>
           ))}
         </section>

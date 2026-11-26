@@ -2,6 +2,7 @@
 // Extracted from the Figma desktop/mobile frames (identical apart from the
 // responsive link-column layout below) so both frames render one source of truth.
 import type { ReactNode } from "react";
+import { Mail } from "lucide-react";
 import svgPaths from "./footerSvgPaths";
 
 function Group11() {
@@ -150,10 +151,20 @@ export function AraLogo() {
   );
 }
 
-/** A social icon that opens the account in a new tab. */
-function SocialLink({ href, label, children }: { href: string; label: string; children: ReactNode }) {
+/** A social icon; web accounts open in a new tab, the email link does not. */
+function SocialLink({
+  href,
+  label,
+  newTab = true,
+  children,
+}: {
+  href: string;
+  label: string;
+  newTab?: boolean;
+  children: ReactNode;
+}) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="flex hover:opacity-70 transition-opacity">
+    <a href={href} {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})} aria-label={label} className="flex hover:opacity-70 transition-opacity">
       {children}
     </a>
   );
@@ -167,6 +178,9 @@ function ButtonList() {
       </SocialLink>
       <SocialLink href="https://www.instagram.com/araworld.kids/" label="ara on Instagram">
         <LogoInstagram />
+      </SocialLink>
+      <SocialLink href="mailto:araworld2025@gmail.com" label="Email ara" newTab={false}>
+        <Mail className="size-[24px] text-[#1e1e1e]" strokeWidth={1.75} />
       </SocialLink>
     </div>
   );
