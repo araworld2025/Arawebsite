@@ -162,6 +162,27 @@ function LinkedIn() {
   );
 }
 
+/** One link in a footer column. Pages are reached by hash (`#about` etc.), see main.tsx. */
+function FooterLink({ href, children }: { href: string; children: string }) {
+  return (
+    <a
+      href={href}
+      className="font-['Inter:Regular',sans-serif] font-normal leading-[1.4] not-italic text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap hover:text-[#00a193] transition-colors"
+    >
+      {children}
+    </a>
+  );
+}
+
+/** The ara wordmark at its natural footer size (129 × 55), linking home. */
+export function AraLogo() {
+  return (
+    <a href="#" aria-label="ara home" className="block h-[54.649px] overflow-clip relative shrink-0 w-[129.079px]" data-name="ara-logo-base">
+      <LogoGroup2 />
+    </a>
+  );
+}
+
 function ButtonList() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Button List">
@@ -176,9 +197,7 @@ function ButtonList() {
 function Title() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center min-w-[240px] relative shrink-0 w-[262px]" data-name="Title">
-      <div className="h-[54.649px] overflow-clip relative shrink-0 w-[129.079px]" data-name="ara-logo-base">
-        <LogoGroup2 />
-      </div>
+      <AraLogo />
       <ButtonList />
     </div>
   );
@@ -198,21 +217,8 @@ function TextLinkList() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center relative shrink-0 w-[262px]" data-name="Text Link List">
       <Title1 />
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">About Us</p>
-        </div>
-      </div>
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">Mission</p>
-        </div>
-      </div>
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">The team</p>
-        </div>
-      </div>
+      <FooterLink href="#about">About Us</FooterLink>
+      <FooterLink href="#mission">Mission</FooterLink>
     </div>
   );
 }
@@ -231,26 +237,8 @@ function TextLinkList1() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center relative shrink-0 w-[262px]" data-name="Text Link List">
       <Title2 />
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">Free resources</p>
-        </div>
-      </div>
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">Blog</p>
-        </div>
-      </div>
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">FAQs</p>
-        </div>
-      </div>
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">Roadmap</p>
-        </div>
-      </div>
+      <FooterLink href="#free-resources">Free resources</FooterLink>
+      <FooterLink href="#roadmap">Roadmap</FooterLink>
     </div>
   );
 }
@@ -269,16 +257,7 @@ function TextLinkList2() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center relative shrink-0 w-[262px]" data-name="Text Link List">
       <Title3 />
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">Privacy Policy</p>
-        </div>
-      </div>
-      <div className="content-stretch flex items-center justify-center relative shrink-0" data-name="Text Link List Item">
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e1e1e] text-[length:var(--ara-text-body)] whitespace-nowrap">
-          <p className="leading-[1.4]">Refund policy</p>
-        </div>
-      </div>
+      <FooterLink href="#privacy-policy">Privacy Policy</FooterLink>
     </div>
   );
 }
